@@ -1,14 +1,15 @@
 
 body{
     border: 0%;
-    margin: 0%;
+    background-color: #280044;
+    color: aliceblue;
 }
 header{
     border: 3px black solid;
     margin: 1px;
    text-align: center;
 }
-div{
+section{
     border: 3px black solid;
     margin: 1px;
     text-align: center;
@@ -22,8 +23,10 @@ div{
 .logo{
     flex-direction: center;
     display: flex;
-   flex-wrap:nowrap;
+    flex-wrap:nowrap;
     width: 50%;
+    justify-content: center;
+    align-items: center;
 }
 .form{
     border: 3px black solid;
@@ -32,4 +35,9 @@ div{
     flex-direction: column;
     flex-wrap: nowrap;
     width: 50%;
+}
+.campos{
+    background-color: #0E0E11;
+    border-radius: 8.8%;
+    height: 350px;
 }
