@@ -10,18 +10,32 @@
 </head>
 <body>
     <header class="header">
-        <p>header</p>
+        <div class="headIzquierda">
+            <img class="iconoHamburguesa" src="./imagenes/iconoMenuHamburgesa.png" alt="">
+            <img class="iconoLogoChico" src="./imagenes/logoChico.png" alt="">
+        </div>
+        <div class="headCentro">
+            <img class="iconoBuscador" src="./imagenes/buscador.png" alt="">
+        </div>
+        <div class="headDerecha">
+            <img class="iconoCarrito" src="./imagenes/iconoCarrito.png" alt="">
+            <p class="textoUsuario">bienvenido usuario2443!!</p>
+            <img class="iconoUser" src="./imagenes/iconoUserIncognito.png" alt="">
+        </div>
     </header>
+    <div class="breadCrumBox">
+        <p class="breadCrum">>> login</p>
+    </div>
     <section class="content">
         <section class="logo">
-            <img class="iconoLogo" src="./imagenes/Group 87.png" alt="logo">
+            <img class="iconoLogo" src="./imagenes/logoGrande.png" alt="logo">
         
         </section>
         <form action="" class="form">
             <section class="campos">
-                <h1>log in</h1>
+                <h1 id="loginTitle">log in</h1>
                 <div class="inputs">
-                    <div >
+                    <div>
                         <label for="email">email*</label>
                         <input class="input-login" type="text" name="email" id="emailInput">
                     </div>
@@ -29,7 +43,7 @@
                         <label for="password">contraseña*</label>
                         <input class="input-login" type="text" name="password" id="passwordInput">
                     </div>
-                    <button class="botonPrimario"><p class="texto-botones">log in</p></button>
+                    <button class="botonPrimario botonGrande" id="loginButton"><p class="texto-botones">log in</p></button>
                 </div>
                 <div class="alter-login">
                         <button>Log in with Google</button>
