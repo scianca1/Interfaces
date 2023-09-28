@@ -1,0 +1,80 @@
+
+
+@media (max-width: 768px){
+    /*header*/
+    .header{
+        display: flex;
+        margin: 1px;
+        text-align: center;
+        height: 70px;
+        background-color: var(--secondaryColor);
+        position: fixed;
+        width: 100%;
+        top: 0%;
+    }
+    .headIzquierda{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 20%;
+    }
+    .headCentro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+    }
+    .headDerecha{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 20%;
+    }
+
+    /*iconos*/
+    .iconoLogoGrande{
+        width: 330px;
+        height: auto; 
+        margin-bottom: 100px;
+        margin-left: 120px;
+    }
+    .iconoLogoChico{
+        width: 75px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .iconoHamburguesa{
+        width: 25px;
+        margin: 20px;
+    }
+    .iconoBuscador{
+        margin-top: 7px;
+    }
+    .iconoCarrito{
+        width: 35px;
+        margin-bottom: 2px;
+        margin-right: 5px;
+        margin-right: 25px;
+    }
+    .iconoUser{
+        width: 40px;
+        margin-right: 30px;
+        margin-left: 5px;
+    }
+    .iconoGoogle{
+        margin:3px;
+        width: 20px;
+        height: auto;
+    }
+    .iconoFacebook{
+        filter: brightness(0) invert(1);
+    }
+    .iconoFooter{
+        width: 30px;
+        margin-right: 10px;
+    }
+    
+    body{
+        background-color: aquamarine;
+    }
+}
