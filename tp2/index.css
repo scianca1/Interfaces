@@ -6,9 +6,17 @@
     --secondaryColorDark: #0E0E11; 
     --elevacion : 3.40995px 3.40995px 5.11492px 0px rgba(0, 0, 0, 0.25);
     /*box-shadow: 3.40995px 3.40995px 5.11492px 0px rgba(0, 0, 0, 0.25);*/
+    --blancotransparente46:rgb(240,240,240,0.46);
 }
+@font-face {
+    font-family: 'open-sans';
+    src: url('./Fuentes/Open_Sans/static/OpenSans_Condensed-Medium.ttf') format('ttf');
+    
+  }
 body{
     border: 0%;
+    margin: 0%;
+    padding: 0%;
     background-color: var(--primaryColorDark);
     color: aliceblue;
 }
@@ -26,6 +34,9 @@ body{
     text-align: center;
     height: 70px;
     background-color: var(--secondaryColor);
+    position: fixed;
+    width: 100%;
+    top: 0%;
 }
 .headIzquierda{
     display: flex;
@@ -47,7 +58,7 @@ body{
 }
 /*footer*/
 .footer{
-    height: 500px;
+    height: 360px;
     display: flex;
     background-color: var(--secondaryColorDark);
     border: 3px black solid;
@@ -89,7 +100,7 @@ body{
     flex-direction: row;
     width: 100%;
     height: 50px;
-    border-bottom: 3px rgb(174, 174, 174) solid;
+    border-bottom: 0.1px var(--blancotransparente46) solid;
 }
 .ul-footer{
     padding: 0;
@@ -115,14 +126,12 @@ body{
 .input-mensaje{
     padding-top: 25px;
 }
-.form-footer{
-
-}
 
 /*BREADCRUM*/
 .breadCrumBox{
-    height: 30px;
+    height: 20px;
     padding: 0;
+    margin-top: 80px;
 }
 .breadCrum{
     font-size: 15px;
@@ -139,31 +148,32 @@ section{
 
 .content{
     display: flex;
-   
+   height: 550px;
     
 }
 .logo{
     flex-direction: column;
     display: flex;
     flex-wrap:nowrap;
-    width: 55%;
+    width: 45%;
     justify-content: center;
     align-items: center;
 }
 .form{
     border: 3px black solid;
-    margin: 3px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 23%;
+    width: 340px;
+    box-shadow: var(--elevacion);
 }
 .campos{
     display:flex;
     flex-direction: column;
     background-color: var(--secondaryColorDark);
     border-radius: 4%;
-    height: 400px;
+    height: 420px;
     align-items: center;
 }
 .inputs{
@@ -178,19 +188,34 @@ div.inputs{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border-top: 2px solid whitesmoke;
-    border-bottom: 2px solid whitesmoke;
-    width: 75%;
+    border-top: 1px solid var(--blancotransparente46);
+    border-bottom: 0.1px solid var(--blancotransparente46);
+    width: 220px;
     padding-top: 15px;
     padding-bottom: 15px;
 
 }
 .alter-login{
+    margin: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 75px;
+    height: 90px;
+    justify-content: center;
 }
+.alter-login button{
+    display: flex;
+    border: 0px;
+    border-radius: 25px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 170px;
+}
+.b-Alter-Login-Facebook{
+    background-color: #3b5998;
+    color:white
+}
+
 
 .inputs div {
     width: 100%;
@@ -199,27 +224,34 @@ div.inputs{
     align-items: center;
 }
 .input-login{
+    border: 0px;
     border-radius: 12px;
     margin-top: 0px;
     margin-bottom: 4px;
     width: 90%;
     height: 25px;
 }
-.alter-login button{
-    border-radius: 7px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
+
 .tituloLogo{
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 50px;
-
+}
+.textoBotones{
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+    justify-content: center;
+    height: 23px;
+    
 }
 
 /*iconos*/
 .iconoLogoGrande{
-
+    width: 330px;
+    height: auto; 
+    margin-bottom: 100px;
+    margin-left: 120px;
 }
 .iconoLogoChico{
     width: 75px;
@@ -244,7 +276,14 @@ div.inputs{
     margin-right: 30px;
     margin-left: 5px;
 }
-
+.iconoGoogle{
+    margin:3px;
+    width: 20px;
+    height: auto;
+}
+.iconoFacebook{
+    filter: brightness(0) invert(1);
+}
 .botonPrimario{
     background-color: var(--accentColor);
     border-radius: 25px;
@@ -275,4 +314,5 @@ div.inputs{
 #loginTitle{
     margin-top: 10px;
     margin-bottom: 15px;
+    font-family: 'open-sans';
 }
