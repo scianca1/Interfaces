@@ -7,6 +7,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon"  sizes="64x64" href="imagenes/logoChico.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -33,7 +36,7 @@
         </section>
         <form action="" class="form">
             <section class="campos">
-                <h1 id="loginTitle">log in</h1>
+                <h1 id="loginTitle" class="loginTitle">log in</h1>
                 <div class="inputs">
                     <div>
                         <label for="email">email*</label>
@@ -43,15 +46,15 @@
                         <label for="password">contraseña*</label>
                         <input class="input-login" type="text" name="password" id="passwordInput">
                     </div>
-                    <button class="botonPrimario botonGrande" id="loginButton"><p class="texto-botones">log in</p></button>
+                    <button class="botonPrimario botonGrande" id="loginButton"><p class="textoBotones">log in</p></button>
                 </div>
                 <div class="alter-login">
-                        <button ><img class="iconoGoogle"src="./imagenes/iconoGoogle.png" alt="iconoGoogle"><p class="textoBotones texto-chico">Log in with Google</p></button>
+                        <button class="b-Alter-Login-Google"><img class="iconoGoogle"src="./imagenes/iconoGoogle.png" alt="iconoGoogle"><p class="textoBotones texto-chico">Log in with Google</p></button>
                         <button class="b-Alter-Login-Facebook"><img class="iconoGoogle "src="./imagenes/iconoFacebook.png" alt="iconoFacebook"><p class="textoBotones texto-chico">Log in with Facebook</p></button>
                 </div>
             </section>
             <section class="texto-bajo-form">
-                <p>no tienes cuenta?</p>
+                <p>no tienes cuenta? Registrate cliqueando</p>
             </section>
         </form>
     </section>
@@ -129,7 +132,7 @@
                         <label for="mensaje">mensaje*</label>
                         <input class="input-login input-mensaje" type="text" name="mensaje" id="passwordInput">
                     </div>
-                    <button class="botonPrimario" id="loginButton"><p class="texto-botones">log in</p></button>
+                    <button class="botonPrimario boton-Mediano boton-enviar-mensaje" ><p class="textoBotones">enviar</p></button>
                 </div>
             </div>
     </footer>
