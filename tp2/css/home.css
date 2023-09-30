@@ -34,6 +34,29 @@
         align-items: center;
         width: 40%;
     }
+    /*footer*/
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        margin: 0px;
+    }
+    .enlacesFooter{
+        width: 50%;
+        height: 250px;
+    }
+    .contactoFooter{
+        width: 50%;
+        
+    }
+    .categoriaFooter{
+        width: 50%;
+        
+    }
+    .mensajesFooter{
+        width: 50%;
+        
+    }
 
     /*iconos*/
     .iconoLogoGrande{
