@@ -1,6 +1,7 @@
 
 :root{
     --primaryColorDark: #280044; 
+    --primaryColor: #6E03BB;
     --accentColor: #F7FC00; 
     --secondaryColor: #1F1F23; 
     --secondaryColorDark: #0E0E11; 
@@ -296,7 +297,6 @@ div.inputs{
     margin-top: 7px;
 }
 .iconoCarrito{
-    display: none;
     width: 35px;
     margin-bottom: 2px;
     margin-right: 5px;
