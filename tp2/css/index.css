@@ -44,6 +44,7 @@ body{
     position: fixed;
     width: 100%;
     top: 0%;
+    z-index: 1;
 }
 .headIzquierda{
     display: flex;
@@ -211,6 +212,8 @@ div.inputs{
     justify-content: center;
 }
 .alter-login button{
+    padding-top: 3px;
+    padding-bottom: 3px;
     display: flex;
     border: 0px;
     border-radius: 25px;
@@ -270,9 +273,24 @@ div.inputs{
 .textoBotones{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
     margin: 3px;
     justify-content: center;
     height: 23px;
+    letter-spacing: 1.4px;
+    transition: background-color 0.4s; 
+}
+.textoBotonesPequenios{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
+    height: 20px;
     letter-spacing: 1.4px;
     transition: background-color 0.4s; 
 }
@@ -319,6 +337,8 @@ div.inputs{
 
 /*botones*/
 .botonPrimario{
+    display: flex;
+    justify-content: center;
     background-color: var(--accentColor);
     border-radius: 25px;
     border: 0;
@@ -336,10 +356,12 @@ div.inputs{
 .boton-Mediano{
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .botonGrande{
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
 }

@@ -67,6 +67,11 @@
     a.link-footer{
         padding-top: 2.5px;
     }
+    .caja-inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 
 
@@ -132,6 +137,8 @@
         border-radius: 15px;
     }
     .boton-pequenio{
+        margin-right: 10px;
+        margin-left: 5px;
         padding-left: 5px;
         padding-right: 5px;
         padding-top: 2px;
@@ -141,6 +148,17 @@
     .boton-card{
         padding: 0;
     }
+    .contenedor-nombre-juego button{
+        display: flex;
+        background-color: unset;
+        border: 0;
+        color: white;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 10px;
+        margin-top: 2px;
+    }
 
     /*texto*/
     .textoUsuario{
@@ -148,6 +166,20 @@
     }
     .texto-pequenio{
         font-size: 10px;
+        margin-top: 0px;
+    }
+    .nombre-card-secuandaria{
+        display: flex;
+        margin-top: 8px;
+        margin-left: 10px;
+        align-items: center;
+        font-family: "open-sans", Arial, Helvetica, sans-serif;
+        max-height: 23px; /* Altura máxima deseada antes de recortar */
+        overflow: hidden;
+    }
+    .contenedor-nombre-juego{
+        display: flex;
+        align-items: center;
     }
 
     /*card*/
