@@ -23,7 +23,9 @@ body{
     color: aliceblue;
     font-family: "open-sans";
 }
-
+button:hover{
+    cursor: pointer;
+}
 /*TEXTO*/
 .textoUsuario{
     font-size: 12.571px;
@@ -255,14 +257,19 @@ div.inputs{
 .texto-bajo-form{
     width: 340px;
     text-align: center;
-    font-family: Open Sans;
+    font-family: 'Open Sans';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1.4px;
     text-decoration-line: underline;
-
+    background-color: unset;
+    border: 0;
+    color:var(--blanco);
+}
+.texto-bajo-form:hover{
+    color: var(--accentColor);
 }
 
 .tituloLogo{
@@ -347,8 +354,8 @@ div.inputs{
     transition: background-color 0.3s; 
 }
 .botonPrimario:hover {
-    background-color: var(--secondaryColor)
-    
+    background-color: var(--secondaryColor);
+   cursor: pointer;
 }
 .botonPrimario:hover .textoBotones{
     color: var(--accentColor);
