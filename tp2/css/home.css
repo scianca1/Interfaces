@@ -286,4 +286,9 @@
     .recomendados{
         background-color: brown;
     }
+    .Etiqueta-Carrito{
+        background-color: var(--accentColor);
+        position:absolute;
+        margin-left: 80px;
+    }
 }
