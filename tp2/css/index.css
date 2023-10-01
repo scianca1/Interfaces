@@ -278,6 +278,7 @@ div.inputs{
     font-size: 50px;
 }
 .textoBotones{
+    font-family:'open sans';
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -289,6 +290,7 @@ div.inputs{
     transition: background-color 0.4s; 
 }
 .textoBotonesPequenios{
+    font-family:'open sans';
     display: flex;
     flex-direction: column;
     width: 100%;

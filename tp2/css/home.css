@@ -199,7 +199,7 @@
         margin: 12px;
         position: relative;
         width: 120px;
-        height: 120px;
+        height: 122px;
         border-top-left-radius: 25px;
         border-bottom-right-radius: 25px;
         box-shadow: var(--elevacion);
@@ -209,7 +209,8 @@
         border-top-left-radius: 25px;
         border-bottom-right-radius: 25px;
         width: 100%; /* Hace que las imágenes ocupen el ancho completo del contenedor */
-        height: 100%; /* Hace que las imágenes ocupen la altura completa del contenedor */
+        height: 95%; /* Hace que las imágenes ocupen la altura completa del contenedor */
+        margin-top: 4px;
         object-fit: cover;
     }
     .socalo-secundario{
@@ -287,8 +288,56 @@
         background-color: brown;
     }
     .Etiqueta-Carrito{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 30px;
         background-color: var(--accentColor);
         position:absolute;
         margin-left: 80px;
+        margin-bottom: 20px;
+        box-shadow: var(--elevacion);
+        border-bottom-left-radius: 10px;
+    }
+    .logo-carrito-violeta-etiqueta{
+        width: 20px;
+        height: 20px;
+        
+    }
+    .Etiqueta-Carrito-free{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 30px;
+        background-color: var(--secondaryColor);
+        position:absolute;
+        margin-left: 80px;
+        margin-bottom: 20px;
+        box-shadow: var(--elevacion);
+        border-bottom-left-radius: 10px;
+        border: 1.5px solid var(--accentColor);
+    }
+    .icono-free-etiqueta{
+        width: 20px;
+        height: 20px;
+    }
+    .free{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--primaryColor);
+        width: 20px;
+        height: 18px;
+        border-radius: 3px;
+    }
+    .textofree{
+        font-size: 7px;
+        letter-spacing: 0.7px;
     }
 }
