@@ -5,6 +5,10 @@
         margin: 0px;
         padding: 0px;
     }
+    /*imagenes*/
+    .imagen-mas-jugados{
+        width: 100%;
+    }
     /*header*/
     .header{
         display: flex;
@@ -270,10 +274,14 @@
     }
     .mas-jugados{
         background-color: aquamarine;
+        width: 100%;
     }
     .carrusel-tus-juegos{
         display: flex;
+        height: auto;
         background-color: var(--secondaryColor);
+        max-width: 375.2px;
+        overflow: hidden;
     }
     .carrusel-destacados{
         display:flex;
@@ -283,7 +291,8 @@
         display: flex;
         background-color: green;
     }
-   
+
+
     .recomendados{
         background-color: brown;
     }
