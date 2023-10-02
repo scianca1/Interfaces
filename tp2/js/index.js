@@ -1,7 +1,6 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded",()=>{
-    console.log("holi");
 
 
 
@@ -9,6 +8,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     const commonsCarousel = document.getElementById('carrusel-comunes');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
+    const nextButtons = document.querySelectorAll(".gameWeek-btn-next");
+    const backButtons = document.querySelectorAll(".gameWeek-btn-back");
+    console.log(nextButtons);
+    console.log(backButtons);
+    console.log(backButtons[0].parentNode.parentNode.parentNode);
 
     highlightsWeek.forEach((gameWeek) => {
         console.log(gameWeek.name);
@@ -55,44 +59,86 @@ document.addEventListener("DOMContentLoaded",()=>{
         commonsCarousel.append(article);
     });
 
-    prevButton.addEventListener("click", () => {
-        const posicionFinal = 50;
-        const duracionAnimacion = 1000;
-        const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
-        let tiempoInicio;
-        function animarScroll(timestamp) {
-            if (!tiempoInicio) tiempoInicio = timestamp;
-            const tiempoTranscurrido = timestamp - tiempoInicio;
-            const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
-            const distanciaPaso = distanciaPorPaso * progreso;
-            highlightsWeekCarousel.scrollLeft -= distanciaPaso;
-            console.log("holi");
-            if (progreso < 1) {
-                requestAnimationFrame(animarScroll);
-            }
-        }
-        tiempoInicio = null; // Reinicia el tiempo de inicio
-        requestAnimationFrame(animarScroll(0));
-    });
+    // prevButton.addEventListener("click", () => {
+    //     const posicionFinal = 50;
+    //     const duracionAnimacion = 1000;
+    //     const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
+    //     let tiempoInicio;
+    //     function animarScroll(timestamp) {
+    //         if (!tiempoInicio) tiempoInicio = timestamp;
+    //         const tiempoTranscurrido = timestamp - tiempoInicio;
+    //         const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
+    //         const distanciaPaso = distanciaPorPaso * progreso;
+    //         highlightsWeekCarousel.scrollLeft -= distanciaPaso;
+    //         if (progreso < 1) {
+    //             requestAnimationFrame(animarScroll);
+    //         }
+    //     }
+    //     tiempoInicio = null; // Reinicia el tiempo de inicio
+    //     requestAnimationFrame(animarScroll(0));
+    // });
 
-    nextButton.addEventListener("click", () => {
-        const posicionFinal = 50;
-        const duracionAnimacion = 1000;
-        const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
-        let tiempoInicio;
-        function animarScroll(timestamp) {
-            if (!tiempoInicio) tiempoInicio = timestamp;
-            const tiempoTranscurrido = timestamp - tiempoInicio;
-            const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
-            const distanciaPaso = distanciaPorPaso * progreso;
-            highlightsWeekCarousel.scrollLeft += distanciaPaso;
-            console.log("holi");
-            if (progreso < 1) {
-                requestAnimationFrame(animarScroll);
+
+    backButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const posicionFinal = 50;
+            const duracionAnimacion = 1000;
+            const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
+            let tiempoInicio;
+            function animarScroll(timestamp) {
+                if (!tiempoInicio) tiempoInicio = timestamp;
+                const tiempoTranscurrido = timestamp - tiempoInicio;
+                const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
+                const distanciaPaso = distanciaPorPaso * progreso;
+                button.parentNode.parentNode.scrollLeft -= distanciaPaso;
+                if (progreso < 1) {
+                    requestAnimationFrame(animarScroll);
+                }
             }
-        }
-        tiempoInicio = null; // Reinicia el tiempo de inicio
-        requestAnimationFrame(animarScroll(0));
-    });
+            tiempoInicio = null; // Reinicia el tiempo de inicio
+            requestAnimationFrame(animarScroll(0));
+        });
+
+    })
+    nextButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const posicionFinal = 50;
+            const duracionAnimacion = 1000;
+            const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
+            let tiempoInicio;
+            function animarScroll(timestamp) {
+                if (!tiempoInicio) tiempoInicio = timestamp;
+                const tiempoTranscurrido = timestamp - tiempoInicio;
+                const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
+                const distanciaPaso = distanciaPorPaso * progreso;
+                button.parentNode.parentNode.scrollLeft += distanciaPaso;
+                if (progreso < 1) {
+                    requestAnimationFrame(animarScroll);
+                }
+            }
+            tiempoInicio = null; // Reinicia el tiempo de inicio
+            requestAnimationFrame(animarScroll(0));
+        });
+
+    })
+
+    // nextButton.addEventListener("click", () => {
+    //     const posicionFinal = 50;
+    //     const duracionAnimacion = 1000;
+    //     const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
+    //     let tiempoInicio;
+    //     function animarScroll(timestamp) {
+    //         if (!tiempoInicio) tiempoInicio = timestamp;
+    //         const tiempoTranscurrido = timestamp - tiempoInicio;
+    //         const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
+    //         const distanciaPaso = distanciaPorPaso * progreso;
+    //         highlightsWeekCarousel.scrollLeft += distanciaPaso;
+    //         if (progreso < 1) {
+    //             requestAnimationFrame(animarScroll);
+    //         }
+    //     }
+    //     tiempoInicio = null; // Reinicia el tiempo de inicio
+    //     requestAnimationFrame(animarScroll(0));
+    // });
 
 });
