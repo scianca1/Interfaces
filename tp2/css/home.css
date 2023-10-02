@@ -302,8 +302,7 @@
         height: auto;
         background-color: var(--secondaryColor);
         max-width: 375.2px;
-        overflow: hidden;
-        transition: scrollLeft 200ms;
+        overflow-y: auto;
     }
     .carrusel-destacados{
         display:flex;

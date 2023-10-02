@@ -6,13 +6,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     const highlightsWeekCarousel = document.getElementById('carousel');
     const commonsCarousel = document.getElementById('carrusel-comunes');
-    const prevButton = document.getElementById('prevButton');
-    const nextButton = document.getElementById('nextButton');
     const nextButtons = document.querySelectorAll(".gameWeek-btn-next");
     const backButtons = document.querySelectorAll(".gameWeek-btn-back");
-    console.log(nextButtons);
-    console.log(backButtons);
-    console.log(backButtons[0].parentNode.parentNode.parentNode);
 
     highlightsWeek.forEach((gameWeek) => {
         console.log(gameWeek.name);
@@ -81,7 +76,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     backButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            const posicionFinal = 50;
             const duracionAnimacion = 1000;
             const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
             let tiempoInicio;
@@ -102,7 +96,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     })
     nextButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            const posicionFinal = 50;
             const duracionAnimacion = 1000;
             const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
             let tiempoInicio;
