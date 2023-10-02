@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                 <div class="gradiente">
                     <button class="botonPrimario boton-Mediano">
                         <div class="textoBotones texto-pequenio">
-                            jugar
+                            jugar ${gameWeek.id}
                         </div>
                     </button>
                 </div>
@@ -29,11 +29,43 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
 
     prevButton.addEventListener("click", () => {
-        highlightsWeekCarousel.scrollLeft -= 1000;
-    });
-    
-    nextButton.addEventListener("click", () => {
-        highlightsWeekCarousel.scrollLeft += 1000;
+        const posicionFinal = 50;
+        const duracionAnimacion = 1000;
+        const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
+        let tiempoInicio;
+        function animarScroll(timestamp) {
+            if (!tiempoInicio) tiempoInicio = timestamp;
+            const tiempoTranscurrido = timestamp - tiempoInicio;
+            const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
+            const distanciaPaso = distanciaPorPaso * progreso;
+            highlightsWeekCarousel.scrollLeft -= distanciaPaso;
+            console.log("holi");
+            if (progreso < 1) {
+                requestAnimationFrame(animarScroll);
+            }
+        }
+        tiempoInicio = null; // Reinicia el tiempo de inicio
+        requestAnimationFrame(animarScroll(0));
     });
 
-})
+    nextButton.addEventListener("click", () => {
+        const posicionFinal = 50;
+        const duracionAnimacion = 1000;
+        const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
+        let tiempoInicio;
+        function animarScroll(timestamp) {
+            if (!tiempoInicio) tiempoInicio = timestamp;
+            const tiempoTranscurrido = timestamp - tiempoInicio;
+            const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
+            const distanciaPaso = distanciaPorPaso * progreso;
+            highlightsWeekCarousel.scrollLeft += distanciaPaso;
+            console.log("holi");
+            if (progreso < 1) {
+                requestAnimationFrame(animarScroll);
+            }
+        }
+        tiempoInicio = null; // Reinicia el tiempo de inicio
+        requestAnimationFrame(animarScroll(0));
+    });
+
+});
