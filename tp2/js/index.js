@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
     const highlightsWeekCarousel = document.getElementById('carousel');
+    const commonsCarousel = document.getElementById('carrusel-comunes');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
 
@@ -26,6 +27,32 @@ document.addEventListener("DOMContentLoaded",()=>{
             </div>`;
         
         highlightsWeekCarousel.append(article);
+    });
+
+    console.log(commons);
+    commons.forEach((game) => {
+        console.log(game.etiqueta);
+        let article = document.createElement("article");
+        article.className = "game";
+        article.innerHTML = `
+        <div class="card-secundaria">
+            ${game.etiqueta}
+            <div class="socalo-secundario">
+                <div class="contenedor-nombre-juego">
+                    <p class="nombre-card-secuandaria texto-pequenio">
+                        ${game.name}
+                    </p>
+                </div>
+                <button class="botonPrimario boton-pequenio">
+                    <div class="textoBotonesPequenios texto-pequenio">
+                        ${game.button}
+                    </div>
+                </button>
+            </div>
+            <img class="imagen-card-secundaria" src="${game.image}" alt="">
+        </div>`;
+        console.log(article);
+        commonsCarousel.append(article);
     });
 
     prevButton.addEventListener("click", () => {
