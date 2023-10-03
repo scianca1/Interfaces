@@ -348,6 +348,7 @@ div.inputs{
 .botonPrimario{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: var(--accentColor);
     border-radius: 25px;
     border: 0;

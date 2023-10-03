@@ -418,11 +418,18 @@
     }
     .seccion-Recomendados{
        display: flex;
+       align-items: center;
 
     }
     .Descripcion-Recomendados{
         display: flex;
         flex-direction: column;
-        width: 65%;
+        width: 60%;
+    }
+    .header-recomendados{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .texto-descripcion-recomendados{
     }
 }
