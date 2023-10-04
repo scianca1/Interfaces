@@ -77,7 +77,7 @@ const commons = [
                     </div>`
     },
     {
-        id : 2,
+        id : 4,
         name : 'god of war',
         image : '../imagenes/god-of-war.jpg',
         button : "Jugar",
@@ -87,3 +87,38 @@ const commons = [
                     </div>`
     },
 ]
+
+const morePlayed = [
+    {
+        id : 1,
+        name : 'fifa 23',
+        image : '../imagenes/fifa23.webp',
+        button : "Jugar",
+        price : 0,
+        etiqueta: `<div class="Etiqueta-Carrito">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                    </div>`
+    },
+    {
+        id : 2,
+        name : 'clash royale',
+        image : '../imagenes/clashroyale.png',
+        button : "Jugar",
+        price : 0,
+        etiqueta: `<div class="Etiqueta-Carrito-free">
+                        <div class="free"><p class="textofree">FREE</p></div>
+                    </div>`
+    },
+    {
+        id : 3,
+        name : 'fifa 23',
+        image : '../imagenes/fifa23.webp',
+        button : "Jugar",
+        price : 0,
+        etiqueta: `<div class="Etiqueta-Carrito">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                    </div>`
+    },
+    
+]
+
