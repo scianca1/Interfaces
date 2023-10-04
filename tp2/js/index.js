@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const backButtonSlider = document.getElementById("btn-back-slider");
     const slider = document.querySelector(".slider");
     const slides = document.querySelectorAll(".slide");
+    const header = document.querySelector(".header");
     let currentIndex = 0;
 
     nextButtonSlider.addEventListener("click", () => {
@@ -23,18 +24,16 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     });
     function showSlide(index) {
-        if (index < 0) {
+          if (index < 0) {
             index = slides.length - 1;
-        } else if (index >= slides.length) {
+          } else if (index >= slides.length) {
             index = 0;
-        }
-
-        const slideWidthPercentage = 100 / slides.offsetWidth;
-        console.log(slides.offsetWidth);
-        const translateX = -index * slideWidthPercentage;
+          }
         
-        slider.style.transform = `translateX(${translateX}%)`;
-        currentIndex = index;
+          const translateX = -index * header.offsetWidth;
+        
+          slider.style.transform = `translateX(${translateX}px)`;
+          currentIndex = index;
     }
 
     highlightsWeek.forEach((gameWeek) => {
