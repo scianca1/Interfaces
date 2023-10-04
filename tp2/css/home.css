@@ -209,7 +209,6 @@
         max-width: 60px;
         max-height: 22px;
         height: 22px;
-        overflow: hidden;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -418,7 +417,7 @@
     }
     .seccion-Recomendados{
        display: flex;
-       align-items: center;
+       align-items: start;
 
     }
     .Descripcion-Recomendados{
@@ -427,9 +426,48 @@
         width: 60%;
     }
     .header-recomendados{
+        padding: 10px;
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
+        height: 40px;
     }
     .texto-descripcion-recomendados{
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        max-height: 110px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* poner los 3 puntitos */
     }
+
+    /*slider*/
+    .slider-mas-jugados {
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .slider {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 300%; /* Ancho total de todos los slides */
+        display: flex;
+        transition: transform 0.5s ease; /* Añade transición suave */
+      }
+      
+    .slide {
+        flex:100%; /* Ancho de cada slide */
+        height: 200px;
+        text-align: center;
+    }
+    .imagen-slide{
+        width: 100%; /* Hace que las imágenes ocupen el ancho completo del contenedor */
+        height: 95%;
+        object-fit: cover;
+    }
+      
 }
