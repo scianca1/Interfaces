@@ -148,6 +148,13 @@
     .boton-card{
         padding: 0;
     }
+    .boton-mas-jugados{
+        position: absolute;
+        width: 14%;
+        margin-bottom: 20px;
+        bottom: 23px;
+        left: 43%;
+    }
     
     .socalo-Destacada .boton-jugar-Destacados{
         display: flex;
@@ -183,6 +190,22 @@
         z-index: 1;
         right: 0px;
         top: 50%;
+    }
+    .btn-back-slider{
+        position: absolute;
+        background-color: unset;
+        top: 31%;
+        border: 0px;
+        left: 0px;
+        z-index: 1;
+    }
+    .btn-next-slider{
+        background-color: unset;
+        border: 0px;
+        position: absolute;
+        top: 31%;
+        right: 0px;
+        z-index: 1;
     }
     .iconoScroll{
         visibility: hidden;
@@ -321,6 +344,7 @@
         height: auto;
     }
     .container-slider{
+        position: relative;
         height: auto;
         width: 100%;
         overflow-y: auto;
@@ -328,6 +352,7 @@
     .mas-jugados{
         height: auto;
         width: 100%;
+        position: relative;
     }
     .carrusel-tus-juegos{
         display: flex;
@@ -479,7 +504,7 @@
 
     .slide{
         width: 33.3%;
-        height: 150px;
+        height: 190px;
     }
 
     .img-slide{
@@ -487,5 +512,17 @@
         height: 95%; /* Hace que las imágenes ocupen la altura completa del contenedor */
         object-fit: cover;
     }
-
+    
+    
+    
+    .mas-jugados h2{
+        position: absolute;
+        bottom: 23px;
+        width: 35%;
+        color: var(--secondaryColor);
+        margin-top: 0;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 40%;
+    }
 }

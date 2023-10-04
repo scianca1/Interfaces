@@ -6,8 +6,36 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     const highlightsWeekCarousel = document.getElementById('carousel');
     const commonsCarousel = document.getElementById('carrusel-comunes');
+    const morePlayedSlider = document.getElementById('slider');
     const nextButtons = document.querySelectorAll(".gameWeek-btn-next");
     const backButtons = document.querySelectorAll(".gameWeek-btn-back");
+    const nextButtonSlider = document.getElementById("btn-next-slider");
+    const backButtonSlider = document.getElementById("btn-back-slider");
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide");
+    let currentIndex = 0;
+
+    nextButtonSlider.addEventListener("click", () => {
+        showSlide(currentIndex + 1);    
+    });
+    backButtonSlider.addEventListener("click", () => {
+        showSlide(currentIndex - 1);    
+
+    });
+    function showSlide(index) {
+        if (index < 0) {
+            index = slides.length - 1;
+        } else if (index >= slides.length) {
+            index = 0;
+        }
+
+        const slideWidthPercentage = 100 / slides.offsetWidth;
+        console.log(slides.offsetWidth);
+        const translateX = -index * slideWidthPercentage;
+        
+        slider.style.transform = `translateX(${translateX}%)`;
+        currentIndex = index;
+    }
 
     highlightsWeek.forEach((gameWeek) => {
         console.log(gameWeek.name);
@@ -52,6 +80,15 @@ document.addEventListener("DOMContentLoaded",()=>{
         </div>`;
         console.log(article);
         commonsCarousel.append(article);
+    });
+    
+    console.log(morePlayed);
+    morePlayed.forEach((game) => {
+        let article = document.createElement("div");
+        article.className = "slide";
+        article.innerHTML = `<img class="img-slide" src="${game.image}" alt=""> `;
+        console.log(article);
+        morePlayedSlider.append(article);
     });
 
     // prevButton.addEventListener("click", () => {
