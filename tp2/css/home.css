@@ -291,6 +291,20 @@ body{
     object-fit: cover;
 }
 /*contenido*/
+.container-recomendados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.recomendados{
+    width: 45%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .content{
     flex-direction: column;
     height: auto;
@@ -820,6 +834,10 @@ body{
         object-fit: cover;
     }
     /*contenido*/
+    .container-recomendados{
+        display: flex;
+        flex-direction: column;
+    }
     .content{
         flex-direction: column;
         height: auto;
@@ -867,7 +885,10 @@ body{
 
     .recomendados{
         background-color: var(--primaryColor);
-        margin-bottom: 15px;
+        margin: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
     }
     .Etiqueta-Carrito{
         display: flex;
