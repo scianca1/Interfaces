@@ -132,6 +132,7 @@ button:hover{
 }
 /*form footer*/
 .caja-inputs-mensaje{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;

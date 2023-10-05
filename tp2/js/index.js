@@ -1,11 +1,10 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded",()=>{
-
-
-
-    const highlightsWeekCarousel = document.getElementById('carousel');
-    const commonsCarousel = document.getElementById('carrusel-comunes');
+    const miGamesCarousel = document.getElementById('tus-juegos');
+    const commonsDeportesCarousel = document.getElementById('carrusel-comunes-deportes');
+    const commonsAccionCarousel = document.getElementById('carrusel-comunes-accion');
+    const destacadasCarousel = document.getElementById('destacadas-carousel');
     const morePlayedSlider = document.getElementById('slider');
     const nextButtons = document.querySelectorAll(".gameWeek-btn-next");
     const backButtons = document.querySelectorAll(".gameWeek-btn-back");
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     let currentIndex = 0;
 
     console.log(puntitosSlider);
-    
+
 
     nextButtonSlider.addEventListener("click", () => {
         showSlide(currentIndex + 1);    
@@ -42,8 +41,8 @@ document.addEventListener("DOMContentLoaded",()=>{
         
     }
 
-    highlightsWeek.forEach((gameWeek) => {
-        console.log(gameWeek.name);
+    miGames.forEach((game) => {
+        console.log(game.name);
         let article = document.createElement("article");
         article.className = "gameWeek";
         article.innerHTML = `
@@ -51,17 +50,41 @@ document.addEventListener("DOMContentLoaded",()=>{
                 <div class="gradiente">
                     <button class="botonPrimario boton-Mediano">
                         <div class="textoBotones texto-pequenio">
-                            jugar ${gameWeek.id}
+                            jugar ${game.id}
                         </div>
                     </button>
                 </div>
-                <img class="imagen-card-mis-juegos" src="${gameWeek.image}" alt="">
+                <img class="imagen-card-mis-juegos" src="${game.image}" alt="">
             </div>`;
         
-        highlightsWeekCarousel.append(article);
+        miGamesCarousel.append(article);
+    });
+    
+    commons.forEach((game) => {
+        console.log(game.name);
+        let article = document.createElement("article");
+        article.className = "gameWeek";
+        article.innerHTML = `
+        <div class="card-Destacadas">
+            ${game.etiqueta}
+            <div class="socalo-Destacada">
+                <div class="contenedor-nombre-juego">
+                    <p class="nombre-card-secuandaria texto-pequenio">
+                        ${game.name}
+                    </p>
+                </div>
+                <button class="botonPrimario boton-Mediano boton-jugar-Destacados">
+                    <div class="textoBotones texto-pequenio">
+                        ${game.button}
+                    </div>
+                </button>
+            </div>
+            <img class="imagen-card-Destacadas" src="${game.image}" alt="">
+        </div>`;
+        
+        destacadasCarousel.append(article);
     });
 
-    console.log(commons);
     commons.forEach((game) => {
         console.log(game.etiqueta);
         let article = document.createElement("article");
@@ -84,7 +107,32 @@ document.addEventListener("DOMContentLoaded",()=>{
             <img class="imagen-card-secundaria" src="${game.image}" alt="">
         </div>`;
         console.log(article);
-        commonsCarousel.append(article);
+        commonsDeportesCarousel.append(article);
+    });
+    
+    commons.forEach((game) => {
+        console.log(game.etiqueta);
+        let article = document.createElement("article");
+        article.className = "game";
+        article.innerHTML = `
+        <div class="card-secundaria">
+            ${game.etiqueta}
+            <div class="socalo-secundario">
+                <div class="contenedor-nombre-juego">
+                    <p class="nombre-card-secuandaria texto-pequenio">
+                        ${game.name}
+                    </p>
+                </div>
+                <button class="botonPrimario boton-pequenio">
+                    <div class="textoBotonesPequenios texto-pequenio">
+                        ${game.button}
+                    </div>
+                </button>
+            </div>
+            <img class="imagen-card-secundaria" src="${game.image}" alt="">
+        </div>`;
+        console.log(article);
+        commonsAccionCarousel.append(article);
     });
     
     console.log(morePlayed);
@@ -95,26 +143,6 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(article);
         morePlayedSlider.append(article);
     });
-
-    // prevButton.addEventListener("click", () => {
-    //     const posicionFinal = 50;
-    //     const duracionAnimacion = 1000;
-    //     const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
-    //     let tiempoInicio;
-    //     function animarScroll(timestamp) {
-    //         if (!tiempoInicio) tiempoInicio = timestamp;
-    //         const tiempoTranscurrido = timestamp - tiempoInicio;
-    //         const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
-    //         const distanciaPaso = distanciaPorPaso * progreso;
-    //         highlightsWeekCarousel.scrollLeft -= distanciaPaso;
-    //         if (progreso < 1) {
-    //             requestAnimationFrame(animarScroll);
-    //         }
-    //     }
-    //     tiempoInicio = null; // Reinicia el tiempo de inicio
-    //     requestAnimationFrame(animarScroll(0));
-    // });
-
 
     backButtons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -136,6 +164,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         });
 
     })
+
     nextButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const duracionAnimacion = 1000;
@@ -157,23 +186,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     })
 
-    // nextButton.addEventListener("click", () => {
-    //     const posicionFinal = 50;
-    //     const duracionAnimacion = 1000;
-    //     const distanciaPorPaso = 10; // Distancia a desplazar en cada paso
-    //     let tiempoInicio;
-    //     function animarScroll(timestamp) {
-    //         if (!tiempoInicio) tiempoInicio = timestamp;
-    //         const tiempoTranscurrido = timestamp - tiempoInicio;
-    //         const progreso = Math.min(tiempoTranscurrido / duracionAnimacion, 1);
-    //         const distanciaPaso = distanciaPorPaso * progreso;
-    //         highlightsWeekCarousel.scrollLeft += distanciaPaso;
-    //         if (progreso < 1) {
-    //             requestAnimationFrame(animarScroll);
-    //         }
-    //     }
-    //     tiempoInicio = null; // Reinicia el tiempo de inicio
-    //     requestAnimationFrame(animarScroll(0));
-    // });
+    
 
 });
