@@ -399,3 +399,37 @@ div.inputs{
     font-family: 'Open Sans',sans-serif;
     font-size: 14px;
 }
+.menu_Hamburguesa{
+    width: 280px;
+    height: 100%;
+    top: 70px;
+    position: fixed;
+    z-index: 2;
+    background-color: var(--secondaryColor);
+ }
+ .categoria{
+    display: flex;
+    border-bottom: rgba(240, 240, 240, 0.38) 1px solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left:10px ;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+
+ }
+ .categoria:hover{
+    background: linear-gradient(90deg,rgba(110, 3, 187, 0.00) 8.85%, rgba(255, 255, 255, 0.062)51.56% );
+     cursor: pointer;
+ }
+ .menu_Hamburguesa h2{
+    font-family: "roboto","open sans";
+    color: var(--primaryColor);
+ }
+ .icono-Categoria{
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+ }
+ .menuHamburguesaCerrado{
+    display: none;
+ }
