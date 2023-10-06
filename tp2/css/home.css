@@ -107,7 +107,7 @@ body{
     display: flex;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 57%;
     z-index: 1;
 }
 .gameWeek-btn-next{
@@ -118,12 +118,12 @@ body{
     position: absolute;
     z-index: 1;
     right: 0px;
-    top: 50%;
+    top: 57%;
 }
 .btn-back-slider{
     position: absolute;
     background-color: unset;
-    top: 31%;
+    top: 35%;
     border: 0px;
     left: 0px;
     z-index: 1;
@@ -132,7 +132,7 @@ body{
     background-color: unset;
     border: 0px;
     position: absolute;
-    top: 31%;
+    top: 35%;
     right: 0px;
     z-index: 1;
 }

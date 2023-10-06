@@ -10,15 +10,36 @@ document.addEventListener("DOMContentLoaded",()=>{
     const backButtons = document.querySelectorAll(".gameWeek-btn-back");
     const nextButtonSlider = document.getElementById("btn-next-slider");
     const backButtonSlider = document.getElementById("btn-back-slider");
+    const backButtonDestacadas = document.getElementById("prevButtonDestacadas");
+    const nextButtonDestacadas = document.getElementById("nextButtonDestacadas");
     const slider = document.querySelector(".slider");
     const slides = document.querySelectorAll(".slide");
     const puntitosSlider = document.querySelectorAll(".puntito-slider");
     const header = document.querySelector(".header");
     let currentIndex = 0;
 
-    console.log(puntitosSlider);
 
 
+    backButtonDestacadas.addEventListener("click", () => {
+        let cards = document.querySelectorAll(".card-Destacadas");
+        console.log(cards);
+        cards.forEach((card) => {
+            card.classList.add("card_izquierda");
+            setTimeout(function() {
+                card.classList.remove("card_izquierda");
+            }, 1000);
+        })
+    });
+    nextButtonDestacadas.addEventListener("click", () => {
+        let cards = document.querySelectorAll(".card-Destacadas");
+        console.log(cards);
+        cards.forEach((card) => {
+            card.classList.add("card_derecha");
+            setTimeout(function() {
+                card.classList.remove("card_derecha");
+            }, 1000);
+        })
+    });
     nextButtonSlider.addEventListener("click", () => {
         showSlide(currentIndex + 1);    
     });
@@ -32,8 +53,6 @@ document.addEventListener("DOMContentLoaded",()=>{
         } else if (index > 2) {
             index = 0;
         }
-        console.log(index);
-        console.log(slides.length);
         const translateX = -index * header.offsetWidth;
       
         slider.style.transform = `translateX(${translateX}px)`;
@@ -42,7 +61,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
 
     miGames.forEach((game) => {
-        console.log(game.name);
         let article = document.createElement("article");
         article.className = "gameWeek";
         article.innerHTML = `
@@ -61,11 +79,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
     
     commons.forEach((game) => {
-        console.log(game.name);
         let article = document.createElement("article");
         article.className = "gameWeek";
         article.innerHTML = `
-        <div class="card-Destacadas">
+        <div class="card-Destacadas card">
             ${game.etiqueta}
             <div class="socalo-Destacada">
                 <div class="contenedor-nombre-juego">
@@ -86,7 +103,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
 
     commons.forEach((game) => {
-        console.log(game.etiqueta);
         let article = document.createElement("article");
         article.className = "game";
         article.innerHTML = `
@@ -106,12 +122,10 @@ document.addEventListener("DOMContentLoaded",()=>{
             </div>
             <img class="imagen-card-secundaria" src="${game.image}" alt="">
         </div>`;
-        console.log(article);
         commonsDeportesCarousel.append(article);
     });
     
     commons.forEach((game) => {
-        console.log(game.etiqueta);
         let article = document.createElement("article");
         article.className = "game";
         article.innerHTML = `
@@ -131,16 +145,13 @@ document.addEventListener("DOMContentLoaded",()=>{
             </div>
             <img class="imagen-card-secundaria" src="${game.image}" alt="">
         </div>`;
-        console.log(article);
         commonsAccionCarousel.append(article);
     });
     
-    console.log(morePlayed);
     morePlayed.forEach((game) => {
         let article = document.createElement("div");
         article.className = "slide";
         article.innerHTML = `<img class="img-slide" src="${game.image}" alt=""> `;
-        console.log(article);
         morePlayedSlider.append(article);
     });
 
