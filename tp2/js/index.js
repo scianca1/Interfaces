@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
     backButtonDestacadas.addEventListener("click", () => {
-        let cards = document.querySelectorAll(".card-Destacadas");
-        console.log(cards);
+        let cards = document.querySelectorAll(".destacadas");
         cards.forEach((card) => {
             card.classList.add("card_izquierda");
             setTimeout(function() {
@@ -30,9 +29,9 @@ document.addEventListener("DOMContentLoaded",()=>{
             }, 1000);
         })
     });
+
     nextButtonDestacadas.addEventListener("click", () => {
-        let cards = document.querySelectorAll(".card-Destacadas");
-        console.log(cards);
+        let cards = document.querySelectorAll(".destacadas");
         cards.forEach((card) => {
             card.classList.add("card_derecha");
             setTimeout(function() {
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         let article = document.createElement("article");
         article.className = "gameWeek";
         article.innerHTML = `
-        <div class="card-Destacadas card">
+        <div class="card-Destacadas card destacadas">
             ${game.etiqueta}
             <div class="socalo-Destacada">
                 <div class="contenedor-nombre-juego">
