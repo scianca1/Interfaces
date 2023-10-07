@@ -1,10 +1,10 @@
-.wrapper {
-    display: inline-flex;
-    list-style: none;
-    height: 15%;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    justify-content: center;
+   .wrapper {
+        display: inline-flex;
+        list-style: none;
+        height: 10%;
+        width: 150px;
+        font-family: "Poppins", sans-serif;
+        justify-content: center;
     }
 
     .wrapper .icon {
@@ -15,7 +15,7 @@
     margin-left: 5%;
     margin-right: 5%;
     width: 50px;
-    height: 90%;
+    height: 100%;
     font-size: 18px;
     display: flex;
     justify-content: center;
