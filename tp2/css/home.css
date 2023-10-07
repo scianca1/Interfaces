@@ -151,11 +151,12 @@ body{
     margin-top: 0px;
 }
 .titulosSecciones{
-    font-size: 40px;
+    font-size: 25px;
     display: flex;
     justify-content: start;
     text-transform: capitalize;
     margin-left: 15px;
+    margin-bottom: 5px;
 }
 .titulo-destacada{
     text-transform: uppercase;
@@ -188,7 +189,7 @@ body{
 /*card*/
 .card-secundaria{
     display: flex;
-    margin: 22px;
+    margin: 11px;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
@@ -222,6 +223,7 @@ body{
     width: 30%;
 }
 .card-mis-juegos{
+    border: 2px solid transparent;
     margin: 22px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -233,7 +235,7 @@ body{
     transition: border 0.15s;
 }
 .card-Destacadas{
-    margin: 22px;
+    margin: 11px;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
@@ -307,6 +309,7 @@ body{
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    box-shadow:  3.40995px 3.40995px 5.11492px 1px rgba(0, 0, 0, 0.589);
 }
 .content{
     flex-direction: column;
@@ -768,6 +771,7 @@ body{
         width: 30%;
     }
     .card-mis-juegos{
+        border: 2px solid transparent ;
         margin: 12px;
         position: relative;
         width: 120px;
@@ -889,6 +893,7 @@ body{
         margin-top: 10px;
         margin-bottom: 10px;
         width: 100%;
+        box-shadow:  3.40995px 3.40995px 5.11492px 1px rgba(0, 0, 0, 0.589);
     }
     .Etiqueta-Carrito{
         display: flex;
