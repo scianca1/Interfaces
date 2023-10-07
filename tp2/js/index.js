@@ -18,6 +18,27 @@ document.addEventListener("DOMContentLoaded",()=>{
     const header = document.querySelector(".header");
     let currentIndex = 0;
 
+// probando animacion log in 
+const loginButton = document.getElementById('loginButton');
+const loader = document.getElementById('loader');
+const checkmark = document.getElementById('checkmark');
+
+loginButton.addEventListener('click', () => {
+   
+    loader.style.display = 'block';
+
+    // Simular una carga (puedes ajustar la duración según tus necesidades)
+    setTimeout(() => {
+         // Ocultar el texto y mostrar el círculo de carga
+        //  loginButton.querySelector('.textoBotones').style.display = 'none';
+        // Ocultar el círculo de carga y mostrar el icono de verificación
+        loader.style.display = 'none';
+        checkmark.style.display = 'flex';
+        // loginButton.classList.add("logeado");
+    }, 2000); // Ejemplo: 2 segundos de carga simulada
+});
+
+
 
 
     backButtonDestacadas.addEventListener("click", () => {
@@ -195,6 +216,20 @@ document.addEventListener("DOMContentLoaded",()=>{
         });
 
     })
+
+    // probando animacion login
+
+//     const loginButton = document.getElementById('loginButton');
+//     const borderAnimation = document.querySelector('.border-animation');
+
+//     loginButton.addEventListener('click', () => {
+//         console.log("si");
+//     // Inicia la animación al hacer clic
+//     borderAnimation.style.animation = 'none';
+//     void borderAnimation.offsetWidth; // Truco para reiniciar la animación
+//     borderAnimation.style.animation = 'borderExpand 2s ease-out forwards';
+// });
+
 
     
 
