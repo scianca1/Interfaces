@@ -14,7 +14,7 @@ const miGames = [
     {
         id : 2,
         name : 'Pokemon',
-        image : '../imagenes/god-of-war.jpg',
+        image : '../imagenes/imagen-4enLinea.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
