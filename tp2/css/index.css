@@ -247,6 +247,7 @@ div.inputs{
     flex-direction: column;
     align-items: center;
 }
+
 .input-login{
     border: 0px;
     border-radius: 12px;
@@ -279,6 +280,7 @@ div.inputs{
     font-size: 50px;
 }
 .textoBotones{
+    white-space: nowrap;
     font-family:'open sans';
     display: flex;
     flex-direction: column;
@@ -435,3 +437,50 @@ div.inputs{
  .menuHamburguesaCerrado{
     display: none;
  }
+ 
+
+ /* probando animacion log in  */
+
+ /* Estilo del botón */
+.botonPrimario {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accentColor);
+    border-radius: 25px;
+    border: 0;
+    box-shadow: var(--elevacion);
+    margin: 2px;
+    transition: background-color 0.3s; */
+    position: relative; /* Añadido para posicionar los elementos internos */
+}
+
+
+/* Estilo del círculo de carga */
+
+.inputs  .loader {
+    /* position: absolute; */
+    width: 24px;
+    height: 24px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid var(--accentColor);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    display: none; /* Inicialmente oculto */
+}
+
+/* Estilo del icono de verificación */
+.inputs  .checkmark {
+    /* position: absolute; */
+    font-size: 24px;
+    color: var(--accentColor);
+    display: none; /* Inicialmente oculto */
+}
+
+/* Animación de rotación para el círculo de carga */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
