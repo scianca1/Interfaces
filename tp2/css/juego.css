@@ -58,7 +58,6 @@
     border: var(--primaryColor) solid 1px;
     border-radius: 12px;
     width: 100%;
-    height: 420px;
     margin: 64px;
 
 }
@@ -100,7 +99,7 @@ width: auto;
   
     
     padding-bottom: 10px;
-    margin-left: 5px;
+    margin-left: 20px;
     margin-right: 5px;
 }
 .datos-juego ul {
@@ -126,19 +125,112 @@ width: auto;
     padding-top: 1em;
 }
 .video{
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; 
+    width: 100px; /* Ancho deseado para el video */
+    max-width: 100%; /* Evita que el video sea más ancho que el contenedor */
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.videos{
+    display: flex;
+}
+.tutoriales h3{
+    font-family: 'open sans';
+    margin-left: 20px;
+}
+.similares h3{
+    font-family: 'open sans';
+    margin-top: 17.5px;
+    margin-bottom: 9.5px;  
+}
+
+.nombre-card-secuandaria{
+    padding-top: 12px;
+    max-height: 20px;
+    margin-top: 8px;
+    margin-left: 10px;
+    width: 60px;
+    font-family: "open-sans", Arial, Helvetica, sans-serif;
+    max-width: 60px;
+    max-height: 22px;
+    height: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nombre-card-secundaria:after {
+    content: '...'; /* Agrega los tres puntos al final */
+  }
+.contenedor-nombre-juego{
+    max-width: 75px;
+    max-height: 22px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
-.video iframe{
+
+/*card*/
+.card-secundaria{
+    display: flex;
+    margin: 11px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: var(--elevacion);
+    transition: border 0.15s;
+}
+.imagen-card-secundaria{
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 100%; /* Hace que las imágenes ocupen el ancho completo del contenedor */
+    height: 95%; /* Hace que las imágenes ocupen la altura completa del contenedor */
+    margin-top: 4px;
+    object-fit: cover;
+}
+.socalo-secundario{
+    background-color: var(--primaryColor);
+    border-bottom-right-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     position: absolute;
+    bottom: 0px;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    width:"250px";
-     height:"auto";
+    height: 25%;
+}
+.socalo-secundario .boton-pequenio{
+    width: 30%;
+    margin-right: 10px;
+}
+.Etiqueta-Carrito{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 38.5px;
+    background-color: var(--accentColor);
+    position:absolute;
+    margin-left: 73px;
+    margin-bottom: 20px;
+    box-shadow: var(--elevacion);
+    border-bottom-left-radius: 10px;
+}
+.logo-carrito-violeta-etiqueta{
+    width: 22.5px;
+    height: 22.5px;
+    
+}
+.txt-btn-similares{
+    font-size: 8px;
+}
+.content-similares{
+    display: flex;
 }
 
 
