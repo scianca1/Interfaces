@@ -8,7 +8,7 @@ const miGames = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -28,7 +28,7 @@ const miGames = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -48,7 +48,7 @@ const miGames = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -68,7 +68,7 @@ const miGames = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -88,7 +88,7 @@ const miGames = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -111,7 +111,7 @@ const commons = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -131,7 +131,7 @@ const commons = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -151,7 +151,7 @@ const commons = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -171,7 +171,7 @@ const commons = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -191,7 +191,7 @@ const commons = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -214,7 +214,7 @@ const morePlayed = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     {
@@ -234,7 +234,7 @@ const morePlayed = [
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
-                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito violeta.png" alt="">
+                        <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
                     </div>`
     },
     
