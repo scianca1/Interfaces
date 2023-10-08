@@ -126,8 +126,8 @@ const commons = [
     },
     {
         id : 3,
-        name : 'fifa 23',
-        image : '../imagenes/fifa23.webp',
+        name : 'Cube Ninja',
+        image : '../imagenes/imagen- CubeNinja.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
