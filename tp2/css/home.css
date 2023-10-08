@@ -493,6 +493,7 @@ body{
         display: flex;
         width: 100%;
         height: 15%;
+        align-items: center;
         /* background-color: aliceblue; */
     }
     .etiqueta-en-carrito{
@@ -501,16 +502,61 @@ body{
         width: 30%;
         /* background-color: black; */
     }
-    .titulo-carrito{
-        height: 60%;
-    }
+        .Etiqueta-Menu-Carrito{
+            
+        }
+        .Etiqueta-Menu-Carrito img{
+            width: auto;
+            height: auto;
+            margin-left: 1px;
+            margin-bottom: 3px;
+        }
+
+        .titulo-carrito{
+            text-transform: capitalize;
+            height: 60%;
+            font-size: 30px;
+            margin-left: 5px;
+        }
 
     .juego-en-carrito{
+        display: flex;
+        align-items: center;
         width: 100%;
         height: 20%;
         /* background-color: yellow; */
         border-bottom: 2px solid var(--blancotransparente46);
     }
+        .img-en-carrito{
+            margin: 10px;
+            width: 60px;
+        }
+        .titulo-boton-carrito-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .titulo-boton-carrito-container img{
+            width: 20px;
+        }
+        .titulo-boton-carrito-container h3{
+            margin: 0;
+            margin-bottom: 3px;
+            padding: 0;
+            color: var(--primaryColor);
+            text-transform: capitalize;
+        }
+        .span-eliminar{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: rgb(183, 5, 5);
+        }
+        .precio-en-carrito{
+            width: 55px;
+            margin: auto;
+        }
+
     .footer-carrito{
         width: 100%;
         height: 25%;
