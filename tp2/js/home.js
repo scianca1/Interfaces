@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
     const miGamesCarousel = document.getElementById('tus-juegos');
+    const carritoCompras = document.getElementById('carrito-compras');
     const commonsDeportesCarousel = document.getElementById('carrusel-comunes-deportes');
     const commonsAccionCarousel = document.getElementById('carrusel-comunes-accion');
     const destacadasCarousel = document.getElementById('destacadas-carousel');
@@ -23,6 +24,14 @@ const loginButton = document.getElementById('loginButton');
 const loader = document.getElementById('loader');
 const checkmark = document.getElementById('checkmark');
 
+
+    carritoCompras.addEventListener("mouseover", () => {
+        carritoCompras.src = "../imagenes/carrito_violeta.png";
+    })
+
+    carritoCompras.addEventListener("mouseout", function() {
+        carritoCompras.src = "../imagenes/iconoCarrito.png";
+      });
 
     backButtonDestacadas.addEventListener("click", () => {
         let cards = document.querySelectorAll(".destacadas");
