@@ -6,7 +6,12 @@ body{
 .logo-buscador-pequenio{
     display: none;
 }
-
+.d-none{
+    display: none;
+}
+.d-flex{
+    display: flex;
+}
 /*footer*/
 
 
@@ -477,6 +482,7 @@ body{
 @media (max-width: 1024px){
     /*menu carrito*/
     .menu-carrito{
+        flex-direction: column;
         border-radius: 20px;
         border: 3px solid var(--accentColor);
         right: 20px;
@@ -487,7 +493,10 @@ body{
         z-index: 2;
         background-color: var(--secondaryColor);
     }
-
+    .cruz-carrito{
+        width: 25px;
+        margin-left: 25px;
+    }
     .header-carrito{
         padding: 0;
         display: flex;

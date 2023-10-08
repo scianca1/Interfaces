@@ -1,8 +1,10 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded",()=>{
+    const menuCarrito = document.getElementById('menu-carrito');
     const miGamesCarousel = document.getElementById('tus-juegos');
     const carritoCompras = document.getElementById('carrito-compras');
+    const cruzCarrito = document.getElementById('cruz-carrito');
     const commonsDeportesCarousel = document.getElementById('carrusel-comunes-deportes');
     const commonsAccionCarousel = document.getElementById('carrusel-comunes-accion');
     const destacadasCarousel = document.getElementById('destacadas-carousel');
@@ -24,6 +26,17 @@ const loginButton = document.getElementById('loginButton');
 const loader = document.getElementById('loader');
 const checkmark = document.getElementById('checkmark');
 
+    cruzCarrito.addEventListener("click", () => {
+        console.log("hola2");
+        menuCarrito.classList.remove("d-flex");
+        menuCarrito.classList.add("d-none");
+    })
+
+    carritoCompras.addEventListener("click", () => {
+        console.log("hola");
+        menuCarrito.classList.remove("d-none");
+        menuCarrito.classList.add("d-flex");
+    })
 
     carritoCompras.addEventListener("mouseover", () => {
         carritoCompras.src = "../imagenes/carrito_violeta.png";
