@@ -1398,6 +1398,22 @@ body{
         /* poner los 3 puntitos */
     }
 
+    /*precio*/
+    .precio-container{
+        width: 35%;
+        height: 100%;
+        background-color: aqua;
+    }
+    .tipo-moneda{
+        
+    }
+    .precio{
+        
+    }
+    .centavos{
+        
+    }
+
     .slider{
         display: flex;
         width: 300%;
