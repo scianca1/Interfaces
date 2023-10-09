@@ -22,19 +22,22 @@ const loginButton = document.getElementById('loginButton');
 const loader = document.getElementById('loader');
 const checkmark = document.getElementById('checkmark');
 
-// function configurarAgregarAlCarrito(){
-//     const carritos = document.querySelectorAll(".logo-carrito-violeta-etiqueta");
-//     carritos.forEach((carrito) => {
-//         carrito.addEventListener("click", ()=>{
-//             if(carrito.src != "../imagenes/carritoAgregado.png"){
-//                 carrito.src = "../imagenes/carritoAgregado.png";
-//             }
-//             else{
-//                 carrito.src = "../imagenes/carrito_violeta.png";
-//             }
-//         })
-//     })
-//     }
+function configurarAgregarAlCarrito(){
+    console.log("hola");
+    const carritos = document.querySelectorAll(".logo-carrito-violeta-etiqueta");
+    carritos.forEach((carrito) => {
+        carrito.addEventListener("click", ()=>{
+            if(!carrito.classList.contains("agregado")){
+                carrito.src = "../imagenes/carritoAgregado.png";
+                carrito.classList.add("agregado");
+            }
+            else{
+                carrito.src = "../imagenes/carrito_violeta.png";
+                carrito.classList.remove("agregado");
+            }
+        })
+    })
+    }
 
     backButtonDestacadas.addEventListener("click", () => {
         let cards = document.querySelectorAll(".destacadas");
