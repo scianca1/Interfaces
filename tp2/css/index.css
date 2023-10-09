@@ -68,7 +68,6 @@ button:hover{
 }
 /*footer*/
 .footer{
-    height: 400px;
     display: flex;
     background-color: var(--secondaryColorDark);
     text-align: center;
