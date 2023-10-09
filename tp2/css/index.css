@@ -160,7 +160,7 @@ button:hover{
 }
 .content{
     display: flex;
-    height: 550px;
+    /* height: 550px; */
     justify-content: center;
     
 }
@@ -185,7 +185,7 @@ button:hover{
     flex-direction: column;
     background-color: var(--secondaryColorDark);
     border-radius: 4%;
-    height: 420px;
+    /* height: 420px; */
     align-items: center;
     box-shadow: var(--elevacion);
     width: 340px;
@@ -197,6 +197,26 @@ button:hover{
     height:200px; 
     align-items: center;    
 }
+/* .inputs-registrarme{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:40%; 
+    align-items: center;   
+} */
+.inputs-registrarme{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 1px solid var(--blancotransparente46);
+    border-bottom: 0.1px solid var(--blancotransparente46);
+    width: 220px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;    
+}
+
 div.inputs{
     height: 230px;
     display: flex;
@@ -209,15 +229,16 @@ div.inputs{
     padding-bottom: 15px;
 
 }
-.alter-login{
+.alter-login,.alter-login-registrar{
     margin: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90px;
+    height: 20%;
     justify-content: center;
 }
-.alter-login button{
+
+.alter-login button,.alter-login-registrar button{
     padding-top: 3px;
     padding-bottom: 3px;
     display: flex;
@@ -227,6 +248,8 @@ div.inputs{
     margin-bottom: 8px;
     width: 170px;
 }
+
+
 .b-Alter-Login-Facebook{
     background-color: #3b5998;
     color:white
@@ -391,7 +414,10 @@ div.inputs{
     margin-left: 155px;
 }
 
-
+.captcha{
+    margin-top:15px ;
+    margin-bottom: 15px;
+}
 .loginButton{
     margin-top: 25px;
     margin-bottom: 15px;
