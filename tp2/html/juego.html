@@ -7,26 +7,134 @@
     <title>4 en linea</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/juego.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <script src="../js/juego.js" type="text/javascript" ></script>
     <script src="../js/games.js" type="text/javascript"></script>
+    <script src="../js/header.js" type="text/javascript"></script>
 </head>
 <body>
     <header class="header">
         <div class="headIzquierda">
             <img class="iconoHamburguesa" id="iconoHamburguesa" src="../imagenes/iconoMenuHamburgesa.png" alt="">
-            <img class="iconoLogoChico" src="../imagenes/logoChico.png" alt="">
+            <img class="logo-buscador-pequenio" src="../imagenes/logoBuscadorPequenio.png" alt="">
+            <img class="iconoLogoChicoIzquierda" src="../imagenes/logoChico.png" alt="">
         </div>
         <div class="headCentro">
             <img class="iconoBuscador" src="../imagenes/buscador.png" alt="">
+            <img class="iconoLogoChico" src="../imagenes/logoChico.png" alt="">
         </div>
         <div class="headDerecha">
-            <p class="textoUsuario">Hola Geronimo!</p>
-            <img class="iconoUser" src="../imagenes/iconoUser.png" alt="">
+            <img class="iconoCarrito" src="../imagenes/iconoCarrito.png" alt="" id="carrito-compras">
+            <p class="textoUsuario">Iniciar Sesion</p>
+            <img class="iconoUser" src="../imagenes/iconoUser.png" alt="foto de perfil" id="icono-perfil">
         </div>
     </header>
+    <nav class="menu_Hamburguesa menuHamburguesaCerrado" id="menu_Hamburguesa">
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="../imagenes/icono-Categoria-deportes.png" alt="">
+          </div>
+              <h2>Deporte</h2>
+        </section>
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="../imagenes/icono-shooter-categoria.png" alt="">
+          </div>
+              <h2>Shooter</h2>
+        </section>
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="../imagenes/icono-arcade-categoria.png" alt="">
+          </div>
+              <h2>Arcade</h2>
+        </section>
+          
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="../imagenes/icono-terror-categoria.png" alt="">
+          </div>
+              <h2>Terror</h2>
+         </section>
+      
+          <section class="categoria">
+                <div class="icono-Categoria">
+                    <img  src="../imagenes/icono-aventura-categoria.png" alt="">
+                </div>
+                <h2>Aventura</h2>
+          </section>
+    </nav>
+    <section class="menu-carrito d-none" id="menu-carrito">
+        <div class="header-carrito">
+            <div class="etiqueta-en-carrito">
+                <div class="Etiqueta-Menu-Carrito">
+                    <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
+                </div>
+            </div>
+            <h2 class="titulo-carrito">
+                    carrito                
+            </h2>
+            <img class="cruz-carrito" src="../imagenes/cruz.png" alt="cruz carrito" id="cruz-carrito">
+        </div>
+        <div class="juego-en-carrito">
+            <img class="img-en-carrito" src="../imagenes/juego-en-carrito.png" alt="">
+            <div class="titulo-boton-carrito-container">
+                <h3>cube ninja</h3>
+                <span class="span-eliminar">
+                    <img src="../imagenes/icono-eliminar.png" alt="">
+                    eliminar
+                </span>
+            </div>
+            <img class="precio-en-carrito" src="../imagenes/precio.png" alt="">
+        </div>
+        <div class="juego-en-carrito">
+            <img class="img-en-carrito" src="../imagenes/juego-en-carrito.png" alt="">
+            <div class="titulo-boton-carrito-container">
+                <h3>cube ninja</h3>
+                <span class="span-eliminar">
+                    <img src="../imagenes/icono-eliminar.png" alt="">
+                    eliminar
+                </span>
+            </div>
+            <img class="precio-en-carrito" src="../imagenes/precio.png" alt="">
+        </div>
+        <div class="juego-en-carrito">
+            <img class="img-en-carrito" src="../imagenes/juego-en-carrito.png" alt="">
+            <div class="titulo-boton-carrito-container">
+                <h3>cube ninja</h3>
+                <span class="span-eliminar">
+                    <img src="../imagenes/icono-eliminar.png" alt="">
+                    eliminar
+                </span>
+            </div>
+            <img class="precio-en-carrito" src="../imagenes/precio.png" alt="">
+        </div>
+        <div class="footer-carrito">
+            <div>
+                <h3>subtotal:</h3>
+                <img class="precio-en-carrito" src="../imagenes/precio.png" alt="">
+            </div>
+            <button class="botonPrimario boton-carrito">
+                <p>
+                    comprar
+                </p>
+            </button>
+        </div>
+    </section>
+    <section class="menu-perfil d-none" id="menu-perfil">
+        <div class="header-perfil">
+            <h2 class="titulo-perfil">@elmomo124</h2>
+            <h3 class="username-perfil">geronimo benabidez</h3>
+        </div>
+        <section class="body-perfil">
+                <section class="seccion-perfil"><p>mi perfil</p></section>
+                <section class="seccion-perfil"><p>favoritos</p></section>
+                <section class="seccion-perfil"><p>idioma</p></section>
+                <section class="seccion-perfil"><p>cerrar sesion</p></section>
+        </section>
+    </section>
     <nav class="menu_Hamburguesa menuHamburguesaCerrado" id="menu_Hamburguesa">
       <section class="categoria">
         <div class="icono-Categoria">

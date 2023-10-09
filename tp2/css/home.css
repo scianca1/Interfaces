@@ -295,7 +295,7 @@ body{
 .socalo-Destacada .boton-jugar-Destacados{
     display: flex;
     align-items: center;
-    height: 20px;
+    height: 35px;
 }
 .contenedor-nombre-juego button{
     display: flex;
@@ -649,7 +649,7 @@ body{
     padding-bottom: 0;
     padding-left: 15px;
     padding-right: 15px;
-    max-height: 110px;
+    max-height: 220px;
     overflow: hidden;
     text-overflow: ellipsis;
     /* poner los 3 puntitos */
