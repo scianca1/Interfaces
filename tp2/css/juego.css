@@ -1,13 +1,16 @@
 .content-Pagina-Juego{
+    
+}
+.sobre_el_juego{
     display: flex;
+    
 }
 .content-juego{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 70%;
-    border:1px solid black;
-    margin-left: 70px;
+    margin-left: 40px;
 }
 .Titulo{
     margin: 3px;
@@ -44,7 +47,7 @@
 .instrucciones{
     width: 85%;
     border-bottom: solid 0.5px var(--blancotransparente46);
-    padding-bottom: 10px;
+    padding-bottom: 3px;
     margin-bottom: 10px;
 }
 .publicidad-juego{
@@ -81,7 +84,7 @@
  height: 30px;
  width:130px;
  margin: 19px;
- margin-left: 45px;
+ margin-left: 0px;
  margin-bottom: 30px;
 }
 .icono-compartir{
@@ -133,6 +136,7 @@ width: auto;
 }
 .videos{
     display: flex;
+    margin-top: 30px;
 }
 .tutoriales h3{
     font-family: 'open sans';
@@ -141,7 +145,8 @@ width: auto;
 .similares h3{
     font-family: 'open sans';
     margin-top: 17.5px;
-    margin-bottom: 9.5px;  
+    margin-bottom: 9.5px; 
+    margin-left: 15px; 
 }
 
 .nombre-card-secuandaria{
@@ -231,8 +236,83 @@ width: auto;
 }
 .content-similares{
     display: flex;
+    margin:0;
+}
+.carrucel_y_foro{
+   
+}
+.carrusel-container{
+    position: relative;
+    margin-right: 135px;
+    margin-left: 40px;
+}
+.titulosSecciones{
+    font-size: 25px;
+    display: flex;
+    justify-content: start;
+    text-transform: capitalize;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.carrusel-tus-juegos{
+    display: flex;
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+.gameWeek-btn-back{
+    background-color: unset;
+    border: 0px;
+    display: none;
+    align-items: center;
+    position: absolute;
+    top: 57%;
+    z-index: 1;
+}
+.iconoScroll{
+    visibility: hidden;
+}
+.gameWeek-btn-next{
+    background-color: unset;
+    border: 0px;
+    display: none;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: 52%;
+}
+.foro{
+    background-color: var(--primaryColor);
+    padding: 30px;
+}
+.content_tu_comentario{
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--elevacion);
+}
+.content_tu_comentario h3{
+    font-family:'open sans';
 }
 
+.tu_comentario{
+    display: flex;
+}
+.tu_comentario input{
+    border-radius: 20px;
+    width: 80%;
+}
+.valoracion{
+    margin-left: 72%;
+}
+.boton-enviar-comentario{
+    margin-left:80% ;
+    width: 70px;
+}
 
  
 
