@@ -224,11 +224,13 @@ body{
     margin-left: 120px;
 }
 .iconoLogoChico{
+    cursor: pointer;
     display: none;
     width: 75px;
     margin-top: 10px;
 }
 .iconoLogoChicoIzquierda{
+    cursor: pointer;
     display: flex;
     width: 75px;
     margin-top: 10px;
@@ -992,6 +994,7 @@ body{
         margin-bottom: 15px;
     }
     .logo-buscador-pequenio{
+        cursor: pointer;
         display: flex;
         width: 28px;
     }

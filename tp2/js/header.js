@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     const menuPerfil = document.getElementById('menu-perfil');
     const carritoCompras = document.getElementById('carrito-compras');
     const cruzCarrito = document.getElementById('cruz-carrito');
+    const logo= document.getElementById('logo');
+    logo.addEventListener('click',(event)=>{
+        window.location.href = '/tp2/html/home.html';
+    })
 
 
 

@@ -318,6 +318,7 @@ div.inputs{
     margin-left: 120px;
 }
 .iconoLogoChico{
+    cursor: pointer;
     width: 75px;
     margin-top: 10px;
     margin-right: 10px;
