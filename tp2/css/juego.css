@@ -52,7 +52,8 @@
 }
 .publicidad-juego{
     width: 80%;
-    margin-top: 40px;
+    height: 475px;
+    margin-top: 76px;
     margin-bottom: 15px;
 }
 .descripcion{
@@ -338,6 +339,9 @@ width: auto;
 .header-comentario{
     display: flex;
     align-items: center;
+}
+.header-comentario h3{
+    width: 180px;
 }
 .icono-Comentario{
     margin-right: 7px; 
