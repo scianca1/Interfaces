@@ -6,7 +6,21 @@ document.addEventListener("DOMContentLoaded",()=>{
   const commonsAccionCarousel = document.getElementById('carrusel-comunes-accion');
   const nextButtons = document.querySelectorAll(".gameWeek-btn-next");
   const backButtons = document.querySelectorAll(".gameWeek-btn-back");
+  const popUp=document.getElementById('popUp');
+  const cerrarPopUp=  document.getElementById('cruz-pop-up');
+  const abrirPopUp= document.getElementById('btn-compartir');
+  cerrarPopUp.addEventListener('click',()=>cerrarPopUP());
+
   
+  function cerrarPopUP(){
+    popUp.classList.remove("abrir");
+  }
+  
+  abrirPopUp.addEventListener('click',(event)=>{
+    popUp.classList.add("abrir");
+  });
+
+
   commons.forEach((game) => {
     let article = document.createElement("article");
     article.className = "game";

@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4 en linea</title>
+    <link rel="stylesheet" href="../css/botonRedes.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/juego.css">
     <link rel="stylesheet" href="../css/home.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -66,6 +68,30 @@
                 <h2>Aventura</h2>
           </section>
     </nav>
+    <div class="difulminado" id="popUp">
+        <nav class="pop-up-compartir">
+            <div class="texto-compartir">
+                <h4>Donde desea compartirlo?</h4>
+                <img src="../imagenes/cruz.png" alt="" id="cruz-pop-up">
+            </div>
+            <div class="redes-pop-up">
+                <div class="wrapper">
+                    <a href="https://www.youtube.com/@puntowavstudio2756/videos" class="icon youtube">
+                        <span class="tooltip">Youtube</span>
+                        <span class="ciruloRedes"><img class="w-50"  src="../imagenes/youtube.png" alt="logo de punto wav"><i class="fab fa-instagram"></i></span>
+                    </a>
+                    <a href="https://wa.me/5492494503071" class="icon whatsapp">
+                        <span class="tooltip">Whatsapp</span>
+                        <span class="ciruloRedes"><img class="w-50"  src="../imagenes/whatsapp.png" alt="logo de punto wav"><i class="fab fa-instagram"></i></span>
+                    </a>
+                    <a href="https://www.instagram.com/puntowavstudio/" class="icon instagram">
+                        <span class="tooltip">Instagram</span>
+                        <span class="ciruloRedes"><img class="w-50"  src="../imagenes/instagram.png" alt="logo de punto wav"><i class="fab fa-instagram"></i></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
     <section class="menu-carrito d-none" id="menu-carrito">
         <div class="header-carrito">
             <div class="etiqueta-en-carrito">
@@ -209,7 +235,7 @@
                             </div>
                         </div>
                         <div class="right-Descripcion">
-                            <button class="botonPrimario  boton-Mediano boton-compartir"><img src="../imagenes/icono-compartir.png" alt="compartir" class="icono-compartir"><p class="textoBotones">Compartir</p></button>
+                            <button class="botonPrimario  boton-Mediano boton-compartir" id="btn-compartir"><img src="../imagenes/icono-compartir.png" alt="compartir" class="icono-compartir"><p class="textoBotones">Compartir</p></button>
                             <div class="resumen">
                                 <p>La finalidad del juego es intentar conectar cuatro fichas de un mismo color de forma consecutiva, ya sea de forma vertical, horizontal o diagonal. Antes de comenzar la partida los jugadores deciden a suerte quién es el que pondrá la primera ficha, realizándose los siguientes movimientos por turnos alternativos.</p>
                             </div>
