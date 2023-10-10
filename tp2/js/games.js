@@ -162,7 +162,7 @@ const commons = [
     {
         id : 6,
         name : 'batel Jump',
-        image : '../imagenes/imagen-bateljump.png',
+        image : '../imagenes/imagen-GTA.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -184,7 +184,7 @@ const commons = [
     {
         id : 8,
         name : 'Sub Way Surfers',
-        image : '../imagenes/imagen-subwaySurfers.png',
+        image : '../imagenes/imagen-mario_bros.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -220,7 +220,7 @@ const morePlayed = [
     {
         id : 1,
         name : 'acaaaa',
-        image : '../imagenes/fifa23.webp',
+        image : '../imagenes/clashroyale.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -230,7 +230,7 @@ const morePlayed = [
     {
         id : 2,
         name : 'clash royale',
-        image : '../imagenes/clashroyale.png',
+        image : '../imagenes/fifa23.webp',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">

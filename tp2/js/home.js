@@ -15,12 +15,16 @@ document.addEventListener("DOMContentLoaded",()=>{
     const slider = document.querySelector(".slider");
     const slides = document.querySelectorAll(".slide");
     const header = document.querySelector(".header");
+    const jugar= document.getElementById('jugar');
     let currentIndex = 0;
+    const loginButton = document.getElementById('loginButton');
+    const loader = document.getElementById('loader');
+    const checkmark = document.getElementById('checkmark');
 
-// probando animacion log in 
-const loginButton = document.getElementById('loginButton');
-const loader = document.getElementById('loader');
-const checkmark = document.getElementById('checkmark');
+
+    jugar.addEventListener('click',(event)=>{
+        window.location.href = '/Interfaces/tp2/html/juego.html';
+    })
 
 function configurarAgregarAlCarrito(){
     console.log("hola");
