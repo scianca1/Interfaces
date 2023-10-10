@@ -13,7 +13,7 @@ const miGames = [
     },
     {
         id : 2,
-        name : 'Pokemon',
+        name : '4 en Linea',
         image : '../imagenes/imagen-4enLinea.png',
         button : "Jugar",
         price : 0,
@@ -23,8 +23,8 @@ const miGames = [
     },
     {
         id : 3,
-        name : 'Uno',
-        image : '../imagenes/fifa23.webp',
+        name : 'fornite',
+        image : '../imagenes/imagen-fornite.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -33,7 +33,7 @@ const miGames = [
     },
     {
         id : 4,
-        name : 'Free fire',
+        name : 'God of war',
         image : '../imagenes/god-of-war.jpg',
         button : "Jugar",
         price : 0,
@@ -43,8 +43,8 @@ const miGames = [
     },
     {
         id : 5,
-        name : 'Mario Bros',
-        image : '../imagenes/fifa23.webp',
+        name : 'Resistance',
+        image : '../imagenes/imagen-resistance2.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -54,7 +54,7 @@ const miGames = [
     {
         id : 6,
         name : 'Conecta 4',
-        image : '../imagenes/god-of-war.jpg',
+        image : '../imagenes/imagen-GTA.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -64,7 +64,7 @@ const miGames = [
     {
         id : 7,
         name : 'Mario Bros',
-        image : '../imagenes/fifa23.webp',
+        image : '../imagenes/imagen-FuegoyAgua.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -74,7 +74,7 @@ const miGames = [
     {
         id : 8,
         name : 'Conecta 4',
-        image : '../imagenes/god-of-war.jpg',
+        image : '../imagenes/imagen-mario_bros.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -84,7 +84,7 @@ const miGames = [
     {
         id : 9,
         name : 'Mario Bros',
-        image : '../imagenes/fifa23.webp',
+        image : '../imagenes/imagen-planvsZombies.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -106,8 +106,8 @@ const miGames = [
 const commons = [
     {
         id : 1,
-        name : 'fifa 23',
-        image : '../imagenes/fifa23.webp',
+        name : 'need For Speed',
+        image : '../imagenes/imagen-needForSpeed.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -117,8 +117,8 @@ const commons = [
     },
     {
         id : 2,
-        name : 'god of war',
-        image : '../imagenes/god-of-war.jpg',
+        name : 'Minecraft',
+        image : '../imagenes/imagen-minecraft.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -161,8 +161,8 @@ const commons = [
     },
     {
         id : 6,
-        name : 'god of war',
-        image : '../imagenes/god-of-war.jpg',
+        name : 'batel Jump',
+        image : '../imagenes/imagen-bateljump.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -172,8 +172,8 @@ const commons = [
     },
     {
         id : 7,
-        name : 'fifa 23',
-        image : '../imagenes/fifa23.webp',
+        name : 'Bubble',
+        image : '../imagenes/imagen-Bubble.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -183,8 +183,8 @@ const commons = [
     },
     {
         id : 8,
-        name : 'god of war',
-        image : '../imagenes/god-of-war.jpg',
+        name : 'Sub Way Surfers',
+        image : '../imagenes/imagen-subwaySurfers.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -194,8 +194,8 @@ const commons = [
     },
     {
         id : 9,
-        name : 'fifa 23',
-        image : '../imagenes/fifa23.webp',
+        name : '4 en linea',
+        image : '../imagenes/imagen-4enLinea.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -219,7 +219,7 @@ const commons = [
 const morePlayed = [
     {
         id : 1,
-        name : 'fifa 23',
+        name : 'acaaaa',
         image : '../imagenes/fifa23.webp',
         button : "Jugar",
         price : 0,

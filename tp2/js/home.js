@@ -86,7 +86,7 @@ function configurarAgregarAlCarrito(){
                 <div class="gradiente">
                     <button class="botonPrimario boton-Mediano">
                         <div class="textoBotones texto-pequenio">
-                            jugar ${game.id}
+                            jugar 
                         </div>
                     </button>
                 </div>

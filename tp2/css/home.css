@@ -635,6 +635,7 @@ body{
     margin-bottom: 15px;
 }
 .Etiqueta-Carrito{
+    cursor:pointer;
     display: flex;
     flex-direction: column;
     align-content: center;
