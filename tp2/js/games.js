@@ -220,7 +220,7 @@ const morePlayed = [
     {
         id : 1,
         name : 'acaaaa',
-        image : '../imagenes/fifa23.webp',
+        image : '../imagenes/clashroyale.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -230,7 +230,7 @@ const morePlayed = [
     {
         id : 2,
         name : 'clash royale',
-        image : '../imagenes/clashroyale.png',
+        image : '../imagenes/fifa23.webp',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
