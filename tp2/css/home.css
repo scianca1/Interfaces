@@ -253,12 +253,14 @@ body{
     padding: 0px;
 }
 .oferta{
+    position: absolute;
     display: flex;
     justify-content: end;
-    align-items: top;
+    align-items: center;
     color: rgb(208, 47, 47);
     padding-right: 4px;
-    margin-bottom: 10px;
+    right: 7px;
+    bottom: 3px;
 }
 .oferta .tipo-moneda p{
     text-transform: uppercase;
@@ -270,7 +272,7 @@ body{
 .oferta .precio p{
     margin: 0px;
     padding: 0px;
-    font-size: 20px;
+    font-size: 17px;
     text-decoration: line-through;
 }
 .oferta .centavos p{
@@ -1501,12 +1503,14 @@ body{
         padding: 0px;
     }
     .oferta{
+        position: relative;
         display: flex;
         justify-content: end;
         align-items: center;
         color: rgb(208, 47, 47);
-        padding-right: 4px;
+        padding-right: 0px;
         margin-bottom: 5px;
+        margin-right: 0px;
     }
     .oferta .tipo-moneda p{
         text-transform: uppercase;
