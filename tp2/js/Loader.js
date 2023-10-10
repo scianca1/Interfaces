@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             if (width <= 100) {
                 if(width >=60){
                     bar.style.width = width + "%";
-                percentage.textContent = percent + "%"+"ya casii!";
+                percentage.textContent = percent + "%"+" ya casii!";
                 }else{
                 bar.style.width = width + "%";
                 percentage.textContent = percent + "%";

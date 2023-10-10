@@ -9,9 +9,12 @@ document.addEventListener("DOMContentLoaded",()=>{
   const popUp=document.getElementById('popUp');
   const cerrarPopUp=  document.getElementById('cruz-pop-up');
   const abrirPopUp= document.getElementById('btn-compartir');
+  const breadhome=document.getElementById('breadCrumHome');
   cerrarPopUp.addEventListener('click',()=>cerrarPopUP());
 
-  
+  breadhome.addEventListener('click',(event)=>{
+    window.location.href = '/Interfaces/tp2/html/home.html';
+  })
   function cerrarPopUP(){
     popUp.classList.remove("abrir");
   }

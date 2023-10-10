@@ -145,6 +145,7 @@ button:hover{
 
 /*BREADCRUM*/
 .breadCrumBox{
+    cursor: pointer;
     height: 20px;
     padding: 0;
     margin-top: 80px;
