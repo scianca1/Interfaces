@@ -221,6 +221,11 @@ body{
     width: 40%;
     height: 100%;
     display: flex;
+    flex-direction: column;
+}
+.precio-normal{
+    width: 100%;
+    display: flex;
     justify-content: center;
     color: var(--accentColor);
 }
@@ -246,6 +251,33 @@ body{
     margin-left: 3.5px;
     margin-right: 1px;
     padding: 0px;
+}
+.oferta{
+    display: flex;
+    justify-content: end;
+    align-items: top;
+    color: rgb(208, 47, 47);
+    padding-right: 4px;
+    margin-bottom: 10px;
+}
+.oferta .tipo-moneda p{
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px;
+}
+.oferta .precio p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+.oferta .centavos p{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: line-through;
 }
 
 /*iconos*/
@@ -1437,6 +1469,11 @@ body{
         width: 40%;
         height: 100%;
         display: flex;
+        flex-direction: column;
+    }
+    .precio-normal{
+        width: 100%;
+        display: flex;
         justify-content: center;
         color: var(--accentColor);
     }
@@ -1461,6 +1498,33 @@ body{
         margin-left: 1.5px;
         margin-right: 1px;
         padding: 0px;
+    }
+    .oferta{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: rgb(208, 47, 47);
+        padding-right: 4px;
+        margin-bottom: 5px;
+    }
+    .oferta .tipo-moneda p{
+        text-transform: uppercase;
+        margin-top: 5px;
+        margin: 0px;
+        padding: 0px;
+        font-size: 4px;
+    }
+    .oferta .precio p{
+        margin: 0px;
+        padding: 0px;
+        font-size: 8px;
+        text-decoration: line-through;
+    }
+    .oferta .centavos p{
+        font-size: 5px;
+        margin: 0px;
+        padding: 0px;
+        text-decoration: line-through;
     }
 
     .slider{
