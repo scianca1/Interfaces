@@ -1331,6 +1331,7 @@ body{
         box-shadow:  3.40995px 3.40995px 5.11492px 1px rgba(0, 0, 0, 0.589);
     }
     .Etiqueta-Carrito{
+        cursor:pointer;
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -1366,6 +1367,7 @@ body{
         
     }
     .Etiqueta-Carrito-free{
+        cursor:pointer;
         display: flex;
         flex-direction: column;
         align-content: center;

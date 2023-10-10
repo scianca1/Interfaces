@@ -109,7 +109,7 @@ function configurarAgregarAlCarrito(){
                         ${game.name}
                     </p>
                 </div>`;
-                if(game.isFree){
+                if(!game.isFree){
                     string += `<div class="precio-container">
                                     <div class="tipo-moneda">
                                         <p>us$</p>

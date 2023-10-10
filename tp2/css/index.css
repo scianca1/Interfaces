@@ -236,6 +236,13 @@ div.inputs{
     height: 20%;
     justify-content: center;
 }
+.form-registrame{
+    margin-bottom:50px ;
+}
+.content-form{
+    margin-right: 150px;
+    width: 50%;
+}
 
 .alter-login button,.alter-login-registrar button{
     padding-top: 3px;
