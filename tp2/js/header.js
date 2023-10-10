@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const cruzCarrito = document.getElementById('cruz-carrito');
     const logo= document.getElementById('logo');
     logo.addEventListener('click',(event)=>{
-        window.location.href = '/tp2/html/home.html';
+        window.location.href = '/Interfaces/tp2/html/home.html';
     })
 
 
