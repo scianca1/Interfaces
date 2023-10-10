@@ -44,7 +44,7 @@ const miGames = [
     {
         id : 5,
         name : 'Resistance',
-        image : '../imagenes/imagen-resistance2.png',
+        image : '../imagenes/imagen-minecraft.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
@@ -74,7 +74,7 @@ const miGames = [
     {
         id : 8,
         name : 'Conecta 4',
-        image : '../imagenes/imagen-mario_bros.png',
+        image : '../imagenes/imagen- CubeNinja.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
