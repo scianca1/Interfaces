@@ -122,7 +122,7 @@ loginButton.addEventListener('click', () => {
         // Ocultar el círculo de carga y mostrar el icono de verificación
         loader.style.display = 'none';
         checkmark.style.display = 'flex';
-        window.location.href = '/tp2/html/home.html';
+        window.location.href = '/Interfaces/tp2/html/home.html';
         // loginButton.classList.add("logeado");
     }, 2000); // Ejemplo: 2 segundos de carga simulada
 });
