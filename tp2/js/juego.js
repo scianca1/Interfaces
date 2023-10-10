@@ -38,16 +38,19 @@ document.addEventListener("DOMContentLoaded",()=>{
             </div>`;
             if(!game.isFree){
                 string += `<div class="precio-container">
-                                <div class="tipo-moneda">
-                                    <p>us$</p>
-                                </div>
-                                <div class="precio">
-                                    <p>15</p>
-                                </div>
-                                <div class="centavos">
-                                    <p>99</p>
-                                </div>
-                            </div>`;
+                              <div class="precio-normal">
+                                 <div class="tipo-moneda">
+                                   <p>us$</p>
+                                 </div>
+                              <div class="precio">
+                                <p>15</p>
+                              </div>
+                              <div class="centavos">
+                                  <p>99</p>
+                              </div>
+                           </div>
+                            
+                        </div>`;
             }else{
                 string += `<button class="botonPrimario boton-pequenio">
                                  <div class="textoBotonesPequenios texto-pequenio">
@@ -60,6 +63,39 @@ document.addEventListener("DOMContentLoaded",()=>{
                         </div>`;
     article.innerHTML = string;
 
+    if(!game.isFree){
+        string += `<div class="precio-container">
+                      <div class="precio-normal">
+                         <div class="tipo-moneda">
+                           <p>us$</p>
+                         </div>
+                      <div class="precio">
+                        <p>15</p>
+                      </div>
+                      <div class="centavos">
+                          <p>99</p>
+                      </div>
+                   </div>
+                    <div class="oferta">
+                        <div class="tipo-moneda">
+                            <p>us$</p>
+                        </div>
+                        <div class="precio">
+                            <p>15</p>
+                        </div>
+                        <div class="centavos">
+                            <p>99</p>
+                        </div>
+                    </div>
+                </div>`;
+    }
+    // else{
+    //     string += `<button class="botonPrimario boton-Mediano boton-jugar-Destacados">
+    //                     <div class="textoBotones texto-pequenio">
+    //                         ${game.button}
+    //                     </div>
+    //                 </button>`;
+    // }
     // let article = document.createElement("article");
     // article.className = "game";
     // article.innerHTML = `
