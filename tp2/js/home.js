@@ -99,7 +99,8 @@ function configurarAgregarAlCarrito(){
     commons.forEach((game) => {
         let article = document.createElement("article");
         article.className = "gameWeek";
-        article.innerHTML = `
+
+        let string = `
         <div class="card-Destacadas card destacadas">
             ${game.etiqueta}
             <div class="socalo-Destacada">
@@ -107,16 +108,30 @@ function configurarAgregarAlCarrito(){
                     <p class="nombre-card-secuandaria texto-pequenio">
                         ${game.name}
                     </p>
-                </div>
-                <button class="botonPrimario boton-Mediano boton-jugar-Destacados">
-                    <div class="textoBotones texto-pequenio">
-                        ${game.button}
-                    </div>
-                </button>
-            </div>
-            <img class="imagen-card-Destacadas" src="${game.image}" alt="">
-        </div>`;
-        
+                </div>`;
+                if(game.isFree){
+                    string += `<div class="precio-container">
+                                    <div class="tipo-moneda">
+                                        <p>us$</p>
+                                    </div>
+                                    <div class="precio">
+                                        <p>15</p>
+                                    </div>
+                                    <div class="centavos">
+                                        <p>99</p>
+                                    </div>
+                                </div>`;
+                }else{
+                    string += `<button class="botonPrimario boton-Mediano boton-jugar-Destacados">
+                                    <div class="textoBotones texto-pequenio">
+                                        ${game.button}
+                                    </div>
+                                </button>`;
+                }
+                string +=  `</div>
+                            <img class="imagen-card-Destacadas" src="${game.image}" alt="">
+                            </div>`;
+        article.innerHTML = string;
         destacadasCarousel.append(article);
     });
 

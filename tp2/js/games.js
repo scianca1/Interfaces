@@ -112,7 +112,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
                         <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
-                    </div>`
+                    </div>`,
+        isFree: false
     },
     {
         id : 2,
@@ -122,7 +123,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
                         <div class="free"><p class="textofree">FREE</p></div>
-                    </div>`
+                    </div>`,
+        isFree: true
     },
     {
         id : 3,
@@ -132,7 +134,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
                         <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
-                    </div>`
+                    </div>`,
+        isFree: false
     },
     {
         id : 4,
@@ -142,7 +145,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
                         <div class="free"><p class="textofree">FREE</p></div>
-                    </div>`
+                    </div>`,
+        isFree: true
     },
     {
         id : 5,
@@ -152,7 +156,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
                         <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
-                    </div>`
+                    </div>`,
+        isFree: false
     },
     {
         id : 6,
@@ -162,7 +167,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
                         <div class="free"><p class="textofree">FREE</p></div>
-                    </div>`
+                    </div>`,
+        isFree: true
     },
     {
         id : 7,
@@ -172,7 +178,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
                         <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
-                    </div>`
+                    </div>`,
+        isFree: false
     },
     {
         id : 8,
@@ -182,7 +189,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
                         <div class="free"><p class="textofree">FREE</p></div>
-                    </div>`
+                    </div>`,
+        isFree: true
     },
     {
         id : 9,
@@ -192,7 +200,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito">
                         <img class="logo-carrito-violeta-etiqueta"src="../imagenes/carrito_violeta.png" alt="">
-                    </div>`
+                    </div>`,
+        isFree: false
     },
     {
         id : 10,
@@ -202,7 +211,8 @@ const commons = [
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
                         <div class="free"><p class="textofree">FREE</p></div>
-                    </div>`
+                    </div>`,
+        isFree: true
     },
 ]
 

@@ -216,6 +216,38 @@ body{
 }
 
 
+/*precio*/
+.precio-container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--accentColor);
+}
+.tipo-moneda p{
+    text-transform: uppercase;
+    margin: 0px;
+    margin-top: 15px;
+    padding: 0px;
+    font-size: 14px;
+    padding-top: 0.5px;
+}
+.precio p{
+    margin: 0px;
+    margin-top: 12px;
+    margin-left: 2px;
+    padding: 0px;
+    font-size: 30px;
+}
+.centavos p{
+    font-size: 16px;
+    margin: 0px;
+    margin-top: 15px;
+    margin-left: 3.5px;
+    margin-right: 1px;
+    padding: 0px;
+}
+
 /*iconos*/
 .iconoLogoGrande{
     width: 330px;
@@ -1400,18 +1432,33 @@ body{
 
     /*precio*/
     .precio-container{
-        width: 35%;
+        width: 40%;
         height: 100%;
-        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        color: var(--accentColor);
     }
-    .tipo-moneda{
-        
+    .tipo-moneda p{
+        text-transform: uppercase;
+        margin: 0px;
+        margin-top: 9px;
+        padding: 0px;
+        font-size: 8px;
+        padding-top: 0.5px;
     }
-    .precio{
-        
+    .precio p{
+        margin: 0px;
+        margin-top: 8px;
+        padding: 0px;
+        font-size: 16px;
     }
-    .centavos{
-        
+    .centavos p{
+        font-size: 10px;
+        margin: 0px;
+        margin-top: 10px;
+        margin-left: 1.5px;
+        margin-right: 1px;
+        padding: 0px;
     }
 
     .slider{
