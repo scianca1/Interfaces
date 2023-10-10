@@ -162,7 +162,7 @@ const commons = [
     {
         id : 6,
         name : 'batel Jump',
-        image : '../imagenes/imagen-bateljump.png',
+        image : '../imagenes/imagen-GTA.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
@@ -184,7 +184,7 @@ const commons = [
     {
         id : 8,
         name : 'Sub Way Surfers',
-        image : '../imagenes/imagen-subwaySurfers.png',
+        image : '../imagenes/imagen-mario_bros.png',
         button : "Jugar",
         price : 0,
         etiqueta: `<div class="Etiqueta-Carrito-free">
