@@ -17,8 +17,24 @@
     font-family: 'open sans';
 }
 .Ventana-Juego{
-    
-    width: 100%;
+    /* background-color: black; */
+    width: 945px;
+    height: 450px;
+}
+.canvas{
+    /* background-color: white; */
+    width: 945px;
+    height: 450px;
+}
+.inicioJuego{
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219 219 219 / 45%);
+    position: absolute;
+    z-index: 3;
+    width: 945px;
     height: 450px;
 }
 .img-4enlinea{
