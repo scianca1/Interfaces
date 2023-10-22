@@ -4,11 +4,26 @@ class Ficha extends Figure{
         this.radius=radius;
         this.image = new Image();
         this.image.src = imageURL;
+        this.imageLoaded = false; // Agrega una propiedad para controlar si la imagen está cargada.
+        this.image.onload = () => {
+            this.imageLoaded = true; // Cuando la imagen se carga, establece imageLoaded en true.
+            // this.draw(); // Llama a draw una vez que la imagen se ha cargado.
+        };
         
     }
 
-    draw(){
+    // async imageLoaded() {
+    //         return new Promise((resolve) => {
+    //             this.image.onload = resolve;
+    //         });
+    //     }
+     draw(){
+        //  await imageLoaded() ;
         super.draw();
+        // if (!this.imageLoaded) {
+        //     // Si la imagen no se ha cargado aún, no la dibujes.
+        //     return;
+        // }
         this.ctx.beginPath();
           // Crea un patrón con la imagen de fondo
           const pattern = this.ctx.createPattern(this.image, "no-repeat");
@@ -25,6 +40,7 @@ class Ficha extends Figure{
         }
         this.ctx.closePath();
     }
+   
     getRadius(){
         return this.radius;
     }
