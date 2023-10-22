@@ -1,0 +1,439 @@
+.content-Pagina-Juego{
+    
+}
+.sobre_el_juego{
+    display: flex;
+    
+}
+.content-juego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-left: 40px;
+}
+.Titulo{
+    margin: 3px;
+    font-family: 'open sans';
+}
+.Ventana-Juego{
+    /* background-color: black; */
+    width: 945px;
+    height: 450px;
+}
+.canvas{
+    /* background-color: white; */
+    width: 945px;
+    height: 450px;
+}
+.inicioJuego{
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219 219 219 / 45%);
+    position: absolute;
+    z-index: 3;
+    width: 945px;
+    height: 450px;
+}
+.img-4enlinea{
+    width: 100%;
+    height: 100%;
+
+}
+.instrucciones-Juego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+.instrucciones-4enlinea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 9px;
+    width: 80%;
+}
+.instrucciones h3{
+    margin: 4px;
+    color:var(--blanco);
+}
+.instrucciones{
+    width: 85%;
+    border-bottom: solid 0.5px var(--blancotransparente46);
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+.publicidad-juego{
+    width: 80%;
+    height: 475px;
+    margin-top: 76px;
+    margin-bottom: 15px;
+}
+.descripcion{
+    display:flex;
+    background-color: var(--secondaryColor);
+    border: var(--primaryColor) solid 1px;
+    border-radius: 12px;
+    width: 100%;
+    margin: 64px;
+
+}
+.instrucciones-Juego h2{
+    margin: 8px;
+    color:rgb(240 240 240 / 73%);
+}
+.left-Descripcion{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+   
+}
+.right-Descripcion{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
+.boton-compartir{
+ height: 30px;
+ width:130px;
+ margin: 19px;
+ margin-left: 0px;
+ margin-bottom: 30px;
+}
+.icono-compartir{
+height: 100%;
+width: auto;
+
+}
+.left-Descripcion h2 {
+    margin: 15px;
+    font-family: 'open sans';
+    margin-left: 45px;
+    margin-bottom: 30px;
+}
+.datos-juego{
+  
+    
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+.datos-juego ul {
+    list-style: none;
+    padding-left: 10px;
+}
+.titulo-datos{
+    color: var(--primaryColor);
+    font-family: 'roboto';
+}
+.itens-datos{
+    margin-bottom: 9px;
+}
+.resumen{
+    display: flex;
+    height: 202px;
+    margin-left: 5px;
+    margin-right: 5px;
+   
+}
+.resumen p{
+    margin:0%;
+    padding-top: 1em;
+}
+.video{
+    width: 100px; /* Ancho deseado para el video */
+    max-width: 100%; /* Evita que el video sea más ancho que el contenedor */
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.videos{
+    display: flex;
+    margin-top: 30px;
+}
+.tutoriales h3{
+    font-family: 'open sans';
+    margin-left: 20px;
+}
+.similares h3{
+    font-family: 'open sans';
+    margin-top: 17.5px;
+    margin-bottom: 9.5px; 
+    margin-left: 15px; 
+}
+
+.nombre-card-secuandaria{
+    padding-top: 12px;
+    max-height: 20px;
+    margin-top: 8px;
+    margin-left: 10px;
+    width: 60px;
+    font-family: "open-sans", Arial, Helvetica, sans-serif;
+    max-width: 60px;
+    max-height: 22px;
+    height: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nombre-card-secundaria:after {
+    content: '...'; /* Agrega los tres puntos al final */
+  }
+.contenedor-nombre-juego{
+    max-width: 75px;
+    max-height: 22px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*card*/
+.card-secundaria-similares{
+    display: flex;
+    margin: 11px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: var(--elevacion);
+    transition: border 0.15s;
+}
+.imagen-card-secundaria{
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 100%; /* Hace que las imágenes ocupen el ancho completo del contenedor */
+    height: 95%; /* Hace que las imágenes ocupen la altura completa del contenedor */
+    margin-top: 4px;
+    object-fit: cover;
+}
+.socalo-secundario-similares{
+    background-color: var(--primaryColor);
+    border-bottom-right-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 25%;
+}
+.boton-pequenio-similares{
+    margin-right: 10px;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 15px;
+}
+.socalo-secundario .boton-pequenio-similares{
+    width: 30%;
+    margin-right: 10px;
+}
+.Etiqueta-Carrito-similares{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 38.5px;
+    background-color: var(--accentColor);
+    position:absolute;
+    margin-left: 73px;
+    margin-bottom: 20px;
+    box-shadow: var(--elevacion);
+    border-bottom-left-radius: 10px;
+}
+.logo-carrito-violeta-etiqueta-similares{
+    width: 22.5px;
+    height: 22.5px;
+    
+}
+.txt-btn-similares{
+    font-size: 8px;
+}
+.content-similares{
+    display: flex;
+    margin:0;
+}
+.carrucel_y_foro{
+   
+}
+.carrusel-container{
+    position: relative;
+    margin-left: 40px;
+}
+.titulosSecciones{
+    font-size: 25px;
+    display: flex;
+    justify-content: start;
+    text-transform: capitalize;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.carrusel-tus-juegos{
+    display: flex;
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+    margin-right: 55px;
+}
+.gameWeek-btn-back{
+    background-color: unset;
+    border: 0px;
+    display: none;
+    align-items: center;
+    position: absolute;
+    top: 57%;
+    z-index: 1;
+}
+.iconoScroll{
+    visibility: hidden;
+}
+.gameWeek-btn-next{
+    background-color: unset;
+    border: 0px;
+    display: none;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: 52%;
+}
+.foro{
+    background-color: var(--primaryColor);
+    padding: 30px;
+}
+.content_tu_comentario{
+    align-items: center;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--elevacion);
+}
+.content_tu_comentario h3{
+    font-family:'open sans';
+    width: 85%;
+}
+
+.tu_comentario{
+    display: flex;
+    width: 85%;
+    margin-left: 70px;
+}
+.tu_comentario input{
+    border-radius: 20px;
+    width: 80%;
+}
+.valoracion{
+    margin-left: 57%;
+}
+.boton-enviar-comentario{
+    margin-left:60% ;
+    width: 130px;
+    height: 50px;
+}
+.otros-comentarios{
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    border-radius: 15px;
+    padding: 60px;
+    box-shadow: var(--elevacion);
+}
+.header-comentario{
+    display: flex;
+    align-items: center;
+}
+.header-comentario h3{
+    width: 180px;
+}
+.icono-Comentario{
+    margin-right: 7px; 
+}
+.horario-Comentario{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 10px;
+    color: var(--blancotransparente46);
+}
+.manito-like{
+    margin-left: 600px;
+    margin-right: 5px;
+}
+.likes-Comentarios{
+    font-size: 12px;
+    margin: 0;
+}
+.valoracion-comentarios{
+    margin-left: 7px;
+}
+.comentario{
+    border-bottom: 1px solid var(--blancotransparente46);
+    padding-bottom:40px;
+}
+.difulminado{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgb(0 0 0 / 62%);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0%;
+}
+.abrir{
+    display: flex;
+}
+.pop-up-compartir{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    border-radius: 25px;
+    position:fixed;
+    z-index: 5;
+    background-color: var(--secondaryColor);
+    padding: 10px;
+    border: solid 1px var(--accentColor);
+    
+}
+.texto-compartir{
+    display: flex;
+    align-items: center;
+    font-family: 'open sans';
+    color: var(--accentColor);
+}
+.texto-compartir h4{
+    margin-left: 70px;
+}
+.texto-compartir img{
+  margin-left: 50px;
+  cursor: pointer;
+}
+.wrapper{
+    height: 30px;
+}
+.redes-pop-up{
+    margin-top: 10px;
+}
+
+
+
+
+ 
+

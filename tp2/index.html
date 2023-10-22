@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/botonRedes.css">
+    <link rel="icon"  sizes="64x64" href="imagenes/logoChico.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="./js/index.js" type="text/javascript" ></script>
+    <script src="./js/juego.js" type="text/javascript" ></script>
+    
+    
+</head>
+<body>
+    <header class="header">
+        <div class="headIzquierda">
+            <img class="iconoHamburguesa" id="iconoHamburguesa" src="./imagenes/iconoMenuHamburgesa.png" alt="">
+            <img class="iconoLogoChico"  id="Logo" src="./imagenes/logoChico.png" alt="">
+        </div>
+        <div class="headCentro">
+            <img class="iconoBuscador" src="./imagenes/buscador.png" alt="">
+        </div>
+        <div class="headDerecha">
+            <p class="textoUsuario">Iniciar Sesion</p>
+            <img class="iconoUser" src="./imagenes/iconoUserIncognito.png" alt="">
+        </div>
+    </header>
+    <nav class="menu_Hamburguesa menuHamburguesaCerrado" id="menu_Hamburguesa">
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="./imagenes/icono-Categoria-deportes.png" alt="">
+          </div>
+              <h2>Deporte</h2>
+        </section>
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="./imagenes/icono-shooter-categoria.png" alt="">
+          </div>
+              <h2>Shooter</h2>
+        </section>
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="./imagenes/icono-arcade-categoria.png" alt="">
+          </div>
+              <h2>Arcade</h2>
+        </section>
+          
+        <section class="categoria">
+          <div class="icono-Categoria">
+              <img  src="./imagenes/icono-terror-categoria.png" alt="">
+          </div>
+              <h2>Terror</h2>
+         </section>
+      
+          <section class="categoria">
+              <div class="icono-Categoria">
+                  <img  src="./imagenes/icono-aventura-categoria.png" alt="">
+              </div>
+                  <h2>Aventura</h2>
+          </section>
+        
+      </nav>
+    <div class="breadCrumBox">
+        <p class="breadCrum">>> login</p>
+    </div>
+    <section class="content">
+        <section class="logo">
+            <img class="iconoLogoGrande" src="./imagenes/logoGrande.png" alt="logo">
+        </section>
+        <div class="content-form" id="content-form">
+
+            <form action="" class="form">
+                <section class="campos">
+                    <h1 id="loginTitle" class="loginTitle">log in</h1>
+                <div class="inputs">
+                    <div>
+                        <label for="email">email*</label>
+                        <input class="input-login" type="text" name="email" id="emailInput">
+                    </div>
+                    <div>
+                        <label for="password">contraseña*</label>
+                        <input class="input-login" type="text" name="password" id="passwordInput">
+                    </div>
+                    <button type="button" class="botonPrimario botonGrande animacion-boton-log-in" id="loginButton"><p class="textoBotones">log in</p></button>
+                    <div class="loader" id="loader"></div>
+                        <div class="checkmark" id="checkmark">&#10003;</div>
+                </div>
+                <div class="alter-login">
+                    <button class="b-Alter-Login-Google"><img class="iconoGoogle"src="./imagenes/iconoGoogle.png" alt="iconoGoogle"><p class="textoBotones texto-chico">Log in with Google</p></button>
+                    <button class="b-Alter-Login-Facebook"><img class="iconoGoogle "src="./imagenes/iconoFacebook.png" alt="iconoFacebook"><p class="textoBotones texto-chico">Log in with Facebook</p></button>
+                </div>
+                </section>
+                 <section >
+                <button class="texto-bajo-form" id="cambiarRegistrarme">no tienes cuenta? Registrate cliqueando</button>
+                </section>
+            </form>
+        </div>
+        <!-- <form action="" class="form form-registrame">
+            <section class="campos">
+                <h1 id="loginTitle" class="loginTitle">Registrarme</h1>
+                <div class="inputs-registrarme">
+                    <div>
+                        <label for="email">Nombre y Apellido*</label>
+                        <input class="input-login" type="text" name="email" id="emailInput">
+                    </div>
+                    <div>
+                        <label for="password"> Nickname*</label>
+                        <input class="input-login" type="text" name="password" id="passwordInput">
+                    </div>
+                    <div>
+                        <label for="password"> edad*</label>
+                        <input class="input-login" type="text" name="password" id="passwordInput">
+                    </div>
+                    
+                </div>
+                <div class="inputs-registrarme">
+                    <div>
+                        <label for="email">email*</label>
+                        <input class="input-login" type="email" name="email" id="emailInput">
+                    </div>
+                    <div>
+                        <label for="password">Contraseña*</label>
+                        <input class="input-login" type="password" name="password" id="passwordInput">
+                    </div>
+                    <div>
+                        <label for="password">Repetir Contraceña*</label>
+                        <input class="input-login" type="password" name="password" id="passwordInput">
+                    </div>
+                    <div class="captcha">
+                        <div style="width: 202px; height: 37px; position: relative">
+                            <div style="width: 202px; height: 37px; left: 10px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
+                            <div style="width: 59px; height: 11px; left: 31px; top: 14px; position: absolute; text-align: center; color: black; font-size: 5.84px; font-family: Open Sans; font-weight: 400; letter-spacing: 0.58px; word-wrap: break-word">no soy un robot</div>
+                            <img style="width: 26px; height: 24.71px; left: 190px; top: 30px; position: absolute; transform: rotate(180deg); transform-origin: 0 0" src="./imagenes/icono-captcha.png" />
+                            <div style="width: 18px; height: 18px; left: 13px; top: 9px; position: absolute; background: white; border-radius: 3.60px; border: 1.20px #6F6F6F solid"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="botonPrimario botonGrande animacion-boton-log-in" id="loginButton"><p class="textoBotones">Registrarme</p></button>
+                    
+                </div>
+                <div class="alter-login">
+                        <button class="b-Alter-Login-Google"><img class="iconoGoogle"src="./imagenes/iconoGoogle.png" alt="iconoGoogle"><p class="textoBotones texto-chico">Log in with Google</p></button>
+                        <button class="b-Alter-Login-Facebook"><img class="iconoGoogle "src="./imagenes/iconoFacebook.png" alt="iconoFacebook"><p class="textoBotones texto-chico">Log in with Facebook</p></button>
+                </div>
+            </section>
+            <section >
+                <button class="texto-bajo-form">si ya tienes cuenta,clickea aqui</button>
+            </section>
+        </form> -->
+    </section>
+    <footer class="footer">
+        <div class="enlacesFooter">
+            <h2 class="titulosFooter">
+                enlaces
+            </h2>
+            <ul class="ul-footer">
+                <li class="li-footer">
+                    <a class="link-footer" href="">
+                        Inicio
+                    </a>
+                </li>
+                <li class="li-footer">
+                    <a class="link-footer" href="">
+                        Mi Perfil
+                    </a>
+                </li>
+                <li class="li-footer">
+                    <a class="link-footer" href="">
+                        Blog
+                    </a>
+                </li>
+                <li class="li-footer">
+                    <a class="link-footer" href="">
+                        Nosotros
+                    </a>
+                </li>
+                <li class="li-footer">
+                    <a class="link-footer" href="">
+                        @TerminosyCondiciones
+                    </a>
+                </li>
+                <li class="li-footer">
+                    <a class="link-footer" href="">
+                        @PoliticasdePrivacidad
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="contactoFooter">
+            <h2 class="titulosFooter">
+                Contacto
+            </h2>
+            <ul class="ul-footer">
+                <li class="li-footer">
+                    <img class="iconoFooter" src="imagenes/inconoLlamada.png" alt="">
+                    <a class="link-footer" href="">223580471</a>
+                </li>
+                <li class="li-footer">
+                    <img class="iconoFooter" src="imagenes/iconoMail.png" alt="">
+                    <a class="link-footer" href="">playroom@gmail.com</a>
+                </li>
+                <li class="li-footer">
+                    <img class="iconoFooter" src="imagenes/inconoUbicacion.png" alt="">
+                    <a class="link-footer" href="">Av España 7490</a>
+                </li>
+            </ul> 
+            <div class="wrapper">
+                <a href="https://www.youtube.com/@puntowavstudio2756/videos" class="icon youtube">
+                    <span class="tooltip">Youtube</span>
+                    <span class="ciruloRedes"><img class="w-50"  src="imagenes/youtube.png" alt="logo de punto wav"><i class="fab fa-instagram"></i></span>
+                </a>
+                <a href="https://wa.me/5492494503071" class="icon whatsapp">
+                    <span class="tooltip">Whatsapp</span>
+                    <span class="ciruloRedes"><img class="w-50"  src="imagenes/whatsapp.png" alt="logo de punto wav"><i class="fab fa-instagram"></i></span>
+                </a>
+                <a href="https://www.instagram.com/puntowavstudio/" class="icon instagram">
+                    <span class="tooltip">Instagram</span>
+                    <span class="ciruloRedes"><img class="w-50"  src="imagenes/instagram.png" alt="logo de punto wav"><i class="fab fa-instagram"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="categoriaFooter">
+            <h2 class="titulosFooter">
+                categorias
+            </h2>
+            <ul class="ul-footer">
+                <li class="li-footer"><a class="link-footer" href="">deportes</a></li>
+                <li class="li-footer"><a class="link-footer" href="">arcade</a></li>
+                <li class="li-footer"><a class="link-footer" href="">shooter</a></li>
+                <li class="li-footer"><a class="link-footer" href="">terror</a></li>
+                <li class="li-footer"><a class="link-footer" href="">aventura</a></li>
+            </ul>  
+        </div>
+        <div class="mensajesFooter">
+            <h2 class="titulosFooter">envianos un mensaje</h2>
+            <div class="caja-inputs">
+                <div class="caja-inputs-mensaje">
+                    <label for="nombreMensaje">nombre</label>
+                    <input class="input-login" type="text" name="nombreMensaje" id="emailInput">
+                </div>
+                <div class="caja-inputs-mensaje">
+                    <label for="emailMensaje">email*</label>
+                    <input class="input-login" type="text" name="emailMensaje" id="passwordInput">
+                </div>
+                <div class="caja-inputs-mensaje">
+                    <label for="mensaje">mensaje*</label>
+                    <input class="input-login input-mensaje" type="text" name="mensaje" id="passwordInput">
+                </div>
+                <button class="botonPrimario boton-pequenio boton-enviar-mensaje"><p class="textoBotones">enviar</p></button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
