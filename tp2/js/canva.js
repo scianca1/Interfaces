@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded",()=>{
     let canvas= document.getElementById('canvas');
     let ctx= canvas.getContext("2d");
+    // console.log(ctx);
     let canvasWidth= canvas.width;
     let canvasHeight=canvas.height;
     ctx.fillStyle= '#F8F8FF';
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     let fichas= [];
 
-    let fichaPrueba= new Ficha(100,100,20,"../imagenes/Ficha_Argentina.png","rgba(250,250,250,255)",ctx);
+    let fichaPrueba= new Ficha(100,100,20,"../imagenes/Ficha_Argentina.png","red",ctx);
     fichas.push(fichaPrueba);
 
     for(let i=0; i<fichas.length;i++){
