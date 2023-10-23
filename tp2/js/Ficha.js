@@ -26,8 +26,8 @@ class Ficha extends Figure{
         // }
         this.ctx.beginPath();
           // Crea un patrón con la imagen de fondo
-          const pattern = this.ctx.createPattern(this.image, "no-repeat");
-          console.log(pattern);
+        //   const pattern = this.ctx.createPattern(this.image, "no-repeat");
+        //   console.log(pattern);
           this.ctx.fillStyle = this.fill;
   
           // Dibuja un círculo con el patrón de fondo
