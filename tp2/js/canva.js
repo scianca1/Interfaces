@@ -6,12 +6,16 @@ document.addEventListener("DOMContentLoaded",()=>{
     // console.log(ctx);
     let canvasWidth= canvas.width;
     let canvasHeight=canvas.height;
-    ctx.fillStyle= '#F8F8FF';
+    // ctx.fillStyle= '#F8F8FF';
+    ctx.fillStyle = 'blue';
     ctx.fillRect(0,0,canvasWidth,canvasHeight);
 
     let fichas= [];
 
-    cargarFichas();
+    let columnas = 7;
+    let filas = 6;
+    let radio = 5;
+    cargarFichas(filas, columnas, canvas.width, canvas.height, radio);
 
    
 
@@ -19,17 +23,21 @@ document.addEventListener("DOMContentLoaded",()=>{
         fichas[i].draw();
     }
 
-    function cargarFichas(){
-        let width=20;
-        let height=140;
-        for(let i= 0;i<7;i++){
-         let fichaPrueba= new Ficha(width,height,5,"../imagenes/Ficha_Argentina.png","red",ctx);
-         let fichaPrueba2= new Ficha(width+20,height,5,"../imagenes/Ficha_Argentina.png","blue",ctx);
-         fichas.push(fichaPrueba);
-         fichas.push(fichaPrueba2);
-         height= height-20;
-
+    function cargarFichas(filas, columnas, widthTablero, heightTablero, tamanioRadio){
+        let distanciaEntreColumnas = (widthTablero / columnas);
+        let distanciaEntreFilas = (heightTablero / filas);
+        let height = 0;
+        let width = distanciaEntreFilas;
+        for(let columna = 0; columna < columnas; columna++){
+            height = (distanciaEntreFilas / 2);
+                for(let i = 0; i < filas; i++){
+                    let fichaPrueba= new Ficha(width,height,tamanioRadio,"../imagenes/Ficha_Argentina.png","red",ctx);
+                    fichas.push(fichaPrueba);
+                    height = height + distanciaEntreFilas;
+                }
+            width += distanciaEntreColumnas; 
         }  
+    
     }
 
 });
