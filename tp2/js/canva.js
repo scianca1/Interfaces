@@ -11,11 +11,25 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     let fichas= [];
 
-    let fichaPrueba= new Ficha(100,100,20,"../imagenes/Ficha_Argentina.png","red",ctx);
-    fichas.push(fichaPrueba);
+    cargarFichas();
+
+   
 
     for(let i=0; i<fichas.length;i++){
         fichas[i].draw();
+    }
+
+    function cargarFichas(){
+        let width=20;
+        let height=140;
+        for(let i= 0;i<7;i++){
+         let fichaPrueba= new Ficha(width,height,5,"../imagenes/Ficha_Argentina.png","red",ctx);
+         let fichaPrueba2= new Ficha(width+20,height,5,"../imagenes/Ficha_Argentina.png","blue",ctx);
+         fichas.push(fichaPrueba);
+         fichas.push(fichaPrueba2);
+         height= height-20;
+
+        }  
     }
 
 });
