@@ -18,12 +18,14 @@
 }
 .Ventana-Juego{
     /* background-color: black; */
-    width: 945px;
+    width: 1050px;
     height: 450px;
 }
 .canvas{
+    margin: 0;
+    padding: 0;
     /* background-color: white; */
-    width: 945px;
+    width: 1050px;
     height: 450px;
 }
 .inicioJuego{

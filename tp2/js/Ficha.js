@@ -1,14 +1,8 @@
 class Ficha extends Figure{
-    constructor(posX,posY,radius,imageURL,fill,context){
+    constructor(posX,posY,radius,fill,context,img){
         super(posX,posY,fill,context);
         this.radius=radius;
-        this.image = new Image();
-        this.image.src = imageURL;
-        this.imageLoaded = false; // Agrega una propiedad para controlar si la imagen está cargada.
-        this.image.onload = () => {
-            this.imageLoaded = true; // Cuando la imagen se carga, establece imageLoaded en true.
-            // this.draw(); // Llama a draw una vez que la imagen se ha cargado.
-        };
+        this.img=img;
         
     }
 
@@ -17,28 +11,16 @@ class Ficha extends Figure{
     //             this.image.onload = resolve;
     //         });
     //     }
-     draw(){
-        //  await imageLoaded() ;
-        super.draw();
-        // if (!this.imageLoaded) {
-        //     // Si la imagen no se ha cargado aún, no la dibujes.
-        //     return;
-        // }
-        this.ctx.beginPath();
-          // Crea un patrón con la imagen de fondo
-        //   const pattern = this.ctx.createPattern(this.image, "no-repeat");
-        //   console.log(pattern);
-          this.ctx.fillStyle = this.fill;
-  
-          // Dibuja un círculo con el patrón de fondo
-          this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-          this.ctx.fill();
-        if(this.resaltado===true){
-            this.ctx.strokeStyle=this.resaltadoStyle;
-            this.ctx.lineWidth=5;
+    draw(){
+            this.ctx.drawImage(this.img, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
+            // Dibuja el borde
+            this.ctx.beginPath();
+            this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+            this.ctx.strokeStyle = this.borde;
+            this.ctx.lineWidth = 2;
             this.ctx.stroke();
-        }
-        this.ctx.closePath();
+            this.ctx.closePath();
+        // }
     }
    
     getRadius(){

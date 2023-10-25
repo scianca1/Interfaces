@@ -33,7 +33,7 @@ class Figure{
         return this.fill;
     }
     draw(){
-        // this.ctx.fillStyle= this.fill;
+        this.ctx.fillStyle= this.fill;
     }
     setResaltado(resaltado){
         this.resaltado=resaltado;
