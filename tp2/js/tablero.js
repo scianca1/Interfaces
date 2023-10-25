@@ -44,6 +44,36 @@ class Tablero{
                 this.fichas[i].draw();
             }
         }
+        this.agregarFichasJugables();
+    }
+
+    agregarFichasJugables(imagenJugadorUno, imagenJugadorDos){
+        let fichasPorEquipo = (this.columnas * this.filas) / 2;
+        console.log(fichasPorEquipo);
+        let fichasEquipoUno = [];
+        let fichasEquipoDos = [];
+        let widthEquipoUno = 10;
+        let widthEquipoDos = 20;
+        let height = 100;
+        for(let i = 0; i < fichasPorEquipo; i++){
+            let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, "../imagenes/Ficha_Argentina.png");
+            fichasEquipoUno.push(f);
+            height -= 5;
+        }
+        height = 100;
+        for(let i = 0; i < fichasPorEquipo; i++){
+            let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, "../imagenes/Ficha_Argentina.png");
+            fichasEquipoDos.push(f);
+            height -= 5;
+        }
+        console.log(fichasEquipoUno);
+        console.log(fichasEquipoDos);
+        for(let i = 0; i<fichasPorEquipo;i++){
+            fichasEquipoUno[i].draw();
+        }
+        for(let i=0; i<fichasPorEquipo;i++){
+            fichasEquipoDos[i].draw();
+        }
     }
     
 }
