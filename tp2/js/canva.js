@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     ctx.fillStyle= '#F8F8FF';
     ctx.fillRect(0,0,canvasWidth,canvasHeight);
 
-    tablero = new Tablero(canvas, ctx, "red", 40, 20, 220, 130, 6, 7, 7);
+    let tablero = new Tablero(canvas, ctx, "red", 40, 20, 220, 130, 6, 7, 7);
 
    
 
