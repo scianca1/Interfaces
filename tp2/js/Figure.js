@@ -38,5 +38,5 @@ class Figure{
     setResaltado(resaltado){
         this.resaltado=resaltado;
     }
-    isPointInside(x,y){};
+    isPointedInside(x,y){};
 }

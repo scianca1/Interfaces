@@ -14,14 +14,32 @@ class Tablero{
         this.columnas = columnas;
         this.filas = filas;
         this.radio = radio;
-        this.createTablero()
+        this.lastClickedFigure = null;
+        this.isMouseDown = false;
     }
 
+    
+    findClickedFigure(x, y){
+        this.fichasEquipoUno.forEach(fig => {
+            console.log(x);
+            console.log(y);
+            console.log(fig.posX);
+            console.log(fig.posY);
+            if(fig.isPointedInside(x, y)){
+                return fig;
+            }
+        });
+        this.fichasEquipoDos.forEach(fig => {
+            if(fig.isPointedInside(x, y)){
+                return fig;
+            }
+        });
+        return null;
+    }
 
     createTablero(){
         this.ctx.fillStyle= 'red';
         this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
-        this.cargarFichas();
     }
 
     cargarFichas(){
@@ -50,14 +68,35 @@ class Tablero{
                 
             }
         }
-        this.agregarFichasJugables();
+    }
+
+    drawFigures(){
+        this.clearCanvas();
+        this.createTablero();
+        this.cargarFichas();
+        this.fichasEquipoUno.forEach(fig => {
+            fig.draw();
+        });
+        this.fichasEquipoDos.forEach(fig => {
+            fig.draw();
+        });
+    }
+
+    clearCanvas(){
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    onMouseUp(e){
+    }
+    
+    onMouseMove(e){
     }
 
     agregarFichasJugables(imagenJugadorUno, imagenJugadorDos){
         let fichasPorEquipo = (this.columnas * this.filas) / 2;
-        console.log(fichasPorEquipo);
-        let fichasEquipoUno = [];
-        let fichasEquipoDos = [];
+        this.fichasEquipoUno = [];
+        this.fichasEquipoDos = [];
         let widthEquipoUno = 20;
         let widthEquipoDos = 280;
         let height = 140;
@@ -69,25 +108,24 @@ class Tablero{
             img2.onload = () =>{
                 for(let i = 0; i < fichasPorEquipo; i++){
                     let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, img1);
-                    fichasEquipoUno.push(f);
+                    this.fichasEquipoUno.push(f);
                     height -= 6;
                 }
                 height = 140;
                     for(let i = 0; i < fichasPorEquipo; i++){
                         let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, img2);
-                        fichasEquipoDos.push(f);
+                        this.fichasEquipoDos.push(f);
                         height -= 6;
                     }
-                console.log(fichasEquipoUno);
-                console.log(fichasEquipoDos);
                 for(let i = 0; i<fichasPorEquipo;i++){
-                    fichasEquipoUno[i].draw();
+                    this.fichasEquipoUno[i].draw();
                 }
                 for(let i=0; i<fichasPorEquipo;i++){
-                    fichasEquipoDos[i].draw();
+                    this.fichasEquipoDos[i].draw();
                 }
             }
         }
+        
     }
-    
+
 }

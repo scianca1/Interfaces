@@ -16,9 +16,16 @@ class Ficha extends Figure{
             // Dibuja el borde
             this.ctx.beginPath();
             this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-            this.ctx.strokeStyle = this.borde;
-            this.ctx.lineWidth = 2;
-            this.ctx.stroke();
+            if(this.resaltado){
+                this.resaltadoEstilo = 'red';
+                this.ctx.strokeStyle = this.resaltadoEstilo;
+                this.ctx.lineWidth = 5;
+                this.ctx.stroke();
+            }else{
+                this.ctx.strokeStyle = this.borde;
+                this.ctx.lineWidth = 2;
+                this.ctx.stroke();
+            }
             this.ctx.closePath();
         // }
     }
@@ -26,7 +33,7 @@ class Ficha extends Figure{
     getRadius(){
         return this.radius;
     }
-    isPointInside(x,y){
+    isPointedInside(x,y){
         let __x= this.posX-x;
         let __y= this.posY-y;
         return Math.sqrt(__x*__x+__y*__y)< this.radius;
