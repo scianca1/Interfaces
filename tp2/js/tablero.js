@@ -1,6 +1,6 @@
 "use strict";
 
-class Tablero{
+class Tablero {
     constructor(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio){
         this.canvas = canvas;
         this.ctx = ctx;
@@ -41,10 +41,11 @@ class Tablero{
         let img1 = new Image();
         img1.src = '../imagenes/canchafutbol.jpg';
         img1.onload = () =>{
-            console.log(1);
-            this.ctx.fillStyle = this.ctx.createPattern(img1, 'no-repeat');
+            console.log(img1);
+            //this.ctx.fillStyle = this.ctx.createPattern(img1, 'no-repeat');
             this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
-            // this.ctx.drawImage(img1,this.posX,this.posY,this.width,this.height);
+            this.ctx.drawImage(img1,this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
+            // this.ctx.drawImage(this.img, this.x_tablero - this.radius, this.y_tablero - this.radius, this.radius * 2, this.radius * 2)
         }
     }
 

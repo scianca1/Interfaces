@@ -24,8 +24,7 @@ class CuatroEnLinea {
             tablero.lastClickedFigure.setResaltado(false);
             tablero.lastClickedFigure = null;
         }
-        let fig = tablero.findClickedFigure(e.layerX, e.layerY-178);
-        
+        let fig = tablero.findClickedFigure(e.layerX - e.offSetX, e.layerY - e.offsetY);
         console.log(e);
         if(fig != null){
             fig.setResaltado(true);
