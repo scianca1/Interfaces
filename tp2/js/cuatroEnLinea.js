@@ -2,7 +2,7 @@ class CuatroEnLinea {
     constructor(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio){
         this.canvas = canvas;
         this.ctx = ctx;
-        this.tablero = new Tablero(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio)
+        this.tablero = new Tablero(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio);
         this.tablero.createTablero();
         this.tablero.cargarFichas();
         this.tablero.agregarFichasJugables();

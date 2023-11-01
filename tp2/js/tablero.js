@@ -38,8 +38,14 @@ class Tablero{
     }
 
     createTablero(){
-        this.ctx.fillStyle= 'red';
-        this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
+        let img1 = new Image();
+        img1.src = '../imagenes/canchafutbol.jpg';
+        img1.onload = () =>{
+            console.log(1);
+            this.ctx.fillStyle = this.ctx.createPattern(img1, 'no-repeat');
+            this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
+            // this.ctx.drawImage(img1,this.posX,this.posY,this.width,this.height);
+        }
     }
 
     cargarFichas(){
@@ -48,7 +54,7 @@ class Tablero{
         let height = 0;
         let width = (distanciaEntreFilas - 2) + this.x_tablero - 4;
         let img1 = new Image();
-        img1.src = '../imagenes/Ficha_Argentina.png';
+        img1.src = '../imagenes/pelotafutbol.png';
         img1.onload = () =>{
             for(let columna = 0; columna < this.columnas; columna++){
                 let filaFichas = [];
