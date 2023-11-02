@@ -3,7 +3,8 @@ class Ficha extends Figure{
         super(posX,posY,fill,context);
         this.radius=radius;
         this.img=img;
-        
+        this.posInicialX = posX;       
+        this.posInicialY = posY;       
     }
 
     // async imageLoaded() {
@@ -22,7 +23,7 @@ class Ficha extends Figure{
                 this.ctx.lineWidth = 5;
                 this.ctx.stroke();
             }else{
-                this.ctx.strokeStyle = this.borde;
+                this.ctx.strokeStyle = 'black';
                 this.ctx.lineWidth = 2;
                 this.ctx.stroke();
             }

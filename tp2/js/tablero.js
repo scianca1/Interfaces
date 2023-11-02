@@ -5,7 +5,6 @@ class Tablero {
         this.canvas = canvas;
         this.ctx = ctx;
         this.columnaFichas= [];
-        //luego creare arreglos que pusheare dentro en este arreglo
         this.rellenoTablero = rellenoTablero;
         this.x_tablero = x_tablero;
         this.y_tablero = y_tablero;
@@ -18,34 +17,103 @@ class Tablero {
         this.isMouseDown = false;
     }
 
+    async cargarTodasLasImagenes(imgTablero, imgJugadorUno, imgJugadorDos) {
+        try {
+            const urlImagen = imgTablero;
+            const imagenCargada = await this.cargarImagen(urlImagen);
+            this.imgTablero = imagenCargada;
+            
+            const urlImagen2 = imgJugadorUno;
+            const imagenCargada2 = await this.cargarImagen(urlImagen2);
+            this.imgJugadorUno = imagenCargada2;
+            
+            const urlImagen3 = imgJugadorDos;
+            const imagenCargada3 = await this.cargarImagen(urlImagen3);
+            this.imgJugadorDos = imagenCargada3;
+            
+            const urlImagen4 = "../imagenes/pelotafutbol.png";
+            const imagenCargada4 = await this.cargarImagen(urlImagen4);
+            this.imgPelotaDeFutbol = imagenCargada4;
+            return true;
+        } catch (error) {
+          console.error('Error al cargar la imagen:', error);
+        }
+      }
+
+    async cargarImagen(url) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+      
+          img.onload = () => resolve(img);
+          img.onerror = reject;
+      
+          img.src = url;
+        });
+      }
+
+    onMouseDown(e, tablero){
+        tablero.isMouseDown = true;
+        if(tablero.lastClickedFigure != null){
+            tablero.lastClickedFigure.setResaltado(false);
+            tablero.lastClickedFigure = null;
+        }
+        let pos = tablero.obtenerPosCanvas(e);
+        let fig = tablero.findClickedFigure(pos.x,pos.y);
+        if(fig != null){
+            console.log(fig);
+            tablero.lastClickedFigure = fig;
+        }
+        tablero.drawFigures();
+    }
+    
+    onMouseUp(e, tablero){
+        tablero.isMouseDown = false;
+        tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
+        tablero.drawFigures();        
+    }
+    
+    onMouseMove(e, tablero){
+        if(tablero.isMouseDown && tablero.lastClickedFigure != null){
+            let pos = tablero.obtenerPosCanvas(e);
+            tablero.lastClickedFigure.setPosition(pos.x, pos.y);
+            tablero.drawFigures();
+        }
+    }
     
     findClickedFigure(x, y){
-        this.fichasEquipoUno.forEach(fig => {
-            console.log(x);
-            console.log(y);
-            console.log(fig.posX);
-            console.log(fig.posY);
-            if(fig.isPointedInside(x, y)){
-                return fig;
+        let figura = null;
+        for (let i = this.fichasEquipoUno.length - 1; i>=0; i--){
+            let fig = this.fichasEquipoUno[i];
+            if(fig.isPointedInside(x, y) && figura == null){
+                fig.setResaltado(true);
+                figura = fig;
+            }else{
+                fig.setResaltado(false);
             }
-        });
-        this.fichasEquipoDos.forEach(fig => {
-            if(fig.isPointedInside(x, y)){
-                return fig;
+        }
+        for (let i = this.fichasEquipoDos.length - 1; i >= 0; i--){
+            let fig = this.fichasEquipoDos[i];
+            if(fig.isPointedInside(x, y) && figura == null){
+                fig.setResaltado(true);
+                figura = fig;
+            }else{
+                fig.setResaltado(false);
             }
-        });
-        return null;
+        }
+        return figura;
     }
 
+    
     createTablero(){
-        let img1 = new Image();
-        img1.src = '../imagenes/canchafutbol.jpg';
-        img1.onload = () =>{
-            console.log(img1);
-            //this.ctx.fillStyle = this.ctx.createPattern(img1, 'no-repeat');
             this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
-            this.ctx.drawImage(img1,this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
-            // this.ctx.drawImage(this.img, this.x_tablero - this.radius, this.y_tablero - this.radius, this.radius * 2, this.radius * 2)
+            this.ctx.drawImage(this.imgTablero,this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
+    }
+
+    obtenerPosCanvas(e){
+        let rect = canvas.getBoundingClientRect();
+        return {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
         }
     }
 
@@ -54,14 +122,11 @@ class Tablero {
         let distanciaEntreFilas = (this.altoTablero / this.filas);
         let height = 0;
         let width = (distanciaEntreFilas - 2) + this.x_tablero - 4;
-        let img1 = new Image();
-        img1.src = '../imagenes/pelotafutbol.png';
-        img1.onload = () =>{
             for(let columna = 0; columna < this.columnas; columna++){
                 let filaFichas = [];
                 height = (distanciaEntreFilas / 2) + this.y_tablero;
                     for(let i = 0; i < this.filas; i++){
-                        let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, img1);
+                        let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbol);
                         filaFichas.push(fichaPrueba);
                         height = height + distanciaEntreFilas;
                     }
@@ -74,7 +139,6 @@ class Tablero {
                 });
                 
             }
-        }
     }
 
     drawFigures(){
@@ -94,35 +158,23 @@ class Tablero {
         this.ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    onMouseUp(e){
-    }
-    
-    onMouseMove(e){
-    }
-
     agregarFichasJugables(imagenJugadorUno, imagenJugadorDos){
         let fichasPorEquipo = (this.columnas * this.filas) / 2;
         this.fichasEquipoUno = [];
         this.fichasEquipoDos = [];
-        let widthEquipoUno = 20;
-        let widthEquipoDos = 280;
-        let height = 140;
-        let img1 = new Image();
-        img1.src = '../imagenes/Ficha_Argentina.png';
-        img1.onload = () =>{
-            let img2 = new Image();
-            img2.src = '../imagenes/fichaFrancia.png';
-            img2.onload = () =>{
+        let widthEquipoUno = 40;
+        let widthEquipoDos = 1000;
+        let height = 400;
                 for(let i = 0; i < fichasPorEquipo; i++){
-                    let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, img1);
+                    let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno);
                     this.fichasEquipoUno.push(f);
-                    height -= 6;
+                    height -= 15;
                 }
-                height = 140;
+                height = 400;
                     for(let i = 0; i < fichasPorEquipo; i++){
-                        let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, img2);
+                        let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos);
                         this.fichasEquipoDos.push(f);
-                        height -= 6;
+                        height -= 15;
                     }
                 for(let i = 0; i<fichasPorEquipo;i++){
                     this.fichasEquipoUno[i].draw();
@@ -130,8 +182,6 @@ class Tablero {
                 for(let i=0; i<fichasPorEquipo;i++){
                     this.fichasEquipoDos[i].draw();
                 }
-            }
-        }
         
     }
 
