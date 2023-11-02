@@ -226,19 +226,26 @@ class Tablero {
     }
     isvalid(pos){
 
-        //verificar si esta en el rango de arriba de las colunas valido
+        //verificar si esta en el rango de arriba de las columnas valido
         let isValido=true;
-        let numeroColumna=0;
+        let numeroColumna= this.getColumnaSeleccionada(pos);
         if(this.columnaFichas[numeroColumna][0].getJugador()!=0){
             isValido=false;
         }
-       return isValido;
+
+        //verfico que la ficha este colocada en una posician valida
+        if((pos.x - this.x_tablero > this.anchoTablero) || (pos.x - this.x_tablero < 0)
+            || pos.y > this.y_tablero){
+            isValido = false;
+        }
+
+        return isValido;
     }
     getFichavalida(pos){
         //usar el pos para verificar la columna y recorrerla de abajo hacia arriba hasta encontrar una 
-        //que no tenga jugador asignad, osea ficha.getJugador()=0
+        //que no tenga jugador asignado, osea ficha.getJugador()=0
         //retornar la ficha
-        let numeroColumna=0;
+        let numeroColumna=this.getColumnaSeleccionada(pos);
         return this.columnaFichas[numeroColumna][this.getPosEnColumna(numeroColumna)];
     }
     verificarGanador(fichaAcolocar){
@@ -252,6 +259,16 @@ class Tablero {
            }
         }
         return respuesta;
+    }
+    getColumnaSeleccionada(pos){
+        let pixelesPorColumna = this.anchoTablero / this.columnas;
+        let indiceAux = pos.x - this.x_tablero;
+        let indiceColumna = 0;
+        while(indiceAux > pixelesPorColumna){
+            indiceAux -= pixelesPorColumna;
+            indiceColumna++;
+        }
+        return indiceColumna;
     }
 
 }
