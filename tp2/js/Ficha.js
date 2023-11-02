@@ -1,10 +1,11 @@
 class Ficha extends Figure{
-    constructor(posX,posY,radius,fill,context,img){
+    constructor(posX,posY,radius,fill,context,img,jugador){
         super(posX,posY,fill,context);
         this.radius=radius;
         this.img=img;
         this.posInicialX = posX;       
-        this.posInicialY = posY;       
+        this.posInicialY = posY; 
+        this.jugador=jugador;      
     }
 
     // async imageLoaded() {
@@ -34,6 +35,13 @@ class Ficha extends Figure{
     getRadius(){
         return this.radius;
     }
+    setJugador(jugador){
+        this.jugador=jugador;
+    }
+    getJugador(){
+        return this.jugador;
+    }
+    
     isPointedInside(x,y){
         let __x= this.posX-x;
         let __y= this.posY-y;

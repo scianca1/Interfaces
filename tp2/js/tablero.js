@@ -68,9 +68,49 @@ class Tablero {
     
     onMouseUp(e, tablero){
         tablero.isMouseDown = false;
-        tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
-        tablero.drawFigures();        
+        let pos = tablero.obtenerPosCanvas(e);
+        if(this.isvalid(pos)){
+            // console.log("hola");
+            let fichaAcolocar=this.getFichavalida(pos);
+
+            console.log(fichaAcolocar);
+            // console.log(tablero.lastClickedFigure);
+            // for(let y=tablero.lastClickedFigure.getPosY();y<=fichaAcolocar.getPosY();y++){
+            //     tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
+            //     tablero.drawFigures();
+            // }
+            let y=tablero.lastClickedFigure.getPosY();
+            tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
+            tablero.drawFigures();
+            // this.caidaFicha(tablero,y,fichaAcolocar);
+            // while(y<=fichaAcolocar.getPosY()){
+            //     // setTimeout(()=>{
+            //         tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
+            //         tablero.drawFigures();
+                    
+            //     // },100)
+            //     y+=20;
+            //     }
+            // tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
+            // tablero.drawFigures(); 
+            fichaAcolocar.setJugador(tablero.lastClickedFigure.getJugador()); 
+            this.verificarGanador(fichaAcolocar);      
+        }else{
+           tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
+           tablero.drawFigures();   
+        }
+             
     }
+    caidaFicha(tablero,y,fichaAcolocar){
+        tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
+        tablero.drawFigures();
+        y+=15;
+        if(y<=fichaAcolocar.getPosY()){
+            
+            setTimeout(this.caidaFicha(tablero,y,fichaAcolocar),1000);
+        }
+    }
+    
     
     onMouseMove(e, tablero){
         if(tablero.isMouseDown && tablero.lastClickedFigure != null){
@@ -126,7 +166,7 @@ class Tablero {
                 let filaFichas = [];
                 height = (distanciaEntreFilas / 2) + this.y_tablero;
                     for(let i = 0; i < this.filas; i++){
-                        let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbol);
+                        let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbol,0);
                         filaFichas.push(fichaPrueba);
                         height = height + distanciaEntreFilas;
                     }
@@ -166,13 +206,13 @@ class Tablero {
         let widthEquipoDos = 1000;
         let height = 400;
                 for(let i = 0; i < fichasPorEquipo; i++){
-                    let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno);
+                    let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1);
                     this.fichasEquipoUno.push(f);
                     height -= 15;
                 }
                 height = 400;
                     for(let i = 0; i < fichasPorEquipo; i++){
-                        let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos);
+                        let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos,2);
                         this.fichasEquipoDos.push(f);
                         height -= 15;
                     }
@@ -183,6 +223,35 @@ class Tablero {
                     this.fichasEquipoDos[i].draw();
                 }
         
+    }
+    isvalid(pos){
+
+        //verificar si esta en el rango de arriba de las colunas valido
+        let isValido=true;
+        let numeroColumna=0;
+        if(this.columnaFichas[numeroColumna][0].getJugador()!=0){
+            isValido=false;
+        }
+       return isValido;
+    }
+    getFichavalida(pos){
+        //usar el pos para verificar la columna y recorrerla de abajo hacia arriba hasta encontrar una 
+        //que no tenga jugador asignad, osea ficha.getJugador()=0
+        //retornar la ficha
+        let numeroColumna=0;
+        return this.columnaFichas[numeroColumna][this.getPosEnColumna(numeroColumna)];
+    }
+    verificarGanador(fichaAcolocar){
+        //hacer la logica de ver si hay 4 fichas en linea a partir de la ficha a colocar
+    }
+    getPosEnColumna(numeroColumna){
+        let respuesta=null;
+        for(let i= this.columnaFichas[numeroColumna].length-1;i>=0;i--){
+           if(respuesta==null&&this.columnaFichas[numeroColumna][i].getJugador()==0){
+                respuesta=i;
+           }
+        }
+        return respuesta;
     }
 
 }
