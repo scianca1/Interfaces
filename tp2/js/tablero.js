@@ -60,7 +60,7 @@ class Tablero {
         let pos = tablero.obtenerPosCanvas(e);
         let fig = tablero.findClickedFigure(pos.x,pos.y);
         if(fig != null){
-            console.log(fig);
+            // console.log(fig);
             tablero.lastClickedFigure = fig;
         }
         tablero.drawFigures();
@@ -71,9 +71,10 @@ class Tablero {
         let pos = tablero.obtenerPosCanvas(e);
         if(this.isvalid(pos)){
             // console.log("hola");
-            let fichaAcolocar=this.getFichavalida(pos);
+            let fichaYposicion=this.getFichavalida(pos)
+            let fichaAcolocar=fichaYposicion.ficha;
 
-            console.log(fichaAcolocar);
+            // console.log(fichaAcolocar);
             // console.log(tablero.lastClickedFigure);
             // for(let y=tablero.lastClickedFigure.getPosY();y<=fichaAcolocar.getPosY();y++){
             //     tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
@@ -94,7 +95,11 @@ class Tablero {
             // tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
             // tablero.drawFigures(); 
             fichaAcolocar.setJugador(tablero.lastClickedFigure.getJugador()); 
-            this.verificarGanador(fichaAcolocar);      
+
+           if(this.verificarGanador(fichaYposicion)) {
+            //pensar que hay que hacer cuando uno gana 
+           }
+                 
         }else{
            tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
            tablero.drawFigures();   
@@ -246,11 +251,104 @@ class Tablero {
         //que no tenga jugador asignado, osea ficha.getJugador()=0
         //retornar la ficha
         let numeroColumna=this.getColumnaSeleccionada(pos);
-        return this.columnaFichas[numeroColumna][this.getPosEnColumna(numeroColumna)];
+        let numeroFila=this.getPosEnColumna(numeroColumna);
+        let ficha=  this.columnaFichas[numeroColumna][numeroFila];
+        return {
+            posicion:[numeroColumna,numeroFila],
+            ficha:ficha
+        };
     }
     verificarGanador(fichaAcolocar){
         //hacer la logica de ver si hay 4 fichas en linea a partir de la ficha a colocar
+        // console.log(fichaAcolocar.posicion[0]+" "+fichaAcolocar.posicion[1]);
+        let poscolumna=fichaAcolocar.posicion[0];
+        let posfila=fichaAcolocar.posicion[1];
+        let ganador=false;
+        let coincidenciasenColumna=1;
+        for(let i=0;i<this.columnas-1;i++){
+            let ficha=this.columnaFichas[i][posfila];
+            let fichasiguiente=this.columnaFichas[i+1][posfila];
+           if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
+             coincidenciasenColumna+=1;
+           }else if(coincidenciasenColumna<=this.columnas-4){
+              coincidenciasenColumna=1;
+           }
+        }
+        let coincidenciasenFila=1;
+        for(let i=0;i<this.filas-1;i++){
+            let ficha=this.columnaFichas[poscolumna][i];
+            let fichasiguiente=this.columnaFichas[poscolumna][i+1];
+           if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
+            coincidenciasenFila+=1;
+           }else if(coincidenciasenFila<=this.columnas-4){
+            coincidenciasenFila=1;
+           }
+        }
+        
+        let coincidenciasenDiagonalizquierda=1;
+        let puntaDiagonalarribaIzquierda=this.getpuntaDiagonalIxquierda(poscolumna,posfila);
+        let posdiagonalizquierdacolumna=puntaDiagonalarribaIzquierda.poscolumna;
+        let posdiagonalizquierdafila=puntaDiagonalarribaIzquierda.posfila;
+        // console.log(puntaDiagonalarribaIzquierda.poscolumna+" "+puntaDiagonalarribaIzquierda.posfila);
+        while(posdiagonalizquierdacolumna<this.columnas-1&&posdiagonalizquierdafila<this.filas-1){
+            let ficha=this.columnaFichas[posdiagonalizquierdacolumna][posdiagonalizquierdafila];
+            let fichasiguiente=this.columnaFichas[posdiagonalizquierdacolumna+1][posdiagonalizquierdafila+1];
+            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
+                coincidenciasenDiagonalizquierda+=1;
+               }else if(coincidenciasenDiagonalizquierda<=this.columnas-4){
+                coincidenciasenDiagonalizquierda=1;
+               }
+               posdiagonalizquierdacolumna++;
+               posdiagonalizquierdafila++
+        }
+       
+        let coincidenciasenDiagonalDerecha=1;
+        let puntaDiagonalarribaDerecha=this.getpuntaDiagonalDerecha(poscolumna,posfila);
+        let posdiagonalDerechacolumna=puntaDiagonalarribaDerecha.poscolumna;
+        let posdiagonalDerechadafila=puntaDiagonalarribaDerecha.posfila;
+        // console.log(puntaDiagonalarribaDerecha.poscolumna+" "+puntaDiagonalarribaDerecha.posfila);
+        while(posdiagonalDerechacolumna>=1&&posdiagonalDerechadafila<this.filas-1){
+            let ficha=this.columnaFichas[posdiagonalDerechacolumna][posdiagonalDerechadafila];
+            let fichasiguiente=this.columnaFichas[posdiagonalDerechacolumna-1][posdiagonalDerechadafila+1];
+            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
+                coincidenciasenDiagonalDerecha+=1;
+               }else if(coincidenciasenDiagonalDerecha<=this.columnas-4){
+                coincidenciasenDiagonalDerecha=1;
+               }
+               posdiagonalDerechacolumna--;
+               posdiagonalDerechadafila++;
+        }
+        if(coincidenciasenColumna>=this.columnas-3||coincidenciasenFila>=this.columnas-3||coincidenciasenDiagonalizquierda>=this.columnas-3||coincidenciasenDiagonalDerecha>=this.columnas-3){
+            ganador=true;
+        }
+        if(ganador){
+            console.log("El ganador de la partida es el jugador "+fichaAcolocar.ficha.getJugador());
+        }else{
+           console.log("seguir en juego");
+        }
+        return ganador;
     }
+    getpuntaDiagonalIxquierda(poscolumna,posfila){
+        while(poscolumna>0&&posfila>0){
+            poscolumna--;
+            posfila--;
+        }
+        return {
+            poscolumna: poscolumna,
+            posfila:posfila
+        }
+    }
+    getpuntaDiagonalDerecha(poscolumna,posfila){
+        while(poscolumna<this.columnas-1&&posfila>0){
+            poscolumna++;
+            posfila--;
+        }
+        return {
+            poscolumna: poscolumna,
+            posfila:posfila
+        }
+    }
+
     getPosEnColumna(numeroColumna){
         let respuesta=null;
         for(let i= this.columnaFichas[numeroColumna].length-1;i>=0;i--){
