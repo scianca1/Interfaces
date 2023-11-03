@@ -17,6 +17,7 @@ class Tablero {
         this.isMouseDown = false;
         this.turnoJugador = 0;
         this.time = time;
+        this.cantFichasSeteadas=0;
     }
 
     setTiempo(time){
@@ -24,10 +25,14 @@ class Tablero {
     }
 
     divujarTiempo(){
+        this.ctx.fillStyle="red";
+        let xrect= this.x_tablero+this.anchoTablero/2-48;
+        let yrect=this.y_tablero+this.altoTablero;
+        this.ctx.fillRect(xrect,yrect,100,450-yrect);
         let tiempo = " " + this.time;
-        this.ctx.font = "30px Arial";
+        this.ctx.font = "25px Black Ops One";
         this.ctx.fillStyle = 'black';
-        this.ctx.fillText(tiempo, 490, 45);
+        this.ctx.fillText(tiempo, 490, 444);
 
     }
 
@@ -48,6 +53,15 @@ class Tablero {
             const urlImagen4 = "../imagenes/pelotafutbol.png";
             const imagenCargada4 = await this.cargarImagen(urlImagen4);
             this.imgPelotaDeFutbol = imagenCargada4;
+
+            const urlImagen5 = "../imagenes/PelotaFutboolClarita.png";
+            const imagenCargada5 = await this.cargarImagen(urlImagen5);
+            this.imgPelotaDeFutbolClarita = imagenCargada5;
+
+            const urlImagen6 = "../imagenes/background_canva.jpg";
+            const imagenCargada6 = await this.cargarImagen(urlImagen6);
+            this.imgbackground = imagenCargada6;
+
             return true;
         } catch (error) {
           console.error('Error al cargar la imagen:', error);
@@ -95,9 +109,11 @@ class Tablero {
                 //     tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
                 //     tablero.drawFigures();
                 // }
+                this.cantFichasSeteadas+=1;
                 let y=tablero.lastClickedFigure.getPosY();
                 this.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
                 this.lastClickedFigure.setSeJugo(true);
+                this.lastClickedFigure.setResaltado(false);
                 tablero.drawFigures();
                 // this.caidaFicha(tablero,y,fichaAcolocar);
                 // while(y<=fichaAcolocar.getPosY()){
@@ -116,10 +132,14 @@ class Tablero {
                 }else{
                     this.turnoJugador = 1;
                 }
-            if(this.verificarGanador(fichaYposicion)) {
-                //pensar que hay que hacer cuando uno gana 
-                this.turnoJugador = 0;
-            }
+                if(this.verificarGanador(fichaYposicion)) {
+                    //pensar que hay que hacer cuando uno gana 
+                    this.turnoJugador = 0;
+                }else{
+                    if(this.cantFichasSeteadas==this.columnas*this.filas){
+                        console.log("empate");
+                    }
+                }
                     
             }else{
                 tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
@@ -168,12 +188,53 @@ class Tablero {
         }
         return figura;
     }
+    createHeaderTamblero(){
+        this.ctx.fillStyle= "#1F1F23";
+        this.ctx.fillRect(this.x_tablero,5,this.anchoTablero,this.y_tablero);
+        let x1 = this.x_tablero;
+        let x2 = this.x_tablero;
+        let espacioEntreColumnas=this.anchoTablero/this.columnas;
+        const y1 = 5;
+        const y2 = this.y_tablero;
+        for(let i= 0; i<=this.columnas;i++){
+                // Definir el punto de inicio (x1, y1) y el punto final (x2, y2) de la línea
+                
+                
+                
 
+                // Establecer propiedades de la línea, como el color y el grosor
+               this.ctx.strokeStyle = '#F0F0F0'; // Color de la línea (puedes usar nombres de colores o códigos hexadecimales)
+                this.ctx.lineWidth = 0.5; // Grosor de la línea en píxeles
+
+                // Dibujar la línea
+                this.ctx.beginPath(); // Comienza el trazado
+                this.ctx.moveTo(x1, y1); // Mueve el "lápiz" al punto de inicio
+                this.ctx.lineTo(x2, y2); // Dibuja una línea hasta el punto final
+                this.ctx.stroke(); // Aplica el trazado
+
+                // Cierra el trazado (opcional)
+                this.ctx.closePath();
+                x1+=espacioEntreColumnas;
+                x2+=espacioEntreColumnas;
+
+
+        }
+        let width=this.x_tablero+espacioEntreColumnas/2;
+        let height = this.y_tablero/2+5;
+        for(let columna = 0; columna < this.columnas; columna++){
+            
+              
+            let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbolClarita,0, true);
+            fichaPrueba.draw();    
+            width += espacioEntreColumnas; 
+        }  
+    }
     
     createTablero(){
-            this.divujarTiempo();
+            this.createHeaderTamblero();
             this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
             this.ctx.drawImage(this.imgTablero,this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
+            this.divujarTiempo();
     }
 
     obtenerPosCanvas(e){
@@ -222,8 +283,9 @@ class Tablero {
     }
 
     clearCanvas(){
-        this.ctx.fillStyle = "white";
+        // this.ctx.fillStyle = "white";
         this.ctx.fillRect(0, 0, canvas.width, canvas.height);
+        this.ctx.drawImage(this.imgbackground,0,0,1050,450);
     }
 
     agregarFichasJugables(imagenJugadorUno, imagenJugadorDos){
@@ -233,6 +295,35 @@ class Tablero {
         let widthEquipoUno = 40;
         let widthEquipoDos = 1000;
         let height = 400;
+        if(this.columnas*this.filas>42){
+            for(let i = 0; i < fichasPorEquipo; i++){
+               if(i==fichasPorEquipo/2){ 
+                widthEquipoUno+=55
+                height=400;
+                      
+                }
+                let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1, false);
+                this.fichasEquipoUno.push(f);
+                height -= 15;
+            }
+            height = 400;
+                for(let i = 0; i < fichasPorEquipo; i++){
+                    if(i==fichasPorEquipo/2){ 
+                        widthEquipoDos-=55
+                        height=400;
+                              
+                    }
+                    let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos,2, false);
+                    this.fichasEquipoDos.push(f);
+                    height -= 15;
+                }
+            for(let i = 0; i<fichasPorEquipo;i++){
+                this.fichasEquipoUno[i].draw();
+            }
+            for(let i=0; i<fichasPorEquipo;i++){
+                this.fichasEquipoDos[i].draw();
+            }
+        }else{
                 for(let i = 0; i < fichasPorEquipo; i++){
                     let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1, false);
                     this.fichasEquipoUno.push(f);
@@ -250,6 +341,7 @@ class Tablero {
                 for(let i=0; i<fichasPorEquipo;i++){
                     this.fichasEquipoDos[i].draw();
                 }
+            }
         
     }
     isvalid(pos){

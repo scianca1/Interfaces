@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     // }, false);
 
     //let tablero = new Tablero(canvas, ctx, "red", 40, 20, 220, 130, 6, 7, 7);
-    let juego = new CuatroEnLinea(canvas, ctx, "red", 170, 70, 700, 350, 6, 7, 20, "../imagenes/canchafutbol.jpg", "../imagenes/Ficha_Argentina.png", "../imagenes/fichaFrancia.png");
+    let juego = new CuatroEnLinea(canvas, ctx, "red", 170, 70, 700, 350, 8, 9, 18, "../imagenes/canchafutbol.jpg", "../imagenes/Ficha_brazil.png", "../imagenes/fichaFrancia.png");
     juego.iniciarJuego();
    
 
