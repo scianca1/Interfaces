@@ -6,21 +6,21 @@ htmlsPantallas = [
             <h2 class="tituloTableros">elegir modalidad de juego</h2>
             <div class="form-check-tablero">
                 <img class="imagenTablero" src="../imagenes/tablero6x7.png" alt="">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="4enLinea" value="4" checked>
                 <label class="form-check-label" for="flexRadioDefault1">
                     4 en linea
                 </label>
             </div>
             <div class="form-check-tablero">
                 <img class="imagenTablero" src="../imagenes/tablero7x8.png" alt="">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="5enLinea" value="5">
                 <label class="form-check-label" for="flexRadioDefault1">
                     5 en linea
                 </label>
             </div>
             <div class="form-check-tablero">
                 <img class="imagenTablero" src="../imagenes/tablero8x9.png" alt="">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="6enLinea" value="6">
                 <label class="form-check-label" for="flexRadioDefault2">
                     6 en linea
                 </label>
@@ -88,10 +88,9 @@ htmlsPantallas = [
     },
     {
         nombre: "pantallaEmpate",
-        html: `
-                    <h1 class="textoGanador">es un empate!, puedes intentar de nuevo ;)</h1>
+        html: ` <div class="PantallaEmpate">
+                    <h1 class="textoGanador">es un empate!, pueden intentarlo de nuevo ;)</h1>
                     <button class="botonPrimario botonJugarJuego" id="botonVolveraJugar">volver a jugar</button>
-                </div>
                 `
     }
 ]

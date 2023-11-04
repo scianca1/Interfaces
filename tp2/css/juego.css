@@ -487,6 +487,11 @@ width: auto;
 .redes-pop-up{
     margin-top: 10px;
 }
+.PantallaEmpate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 

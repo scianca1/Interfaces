@@ -1,7 +1,7 @@
 "use strict";
 
 class Tablero {
-    constructor(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, time){
+    constructor(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, time,equipo1,equipo2,cuatroEnLinea){
         this.canvas = canvas;
         this.ctx = ctx;
         this.columnaFichas= [];
@@ -18,6 +18,9 @@ class Tablero {
         this.turnoJugador = 0;
         this.time = time;
         this.cantFichasSeteadas=0;
+        this.equipo1=equipo1;
+        this.equipo2=equipo2;
+        this.cuatroEnLinea=cuatroEnLinea;
     }
 
     setTiempo(time){
@@ -134,9 +137,33 @@ class Tablero {
                 }
                 if(this.verificarGanador(fichaYposicion)) {
                     //pensar que hay que hacer cuando uno gana 
+                    let pantallaInicio = document.querySelector("#inicioJuego");
+                    let contenidoPantallaInicio = htmlsPantallas[1];
+                    let contenido = contenidoPantallaInicio.head;
+                    contenido += "felicidades, ha ganado  "+this.lastClickedFigure.getEquipo();
+                    contenido += contenidoPantallaInicio.body;
+                    pantallaInicio.innerHTML = contenido;
+                    let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
+                    this.cuatroEnLinea.setTiempo(-1);
+                    pantallaInicio.style.display = "flex";
+                    botonVolveraJugar.addEventListener("click", ()=>{
+                        window.location.reload();
+                    })
                     this.turnoJugador = 0;
+                    
                 }else{
                     if(this.cantFichasSeteadas==this.columnas*this.filas){
+                        let pantallaInicio = document.querySelector("#inicioJuego");
+                        let contenidoPantallaInicio = htmlsPantallas[2];
+                        contenidoPantallaInicio.html+=`</div>`;
+                        pantallaInicio.innerHTML = contenidoPantallaInicio.html;
+                        let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
+                        this.cuatroEnLinea.setTiempo(-1);
+                        pantallaInicio.style.display = "flex";
+                        botonVolveraJugar.addEventListener("click", ()=>{
+                            window.location.reload();
+                        });
+                        
                         console.log("empate");
                     }
                 }
@@ -224,7 +251,7 @@ class Tablero {
         for(let columna = 0; columna < this.columnas; columna++){
             
               
-            let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbolClarita,0, true);
+            let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbolClarita,0, true,null);
             fichaPrueba.draw();    
             width += espacioEntreColumnas; 
         }  
@@ -254,7 +281,7 @@ class Tablero {
                 let filaFichas = [];
                 height = (distanciaEntreFilas / 2) + this.y_tablero;
                     for(let i = 0; i < this.filas; i++){
-                        let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbol,0, true);
+                        let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbol,0, true,null);
                         filaFichas.push(fichaPrueba);
                         height = height + distanciaEntreFilas;
                     }
@@ -302,7 +329,7 @@ class Tablero {
                 height=400;
                       
                 }
-                let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1, false);
+                let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1, false,this.equipo1);
                 this.fichasEquipoUno.push(f);
                 height -= 15;
             }
@@ -313,7 +340,7 @@ class Tablero {
                         height=400;
                               
                     }
-                    let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos,2, false);
+                    let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos,2, false,this.equipo2);
                     this.fichasEquipoDos.push(f);
                     height -= 15;
                 }
@@ -325,13 +352,13 @@ class Tablero {
             }
         }else{
                 for(let i = 0; i < fichasPorEquipo; i++){
-                    let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1, false);
+                    let f = new Ficha(widthEquipoUno,height,this.radio,"red", this.ctx, this.imgJugadorUno,1, false,this.equipo1);
                     this.fichasEquipoUno.push(f);
                     height -= 15;
                 }
                 height = 400;
                     for(let i = 0; i < fichasPorEquipo; i++){
-                        let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos,2, false);
+                        let f = new Ficha(widthEquipoDos,height,this.radio,"red", this.ctx, this.imgJugadorDos,2, false,this.equipo2);
                         this.fichasEquipoDos.push(f);
                         height -= 15;
                     }

@@ -10,41 +10,48 @@ document.addEventListener("DOMContentLoaded",()=>{
     
     let pantallaInicio = document.querySelector("#inicioJuego");
     let contenidoPantallaInicio = htmlsPantallas[0];
-    //cambiando el 0 por el 1 = pantalla gandor, y el 0 por el 2, empate
-    if(contenidoPantallaInicio.nombre == "pantallaInicio"){
-        pantallaInicio.innerHTML = contenidoPantallaInicio.html;
-        let botonJugarJuego = document.querySelector("#botonJugarJuego");
-        botonJugarJuego.addEventListener("click", ()=>{
-            pantallaInicio.style.display = "none";
-            let filas;
-            let columnas;
-            let equipoUno;
-            let equipoDos;
-            console.log(canvas);
-            //cargar data, e iniciar el juego
-            let juego = new CuatroEnLinea(canvas, ctx, "red", 170, 70, 700, 350, 6, 7, 20, "../imagenes/canchafutbol.jpg", "../imagenes/Ficha_brazil.png", "../imagenes/fichaFrancia.png");
-            juego.iniciarJuego();
-        })
-    }else if(contenidoPantallaInicio.nombre == "pantallaGanador"){
-        let contenido = contenidoPantallaInicio.head;
-        contenido += "felicidades, ha ganado el jugador 1";
-        contenido += contenidoPantallaInicio.body;
-        pantallaInicio.innerHTML = contenido;
-        let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
-        botonVolveraJugar.addEventListener("click", ()=>{
-            window.location.reload();
-        })
-    }else if(contenidoPantallaInicio.nombre == "pantallaEmpate"){
-        pantallaInicio.innerHTML = contenidoPantallaInicio.html;
-        let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
-        botonVolveraJugar.addEventListener("click", ()=>{
-            window.location.reload();
-        })
-    }
-   
+    pantallaInicio.innerHTML = contenidoPantallaInicio.html;
+    let botonJugarJuego = document.querySelector("#botonJugarJuego");
+    botonJugarJuego.addEventListener("click", ()=>{
 
-    
+        pantallaInicio.style.display = "none";
 
+        let opciones = document.getElementsByName("flexRadioDefault");
+        let opcionSeleccionada;
+
+        for (let i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) {
+                opcionSeleccionada = opciones[i].value;
+                break;
+            }
+        }
+
+       console.log("Opción seleccionada:", opcionSeleccionada);
+
+        let filas;
+        let columnas;
+        let radio;
+        if(opcionSeleccionada==4){
+            filas=6;
+            columnas=7;
+            radio=20;
+        }else if(opcionSeleccionada==5){
+            filas=7;
+            columnas=8;
+            radio=17;
+        }
+        else if(opcionSeleccionada==6){
+            filas=8;
+            columnas=9;
+            radio=17;
+        }
+        let equipoUno;
+        let equipoDos;
+        console.log(canvas);
+        //cargar data, e iniciar el juego
+        let juego = new CuatroEnLinea(canvas, ctx, "red", 170, 70, 700, 350, filas, columnas, radio, "../imagenes/canchafutbol.jpg", "../imagenes/Ficha_brazil.png", "../imagenes/fichaFrancia.png","Brazil","Francia");
+        juego.iniciarJuego();
+    });
     
 
 });

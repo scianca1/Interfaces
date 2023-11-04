@@ -1,12 +1,12 @@
 class CuatroEnLinea {
-    constructor(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, imgTablero, imgJugador1, imgJugador2){
+    constructor(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, imgTablero, imgJugador1, imgJugador2,equipo1,equipo2){
         this.canvas = canvas;
         this.ctx = ctx;
         this.imgTableroUrl = imgTablero;
         this.imgJugador1Url = imgJugador1;
         this.imgJugador2Url = imgJugador2;
         this.tiempo = 240;
-        this.tablero = new Tablero(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, this.tiempo);
+        this.tablero = new Tablero(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, this.tiempo,equipo1,equipo2,this);
     }
 
     iniciarTemporizador(){
@@ -16,7 +16,22 @@ class CuatroEnLinea {
             this.tablero.drawFigures();
             if(this.tiempo == 0){
                 clearInterval(timer);
+                let pantallaInicio = document.querySelector("#inicioJuego");
+                let contenidoPantallaInicio = htmlsPantallas[2];
+                contenidoPantallaInicio.html+=`<p>El tiempo llego a 0<p></div>`;
+                pantallaInicio.innerHTML = contenidoPantallaInicio.html;
+                let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
+                pantallaInicio.style.display = "flex";
+                botonVolveraJugar.addEventListener("click", ()=>{
+                    window.location.reload();
+                });
+                
+                console.log("empate");
                 //terminar juego en empate
+            }else if(this.tiempo==-2){
+                this.tablero.setTiempo(0);            
+                this.tablero.drawFigures();
+                clearInterval(timer);
             }
         }, 1000)
     }
@@ -43,5 +58,8 @@ class CuatroEnLinea {
 
     setTablero(tablero){
         this.tablero = tablero;
+    }
+    setTiempo(tiempo){
+        this.tiempo=tiempo;
     }
 }
