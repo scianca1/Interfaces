@@ -32,21 +32,21 @@ htmlsPantallas = [
             <form class="formFichas">
                 <div class="form-check">
                     <img class="imagenFicha" src="../imagenes/fichaFrancia.png" alt="">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <input class="form-check-input" type="radio" name="Equipos1" id="flexRadioDefault1" value="francia" checked>
                     <label class="form-check-label" for="flexRadioDefault1">
                         francia
                     </label>
                 </div>
                 <div class="form-check">
                     <img class="imagenFicha" src="../imagenes/Ficha_Argentina.png" alt="">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="Equipos1" id="flexRadioDefault1" value="argentina">
                     <label class="form-check-label" for="flexRadioDefault1">
                         argentina
                     </label>
                 </div>
                 <div class="form-check">
                     <img class="imagenFicha" src="../imagenes/Ficha_brazil.png" alt="">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="Equipos1" id="flexRadioDefault2" value="brasil">
                     <label class="form-check-label" for="flexRadioDefault2">
                         brasil
                     </label>
@@ -56,21 +56,21 @@ htmlsPantallas = [
             <form class="formFichas">
                 <div class="form-check">
                     <img class="imagenFicha" src="../imagenes/fichaFrancia.png" alt="">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="Equipos2" id="flexRadioDefault1" value="francia" >
                     <label class="form-check-label" for="flexRadioDefault1">
                         francia
                     </label>
                 </div>
                 <div class="form-check">
                     <img class="imagenFicha" src="../imagenes/Ficha_Argentina.png" alt="">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <input class="form-check-input" type="radio" name="Equipos2" id="flexRadioDefault1" value="argentina" checked>
                     <label class="form-check-label" for="flexRadioDefault1">
                         argentina
                     </label>
                 </div>
                 <div class="form-check">
                     <img class="imagenFicha" src="../imagenes/Ficha_brazil.png" alt="">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="Equipos2" id="flexRadioDefault2" value="brasil">
                     <label class="form-check-label" for="flexRadioDefault2">
                         brasil
                     </label>
