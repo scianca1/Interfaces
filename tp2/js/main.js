@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             imagenesFichasJugUno.forEach(f => {
                 f.style.border = 'none';
             })
-            ficha.style.border = 'solid 3px red';
+            ficha.style.border = 'solid 5px red';
             ficha.nextElementSibling.checked = true;
         })
     });
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             imagenesFichasJugDos.forEach(f => {
                 f.style.border = 'none';
             })
-            ficha.style.border = 'solid 3px red';
+            ficha.style.border = 'solid 5px red';
             ficha.nextElementSibling.checked = true;
         })
     });
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             imagenesTableros.forEach(img => {
                 img.style.border = 'none';
             })
-            imagen.style.border = 'solid 3px red';
+            imagen.style.border = 'solid 5px red';
             imagen.nextElementSibling.checked = true;
         })
     });

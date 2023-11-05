@@ -137,7 +137,8 @@ class Tablero {
                 }
                 if(this.verificarGanador(fichaYposicion)) {
                     //pensar que hay que hacer cuando uno gana 
-                    let pantallaInicio = document.querySelector("#inicioJuego");
+                    const timer = setTimeout(()=>{
+                        let pantallaInicio = document.querySelector("#inicioJuego");
                     let contenidoPantallaInicio = htmlsPantallas[1];
                     let contenido = contenidoPantallaInicio.head;
                     contenido += "felicidades, ha ganado  "+this.lastClickedFigure.getEquipo();
@@ -150,6 +151,8 @@ class Tablero {
                         window.location.reload();
                     })
                     this.turnoJugador = 0;
+                    }, 3000);
+                  
                     
                 }else{
                     if(this.cantFichasSeteadas==this.columnas*this.filas){
@@ -415,13 +418,21 @@ class Tablero {
         let posfila=fichaAcolocar.posicion[1];
         let ganador=false;
         let coincidenciasenColumna=1;
+        let fichasganadorasEnColumna=[];
         for(let i=0;i<this.columnas-1;i++){
             let ficha=this.columnaFichas[i][posfila];
             let fichasiguiente=this.columnaFichas[i+1][posfila];
            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
              coincidenciasenColumna+=1;
+             if(!fichasganadorasEnColumna.includes(ficha)){
+                fichasganadorasEnColumna.push(ficha);
+             }
+             if(!fichasganadorasEnColumna.includes(fichasiguiente)){
+                fichasganadorasEnColumna.push(fichasiguiente);
+             }
            }else if(coincidenciasenColumna<=this.columnas-4){
               coincidenciasenColumna=1;
+              fichasganadorasEnColumna=[];
            }
         }
         let coincidenciasenFila=1;
@@ -470,6 +481,24 @@ class Tablero {
         }
         if(coincidenciasenColumna>=this.columnas-3||coincidenciasenFila>=this.columnas-3||coincidenciasenDiagonalizquierda>=this.columnas-3||coincidenciasenDiagonalDerecha>=this.columnas-3){
             ganador=true;
+            fichasganadorasEnColumna.forEach(ficha => {
+                if(ficha.getJugador()==1){
+                    this.fichasEquipoUno.forEach(fichaJugador1 => {
+                        if(fichaJugador1.isPointedInside(ficha.getPosX(),ficha.getPosY())){
+                            fichaJugador1.setResaltado(true);
+                        }
+                    });
+                }else {
+                    this.fichasEquipoDos.forEach(fichaJugador2 => {
+                        if(fichaJugador2.isPointedInside(ficha.getPosX(),ficha.getPosY())){
+                            fichaJugador2.setResaltado(true);
+                        }
+                    });
+                }
+               
+            });
+            this.drawFigures();
+           
         }
         if(ganador){
             console.log("El ganador de la partida es el jugador "+fichaAcolocar.ficha.getJugador());
