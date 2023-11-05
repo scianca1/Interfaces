@@ -119,22 +119,40 @@
     align-items: center;
     background-color: var(--secondaryColor);
     border-radius: 9px;
+    height: 41%;
     width: 80%;
+}
+.objetivo p{
+    text-align: center;
+}
+.controles p{
+    text-align: center;
 }
 .instrucciones h3{
     margin: 4px;
     color:var(--blanco);
 }
 .instrucciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 85%;
+    height: 35%;
     border-bottom: solid 0.5px var(--blancotransparente46);
     padding-bottom: 3px;
     margin-bottom: 10px;
 }
+.imagenesJuego img{
+    width: 45%;
+    height: 130px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
 .publicidad-juego{
     width: 80%;
     height: 475px;
-    margin-top: 76px;
+    margin-top: 62px;
     margin-bottom: 15px;
 }
 .descripcion{
@@ -142,8 +160,9 @@
     background-color: var(--secondaryColor);
     border: var(--primaryColor) solid 1px;
     border-radius: 12px;
-    width: 100%;
-    margin: 64px;
+    width: 97.5%;
+    margin-top: 64px;
+    margin-bottom: 64px;
 
 }
 .instrucciones-Juego h2{
@@ -167,7 +186,7 @@
  width:130px;
  margin: 19px;
  margin-left: 0px;
- margin-bottom: 30px;
+ margin-bottom: 0px;
 }
 .icono-compartir{
 height: 100%;
@@ -200,7 +219,7 @@ width: auto;
 }
 .resumen{
     display: flex;
-    height: 202px;
+    height: 100px;
     margin-left: 5px;
     margin-right: 5px;
    
