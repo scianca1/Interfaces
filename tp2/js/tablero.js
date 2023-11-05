@@ -154,9 +154,10 @@ class Tablero {
                 }else{
                     if(this.cantFichasSeteadas==this.columnas*this.filas){
                         let pantallaInicio = document.querySelector("#inicioJuego");
-                        let contenidoPantallaInicio = htmlsPantallas[2];
-                        contenidoPantallaInicio.html+=`</div>`;
-                        pantallaInicio.innerHTML = contenidoPantallaInicio.html;
+                        let contenidoPantallaInicio = htmlsPantallas[2].head;
+                        contenidoPantallaInicio +=`todas las casillas estan ocupadas :(`;
+                        contenidoPantallaInicio += htmlsPantallas[2].body;
+                        pantallaInicio.innerHTML = contenidoPantallaInicio;
                         let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
                         this.cuatroEnLinea.setTiempo(-1);
                         pantallaInicio.style.display = "flex";

@@ -12,10 +12,38 @@ document.addEventListener("DOMContentLoaded",()=>{
     let contenidoPantallaInicio = htmlsPantallas[0];
     pantallaInicio.innerHTML = contenidoPantallaInicio.html;
     let botonJugarJuego = document.querySelector("#botonJugarJuego");
+    let imagenesTableros = document.querySelectorAll(".imagenTablero");
+    let imagenesFichasJugUno = document.querySelectorAll(".imagenFichaJugUno");
+    let imagenesFichasJugDos = document.querySelectorAll(".imagenFichaJugDos");
+    
+    imagenesFichasJugUno.forEach(ficha => {
+        ficha.addEventListener("click", ()=>{
+            imagenesFichasJugUno.forEach(f => {
+                f.style.border = 'none';
+            })
+            ficha.style.border = 'solid 3px red';
+            ficha.nextElementSibling.checked = true;
+        })
+    });
+    imagenesFichasJugDos.forEach(ficha => {
+        ficha.addEventListener("click", ()=>{
+            imagenesFichasJugDos.forEach(f => {
+                f.style.border = 'none';
+            })
+            ficha.style.border = 'solid 3px red';
+            ficha.nextElementSibling.checked = true;
+        })
+    });
+    imagenesTableros.forEach(imagen => {
+        imagen.addEventListener("click", ()=>{
+            imagenesTableros.forEach(img => {
+                img.style.border = 'none';
+            })
+            imagen.style.border = 'solid 3px red';
+            imagen.nextElementSibling.checked = true;
+        })
+    });
     botonJugarJuego.addEventListener("click", ()=>{
-
-        
-
         let tableros = document.getElementsByName("flexRadioDefault");
         let tableroSeleccionado;
 

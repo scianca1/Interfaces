@@ -17,9 +17,10 @@ class CuatroEnLinea {
             if(this.tiempo == 0){
                 clearInterval(timer);
                 let pantallaInicio = document.querySelector("#inicioJuego");
-                let contenidoPantallaInicio = htmlsPantallas[2];
-                contenidoPantallaInicio.html+=`<p>El tiempo llego a 0<p></div>`;
-                pantallaInicio.innerHTML = contenidoPantallaInicio.html;
+                let contenidoPantallaInicio = htmlsPantallas[2].head;
+                contenidoPantallaInicio += `El tiempo llego a 0 :(`;
+                contenidoPantallaInicio += htmlsPantallas[2].body;
+                pantallaInicio.innerHTML = contenidoPantallaInicio;
                 let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
                 pantallaInicio.style.display = "flex";
                 botonVolveraJugar.addEventListener("click", ()=>{

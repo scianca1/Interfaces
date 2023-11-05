@@ -6,7 +6,6 @@
     
 }
 .content-juego{
-    
     margin-left: 40px;
 }
 .Titulo{
@@ -14,7 +13,6 @@
     font-family: 'open sans';
 }
 .Ventana-Juego{
-    /* background-color: black; */
     width: 1050px;
     height: 450px;
 }
@@ -27,7 +25,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.854);
+    background-image: url(../imagenes/fotomundial.jpg);
+    background-size: cover;
+    background-position: center top;
+    /* background-color: rgba(0, 0, 0, 0.854); */
     position: absolute;
     z-index: 3;
     width: 1050px;
@@ -65,8 +66,13 @@
     margin-left: 50px;
 }
 .textoGanador{
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
+    color: rgb(234, 255, 0);
+}
+.form-check-input{
+    display: none;
 }
 .formFichas{
     display: flex;
@@ -89,10 +95,13 @@
     height: 100px;
     margin: 10px;
     margin-right: 20px;
+    border: none;
 }
 .imagenFicha{
     width: 40px;
     height: 40px;
+    border-radius: 25px;
+    border: none;
 }
 .img-4enlinea{
     width: 100%;
