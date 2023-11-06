@@ -30,7 +30,6 @@
     background-position: center top;
     /* background-color: rgba(0, 0, 0, 0.854); */
     position: absolute;
-    z-index: 3;
     width: 1050px;
     height: 450px;
 }
