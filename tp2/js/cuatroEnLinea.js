@@ -13,7 +13,7 @@ class CuatroEnLinea {
         const timer = setInterval(()=>{
             this.tiempo--;
             this.tablero.setTiempo(this.tiempo);            
-            this.tablero.drawFigures();
+            this.tablero.divujarTiempo();
             if(this.tiempo == 0){
                 clearInterval(timer);
                 let pantallaInicio = document.querySelector("#inicioJuego");
