@@ -301,14 +301,16 @@ class Tablero {
     caidaFicha(tablero,y_fichaInicial,fichaAcolocar){
         tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y_fichaInicial);
         tablero.drawFigures();
-        y_fichaInicial+=10;
+        y_fichaInicial+=15;
         if(y_fichaInicial<=fichaAcolocar.getPosY()){
             
-            setTimeout(()=>{   
-                this.caidaFicha(tablero,y_fichaInicial,fichaAcolocar)
+           let intervaloCaida= setTimeout(()=>{   
+                this.caidaFicha(tablero,y_fichaInicial,fichaAcolocar);
+                clearTimeout(intervaloCaida);
             }
-            ,10);
-        }else{
+            ,50);
+        }
+        else{
             tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
             this.drawFigures();
         }
