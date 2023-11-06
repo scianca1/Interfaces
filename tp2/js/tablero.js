@@ -419,84 +419,115 @@ class Tablero {
         let ganador=false;
         let coincidenciasenColumna=1;
         let fichasganadorasEnColumna=[];
+        let haySufucientesFichas = false;
         for(let i=0;i<this.columnas-1;i++){
             let ficha=this.columnaFichas[i][posfila];
             let fichasiguiente=this.columnaFichas[i+1][posfila];
-           if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
-             coincidenciasenColumna+=1;
-             if(!fichasganadorasEnColumna.includes(ficha)){
-                fichasganadorasEnColumna.push(ficha);
-             }
-             if(!fichasganadorasEnColumna.includes(fichasiguiente)){
-                fichasganadorasEnColumna.push(fichasiguiente);
-             }
-           }else if(coincidenciasenColumna<=this.columnas-4){
-              coincidenciasenColumna=1;
-              fichasganadorasEnColumna=[];
-           }
+            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0 && !haySufucientesFichas){
+                coincidenciasenColumna+=1;
+                if(!fichasganadorasEnColumna.includes(ficha)){
+                    fichasganadorasEnColumna.push(ficha);
+                }
+                if(!fichasganadorasEnColumna.includes(fichasiguiente)){
+                    fichasganadorasEnColumna.push(fichasiguiente);
+                }
+                if(fichasganadorasEnColumna.length >= this.columnas-3){
+                    haySufucientesFichas = true;
+                }
+            }else if(coincidenciasenColumna<=this.columnas-4){
+                coincidenciasenColumna=1;
+                fichasganadorasEnColumna=[];
+            }
         }
         let coincidenciasenFila=1;
+        let fichasganadorasEnFila = [];
         for(let i=0;i<this.filas-1;i++){
             let ficha=this.columnaFichas[poscolumna][i];
             let fichasiguiente=this.columnaFichas[poscolumna][i+1];
-           if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
-            coincidenciasenFila+=1;
-           }else if(coincidenciasenFila<=this.columnas-4){
-            coincidenciasenFila=1;
-           }
+            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0 && !haySufucientesFichas){
+                coincidenciasenFila+=1;
+                if(!fichasganadorasEnFila.includes(ficha)){
+                    fichasganadorasEnFila.push(ficha);
+                }
+                if(!fichasganadorasEnFila.includes(fichasiguiente)){
+                    fichasganadorasEnFila.push(fichasiguiente);
+                }
+                if(fichasganadorasEnFila.length >= this.columnas-3){
+                    haySufucientesFichas = true;
+                }
+            }else if(coincidenciasenFila<=this.columnas-4){
+                coincidenciasenFila=1;
+                fichasganadorasEnFila = [];
+            }
         }
         
         let coincidenciasenDiagonalizquierda=1;
         let puntaDiagonalarribaIzquierda=this.getpuntaDiagonalIxquierda(poscolumna,posfila);
         let posdiagonalizquierdacolumna=puntaDiagonalarribaIzquierda.poscolumna;
         let posdiagonalizquierdafila=puntaDiagonalarribaIzquierda.posfila;
+        let fichasganadorasEnDiagonalIzquierda = [];
         // console.log(puntaDiagonalarribaIzquierda.poscolumna+" "+puntaDiagonalarribaIzquierda.posfila);
         while(posdiagonalizquierdacolumna<this.columnas-1&&posdiagonalizquierdafila<this.filas-1){
             let ficha=this.columnaFichas[posdiagonalizquierdacolumna][posdiagonalizquierdafila];
             let fichasiguiente=this.columnaFichas[posdiagonalizquierdacolumna+1][posdiagonalizquierdafila+1];
-            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
+            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0 && !haySufucientesFichas){
                 coincidenciasenDiagonalizquierda+=1;
-               }else if(coincidenciasenDiagonalizquierda<=this.columnas-4){
+                if(!fichasganadorasEnDiagonalIzquierda.includes(ficha)){
+                    fichasganadorasEnDiagonalIzquierda.push(ficha);
+                }
+                if(!fichasganadorasEnDiagonalIzquierda.includes(fichasiguiente)){
+                    fichasganadorasEnDiagonalIzquierda.push(fichasiguiente);
+                }
+                if(fichasganadorasEnDiagonalIzquierda.length >= this.columnas-3){
+                    haySufucientesFichas = true;
+                }
+            }else if(coincidenciasenDiagonalizquierda<=this.columnas-4){
                 coincidenciasenDiagonalizquierda=1;
-               }
-               posdiagonalizquierdacolumna++;
-               posdiagonalizquierdafila++
+            }
+            posdiagonalizquierdacolumna++;
+            posdiagonalizquierdafila++
         }
        
         let coincidenciasenDiagonalDerecha=1;
         let puntaDiagonalarribaDerecha=this.getpuntaDiagonalDerecha(poscolumna,posfila);
         let posdiagonalDerechacolumna=puntaDiagonalarribaDerecha.poscolumna;
         let posdiagonalDerechadafila=puntaDiagonalarribaDerecha.posfila;
+        let fichasganadorasEnDiagonalDerecha = [];
         // console.log(puntaDiagonalarribaDerecha.poscolumna+" "+puntaDiagonalarribaDerecha.posfila);
         while(posdiagonalDerechacolumna>=1&&posdiagonalDerechadafila<this.filas-1){
             let ficha=this.columnaFichas[posdiagonalDerechacolumna][posdiagonalDerechadafila];
             let fichasiguiente=this.columnaFichas[posdiagonalDerechacolumna-1][posdiagonalDerechadafila+1];
-            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!=0){
+            if(ficha.getJugador()==fichasiguiente.getJugador()&&ficha.getJugador()!= 0 && !haySufucientesFichas){
                 coincidenciasenDiagonalDerecha+=1;
-               }else if(coincidenciasenDiagonalDerecha<=this.columnas-4){
-                coincidenciasenDiagonalDerecha=1;
-               }
-               posdiagonalDerechacolumna--;
-               posdiagonalDerechadafila++;
+                if(!fichasganadorasEnDiagonalDerecha.includes(ficha)){
+                    fichasganadorasEnDiagonalDerecha.push(ficha);
+                }
+                if(!fichasganadorasEnDiagonalDerecha.includes(fichasiguiente)){
+                    fichasganadorasEnDiagonalDerecha.push(fichasiguiente);
+                }
+                if(fichasganadorasEnDiagonalDerecha.length >= this.columnas-3){
+                    haySufucientesFichas = true;
+                }
+                }else if(coincidenciasenDiagonalDerecha<=this.columnas-4){
+                    coincidenciasenDiagonalDerecha=1;
+                }
+                posdiagonalDerechacolumna--;
+                posdiagonalDerechadafila++;
         }
         if(coincidenciasenColumna>=this.columnas-3||coincidenciasenFila>=this.columnas-3||coincidenciasenDiagonalizquierda>=this.columnas-3||coincidenciasenDiagonalDerecha>=this.columnas-3){
             ganador=true;
-            fichasganadorasEnColumna.forEach(ficha => {
-                if(ficha.getJugador()==1){
-                    this.fichasEquipoUno.forEach(fichaJugador1 => {
-                        if(fichaJugador1.isPointedInside(ficha.getPosX(),ficha.getPosY())){
-                            fichaJugador1.setResaltado(true);
-                        }
-                    });
-                }else {
-                    this.fichasEquipoDos.forEach(fichaJugador2 => {
-                        if(fichaJugador2.isPointedInside(ficha.getPosX(),ficha.getPosY())){
-                            fichaJugador2.setResaltado(true);
-                        }
-                    });
-                }
-               
-            });
+            if(fichasganadorasEnColumna.length >= this.columnas-3){
+                this.resaltarFichasGanadoras(fichasganadorasEnColumna);
+            }
+            else if(fichasganadorasEnFila.length >= this.columnas-3){
+                this.resaltarFichasGanadoras(fichasganadorasEnFila);
+            }
+            else if(fichasganadorasEnDiagonalIzquierda.length >= this.columnas-3){
+                this.resaltarFichasGanadoras(fichasganadorasEnDiagonalIzquierda);
+            }
+            else if(fichasganadorasEnDiagonalDerecha.length >= this.columnas-3){
+                this.resaltarFichasGanadoras(fichasganadorasEnDiagonalDerecha);
+            }
             this.drawFigures();
            
         }
@@ -506,6 +537,25 @@ class Tablero {
            console.log("seguir en juego");
         }
         return ganador;
+    }
+
+    resaltarFichasGanadoras(arrayDeFichasGanadoras){
+        arrayDeFichasGanadoras.forEach(ficha => {
+            if(ficha.getJugador()==1){
+                this.fichasEquipoUno.forEach(fichaJugador1 => {
+                    if(fichaJugador1.isPointedInside(ficha.getPosX(),ficha.getPosY())){
+                        fichaJugador1.setResaltado(true);
+                    }
+                });
+            }else{
+                this.fichasEquipoDos.forEach(fichaJugador2 => {
+                    if(fichaJugador2.isPointedInside(ficha.getPosX(),ficha.getPosY())){
+                        fichaJugador2.setResaltado(true);
+                    }
+                });
+            }
+        
+        });
     }
     getpuntaDiagonalIxquierda(poscolumna,posfila){
         while(poscolumna>0&&posfila>0){
