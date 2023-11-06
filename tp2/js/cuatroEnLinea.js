@@ -40,6 +40,7 @@ class CuatroEnLinea {
     async iniciarJuego(){
         let imgCargadas = await this.tablero.cargarTodasLasImagenes(this.imgTableroUrl, this.imgJugador1Url, this.imgJugador2Url);
         if (imgCargadas){
+            this.tablero.clearCanvas();
             this.tablero.createTablero();
             this.tablero.cargarFichas();
             this.tablero.agregarFichasJugables();

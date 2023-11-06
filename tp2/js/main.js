@@ -15,7 +15,13 @@ document.addEventListener("DOMContentLoaded",()=>{
     let imagenesTableros = document.querySelectorAll(".imagenTablero");
     let imagenesFichasJugUno = document.querySelectorAll(".imagenFichaJugUno");
     let imagenesFichasJugDos = document.querySelectorAll(".imagenFichaJugDos");
+    let botonReiniciar = document.querySelector("#botonReiniciar");
     
+
+    botonReiniciar.addEventListener("click", ()=>{
+        window.location.reload();
+    });
+
     imagenesFichasJugUno.forEach(ficha => {
         ficha.addEventListener("click", ()=>{
             imagenesFichasJugUno.forEach(f => {
