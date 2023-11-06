@@ -127,12 +127,14 @@
 }
 .objetivo p{
     text-align: center;
+    margin:0;
 }
 .controles p{
     text-align: center;
+    margin:0;
 }
 .instrucciones h3{
-    margin: 4px;
+    margin: 6px;
     color:var(--blanco);
 }
 .instrucciones{
@@ -145,6 +147,9 @@
     border-bottom: solid 0.5px var(--blancotransparente46);
     padding-bottom: 3px;
     margin-bottom: 10px;
+}
+.sinBorde{
+    border:0;
 }
 .imagenesJuego img{
     width: 45%;

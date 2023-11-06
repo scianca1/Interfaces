@@ -27,6 +27,7 @@ class Tablero {
         this.time = time;
     }
 
+//dibuja tiempo seteado en atributo time
     divujarTiempo(){
         this.ctx.fillStyle="red";
         let xrect= this.x_tablero+this.anchoTablero/2-48;
@@ -39,6 +40,7 @@ class Tablero {
 
     }
 
+//retorna true cuando todas las imagenes se cargaron correctamente 
     async cargarTodasLasImagenes(imgTablero, imgJugadorUno, imgJugadorDos) {
         try {
             const urlImagen = imgTablero;
@@ -71,6 +73,7 @@ class Tablero {
         }
       }
 
+//carga una imagen individual
     async cargarImagen(url) {
         return new Promise((resolve, reject) => {
           const img = new Image();
@@ -82,6 +85,7 @@ class Tablero {
         });
       }
 
+//verifica que este sobre una ficha y resalta esta de rojo 
     onMouseDown(e, tablero){
         tablero.isMouseDown = true;
         if(tablero.lastClickedFigure != null){
@@ -98,37 +102,25 @@ class Tablero {
         tablero.drawFigures();
     }
     
+//Chequea que la posicion donde solto la ficha sea valida, si no es valida vuelve a su lugar 
+//si es valida, se desmarca la ficha y su posicion pasa a ser la ficha libre de esa columna 
+//y se setea en la matriz el jugador que la coloco.
+//verifica si hay un ganador, marca las fichas ganadoras y despliega la pantalla ganador 
+//cheque si se lleno el tablero y no hay ganador, despliega la pantalla de empate 
+//si no hay ganador ni empate cambia el turno 
     onMouseUp(e, tablero){
         tablero.isMouseDown = false;
         let pos = tablero.obtenerPosCanvas(e);
         if(this.lastClickedFigure != null){
             if(this.isvalid(pos)){
-                // console.log("hola");
                 let fichaYposicion=this.getFichavalida(pos)
                 let fichaAcolocar=fichaYposicion.ficha;
-                // console.log(fichaAcolocar);
-                // console.log(tablero.lastClickedFigure);
-                // for(let y=tablero.lastClickedFigure.getPosY();y<=fichaAcolocar.getPosY();y++){
-                //     tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
-                //     tablero.drawFigures();
-                // }
                 this.cantFichasSeteadas+=1;
                 let y=tablero.lastClickedFigure.getPosY();
                 this.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
                 this.lastClickedFigure.setSeJugo(true);
                 this.lastClickedFigure.setResaltado(false);
                 tablero.drawFigures();
-                // this.caidaFicha(tablero,y,fichaAcolocar);
-                // while(y<=fichaAcolocar.getPosY()){
-                //     // setTimeout(()=>{
-                //         tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
-                //         tablero.drawFigures();
-                        
-                //     // },100)
-                //     y+=20;
-                //     }
-                // tablero.lastClickedFigure.setPosition(tablero.lastClickedFigure.posInicialX,tablero.lastClickedFigure.posInicialY);
-                // tablero.drawFigures(); 
                 fichaAcolocar.setJugador(tablero.lastClickedFigure.getJugador()); 
                 if(this.lastClickedFigure.getJugador() == 1){
                     this.turnoJugador = 2;
@@ -136,9 +128,8 @@ class Tablero {
                     this.turnoJugador = 1;
                 }
                 if(this.verificarGanador(fichaYposicion)) {
-                    //pensar que hay que hacer cuando uno gana 
                     const timer = setTimeout(()=>{
-                        let pantallaInicio = document.querySelector("#inicioJuego");
+                    let pantallaInicio = document.querySelector("#inicioJuego");
                     let contenidoPantallaInicio = htmlsPantallas[1];
                     let contenido = contenidoPantallaInicio.head;
                     contenido += "felicidades, ha ganado  "+this.lastClickedFigure.getEquipo();
@@ -148,7 +139,7 @@ class Tablero {
                     this.cuatroEnLinea.setTiempo(-1);
                     pantallaInicio.style.display = "flex";
                     botonVolveraJugar.addEventListener("click", ()=>{
-                        window.location.reload();
+                    window.location.reload();
                     })
                     this.turnoJugador = 0;
                     }, 3000);
@@ -158,7 +149,7 @@ class Tablero {
                     if(this.cantFichasSeteadas==this.columnas*this.filas){
                         let pantallaInicio = document.querySelector("#inicioJuego");
                         let contenidoPantallaInicio = htmlsPantallas[2].head;
-                        contenidoPantallaInicio +=`todas las casillas estan ocupadas :(`;
+                        contenidoPantallaInicio +=`todas las casillas estan ocupadas`;
                         contenidoPantallaInicio += htmlsPantallas[2].body;
                         pantallaInicio.innerHTML = contenidoPantallaInicio;
                         let botonVolveraJugar = document.querySelector("#botonVolveraJugar");
@@ -178,17 +169,8 @@ class Tablero {
             }
         }   
     }
-    caidaFicha(tablero,y,fichaAcolocar){
-        tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y);
-        tablero.drawFigures();
-        y+=15;
-        if(y<=fichaAcolocar.getPosY()){
-            
-            setTimeout(this.caidaFicha(tablero,y,fichaAcolocar),1000);
-        }
-    }
     
-    
+//setea el x e y de la ficha y redibuja el canva 
     onMouseMove(e, tablero){
         if(tablero.isMouseDown && tablero.lastClickedFigure != null){
             let pos = tablero.obtenerPosCanvas(e);
@@ -196,7 +178,8 @@ class Tablero {
             tablero.drawFigures();
         }
     }
-    
+
+//busca la ficha clikeada segun X e Y    
     findClickedFigure(x, y){
         let figura = null;
         for (let i = this.fichasEquipoUno.length - 1; i>=0; i--){
@@ -219,6 +202,8 @@ class Tablero {
         }
         return figura;
     }
+
+//dibuja cabezal segun columnas del tablero
     createHeaderTamblero(){
         this.ctx.fillStyle= "#1F1F23";
         this.ctx.fillRect(this.x_tablero,5,this.anchoTablero,this.y_tablero);
@@ -229,38 +214,28 @@ class Tablero {
         const y2 = this.y_tablero;
         for(let i= 0; i<=this.columnas;i++){
                 // Definir el punto de inicio (x1, y1) y el punto final (x2, y2) de la línea
-                
-                
-                
-
-                // Establecer propiedades de la línea, como el color y el grosor
-               this.ctx.strokeStyle = '#F0F0F0'; // Color de la línea (puedes usar nombres de colores o códigos hexadecimales)
-                this.ctx.lineWidth = 0.5; // Grosor de la línea en píxeles
+                this.ctx.strokeStyle = '#F0F0F0'; 
+                this.ctx.lineWidth = 0.5; 
 
                 // Dibujar la línea
-                this.ctx.beginPath(); // Comienza el trazado
-                this.ctx.moveTo(x1, y1); // Mueve el "lápiz" al punto de inicio
-                this.ctx.lineTo(x2, y2); // Dibuja una línea hasta el punto final
-                this.ctx.stroke(); // Aplica el trazado
-
-                // Cierra el trazado (opcional)
+                this.ctx.beginPath(); 
+                this.ctx.moveTo(x1, y1); 
+                this.ctx.lineTo(x2, y2); 
+                this.ctx.stroke(); 
                 this.ctx.closePath();
                 x1+=espacioEntreColumnas;
                 x2+=espacioEntreColumnas;
-
-
         }
         let width=this.x_tablero+espacioEntreColumnas/2;
         let height = this.y_tablero/2+5;
         for(let columna = 0; columna < this.columnas; columna++){
-            
-              
             let fichaPrueba= new Ficha(width,height,this.radio,"red", this.ctx, this.imgPelotaDeFutbolClarita,0, true,null);
             fichaPrueba.draw();    
             width += espacioEntreColumnas; 
         }  
     }
     
+  //dibuja tablero  
     createTablero(){
             this.createHeaderTamblero();
             this.ctx.fillRect(this.x_tablero,this.y_tablero,this.anchoTablero,this.altoTablero);
@@ -276,6 +251,9 @@ class Tablero {
         }
     }
 
+//Obtiene la distancia entre colunas y la distancia entre filas en base a los pixeles que ocupa el tablero 
+//y a la cantidad de columnas y filas que tiene,luego en un for coloca una nueva ficha(no jugable,ficha tablero),
+// y en cada iteracion le agrega a X o a Y la cantida de pixeles correspondientes 
     cargarFichas(){
         let distanciaEntreColumnas = (this.anchoTablero / this.columnas);
         let distanciaEntreFilas = (this.altoTablero / this.filas);
@@ -296,7 +274,6 @@ class Tablero {
                 this.columnaFichas[i].forEach(ficha => {
                     ficha.draw();    
                 });
-                
             }
     }
 
@@ -319,7 +296,11 @@ class Tablero {
         this.ctx.drawImage(this.imgbackground,0,0,1050,450);
     }
 
-    agregarFichasJugables(imagenJugadorUno, imagenJugadorDos){
+//crea y dibuja todas las fichas de los jugadores que se pueden mover y colocar en el tablero 
+//en base al equipo seleccionado 
+//si la candidad es mayor a 21, se generan dos pilas para que quede mejor visualmente y no se exedan el X e Y 
+//del canva 
+    agregarFichasJugables(){
         let fichasPorEquipo = (this.columnas * this.filas) / 2;
         this.fichasEquipoUno = [];
         this.fichasEquipoDos = [];
@@ -375,6 +356,9 @@ class Tablero {
             }
         
     }
+
+//retorna true, si se solto en el rango de la cabecera del tablero y si la columna en la que se solto 
+//segun los pixeles tiene al menos 1 lugar libre 
     isvalid(pos){
 
         //verificar si esta en el rango de arriba de las columnas valido
@@ -399,10 +383,10 @@ class Tablero {
         }
         return false;
     }
+
+//retorna la primer ficha encontrada del tablero de la columna en la que se solto
+//verificando desde abajo hacia arriba y que no tenga jugador asignado
     getFichavalida(pos){
-        //usar el pos para verificar la columna y recorrerla de abajo hacia arriba hasta encontrar una 
-        //que no tenga jugador asignado, osea ficha.getJugador()=0
-        //retornar la ficha
         let numeroColumna=this.getColumnaSeleccionada(pos);
         let numeroFila=this.getPosEnColumna(numeroColumna);
         let ficha=  this.columnaFichas[numeroColumna][numeroFila];
@@ -411,8 +395,10 @@ class Tablero {
             ficha:ficha
         };
     }
+
+    //retorna true si encuentra columnas -3 coicidencias en la fila,columna,diagonal derecha,diagonal izquierda de 
+    //la ultima ficha a colocar del tablero, y las remarca en caso de haber  coincidencia 
     verificarGanador(fichaAcolocar){
-        //hacer la logica de ver si hay 4 fichas en linea a partir de la ficha a colocar
         // console.log(fichaAcolocar.posicion[0]+" "+fichaAcolocar.posicion[1]);
         let poscolumna=fichaAcolocar.posicion[0];
         let posfila=fichaAcolocar.posicion[1];
@@ -531,14 +517,10 @@ class Tablero {
             this.drawFigures();
            
         }
-        if(ganador){
-            console.log("El ganador de la partida es el jugador "+fichaAcolocar.ficha.getJugador());
-        }else{
-           console.log("seguir en juego");
-        }
         return ganador;
     }
 
+//resalta las fichas del array dado
     resaltarFichasGanadoras(arrayDeFichasGanadoras){
         arrayDeFichasGanadoras.forEach(ficha => {
             if(ficha.getJugador()==1){
@@ -557,6 +539,8 @@ class Tablero {
         
         });
     }
+
+//retorna X e Y de la posicion diagonal mas izquierda,segun dos X e Y dados de una matriz
     getpuntaDiagonalIxquierda(poscolumna,posfila){
         while(poscolumna>0&&posfila>0){
             poscolumna--;
@@ -578,6 +562,7 @@ class Tablero {
         }
     }
 
+//retorna pos de la ficha libre(no tiene jugador asignado) mas abajo de la columna dada, esta 
     getPosEnColumna(numeroColumna){
         let respuesta=null;
         for(let i= this.columnaFichas[numeroColumna].length-1;i>=0;i--){
@@ -587,6 +572,7 @@ class Tablero {
         }
         return respuesta;
     }
+//retorna numero de columna segun un X e Y
     getColumnaSeleccionada(pos){
         let pixelesPorColumna = this.anchoTablero / this.columnas;
         let indiceAux = pos.x - this.x_tablero;

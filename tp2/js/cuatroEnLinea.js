@@ -8,7 +8,8 @@ class CuatroEnLinea {
         this.tiempo = 240;
         this.tablero = new Tablero(canvas, ctx, rellenoTablero, x_tablero, y_tablero, anchoTablero, altoTablero, filas, columnas, radio, this.tiempo,equipo1,equipo2,this);
     }
-
+//inicia temporizador, cada un segundo actualiza el tiempo dibujado,termina en empate 
+//cuando el tiempo es 0 y carga pantalla de empate;
     iniciarTemporizador(){
         const timer = setInterval(()=>{
             this.tiempo--;
@@ -26,9 +27,7 @@ class CuatroEnLinea {
                 botonVolveraJugar.addEventListener("click", ()=>{
                     window.location.reload();
                 });
-                
                 console.log("empate");
-                //terminar juego en empate
             }else if(this.tiempo==-2){
                 this.tablero.setTiempo(0);            
                 this.tablero.drawFigures();
@@ -37,6 +36,8 @@ class CuatroEnLinea {
         }, 1000)
     }
 
+ //cargar imagenes, pasa parametros al tablero y lo dibuja el canva con todos sus elementos, 
+ //agrega eventos al mouse 
     async iniciarJuego(){
         let imgCargadas = await this.tablero.cargarTodasLasImagenes(this.imgTableroUrl, this.imgJugador1Url, this.imgJugador2Url);
         if (imgCargadas){
