@@ -115,9 +115,14 @@ class Tablero {
             if(this.isvalid(pos)){
                 let fichaYposicion=this.getFichavalida(pos)
                 let fichaAcolocar=fichaYposicion.ficha;
-                this.cantFichasSeteadas+=1;
                 let y=tablero.lastClickedFigure.getPosY();
                 this.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
+                
+                //no lo usamos porque arruina el rendimiento
+                //que tiene el juego
+                //this.caidaFicha(tablero,y,fichaAcolocar);
+                
+                this.cantFichasSeteadas+=1;
                 this.lastClickedFigure.setSeJugo(true);
                 this.lastClickedFigure.setResaltado(false);
                 tablero.drawFigures();
@@ -290,8 +295,28 @@ class Tablero {
         });
     }
 
+    //ejecuta la animacion de caiga de la ficha, desde una posicion y dada
+    //hasta una posicion y de una ficha tambien dada, en este caso la ficha
+    //a colocar (posicion que queremos como posicion final)
+    caidaFicha(tablero,y_fichaInicial,fichaAcolocar){
+        tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y_fichaInicial);
+        tablero.drawFigures();
+        y_fichaInicial+=35;
+        if(y_fichaInicial<=fichaAcolocar.getPosY()){
+            
+            setTimeout(()=>{   
+                this.caidaFicha(tablero,y_fichaInicial,fichaAcolocar)
+            }
+            ,100);
+        }else{
+            tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
+            this.drawFigures();
+        }
+    }
+
     clearCanvas(){
         // this.ctx.fillStyle = "white";
+        this.ctx.clearRect(0, 0, canvas.width, canvas.height);
         this.ctx.fillRect(0, 0, canvas.width, canvas.height);
         this.ctx.drawImage(this.imgbackground,0,0,1050,450);
     }
