@@ -1,6 +1,4 @@
-.content-Pagina-Juego{
-    
-}
+
 .sobre_el_juego{
     display: flex;
     
@@ -362,9 +360,7 @@ width: auto;
     display: flex;
     margin:0;
 }
-.carrucel_y_foro{
-   
-}
+
 .carrusel-container{
     position: relative;
     margin-left: 40px;

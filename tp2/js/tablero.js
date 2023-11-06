@@ -120,7 +120,7 @@ class Tablero {
                 
                 //no lo usamos porque arruina el rendimiento
                 //que tiene el juego
-                //this.caidaFicha(tablero,y,fichaAcolocar);
+                // this.caidaFicha(tablero,y,fichaAcolocar);
                 
                 this.cantFichasSeteadas+=1;
                 this.lastClickedFigure.setSeJugo(true);
@@ -301,13 +301,13 @@ class Tablero {
     caidaFicha(tablero,y_fichaInicial,fichaAcolocar){
         tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y_fichaInicial);
         tablero.drawFigures();
-        y_fichaInicial+=35;
+        y_fichaInicial+=10;
         if(y_fichaInicial<=fichaAcolocar.getPosY()){
             
             setTimeout(()=>{   
                 this.caidaFicha(tablero,y_fichaInicial,fichaAcolocar)
             }
-            ,100);
+            ,10);
         }else{
             tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
             this.drawFigures();
