@@ -29,7 +29,7 @@ class Tablero {
 
 //dibuja tiempo seteado en atributo time
     divujarTiempo(){
-        this.ctx.fillStyle="red";
+        this.ctx.fillStyle="#7a0606";
         let xrect= this.x_tablero+this.anchoTablero/2-48;
         let yrect=this.y_tablero+this.altoTablero;
         this.ctx.fillRect(xrect,yrect,100,450-yrect);
