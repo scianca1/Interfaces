@@ -129,8 +129,12 @@ class Tablero {
                 fichaAcolocar.setJugador(tablero.lastClickedFigure.getJugador()); 
                 if(this.lastClickedFigure.getJugador() == 1){
                     this.turnoJugador = 2;
+                    let divturno=document.getElementById("turno");
+                    divturno.innerHTML="Turno de: "+ this.fichasEquipoDos[0].getEquipo();
                 }else{
                     this.turnoJugador = 1;
+                    let divturno=document.getElementById("turno");
+                    divturno.innerHTML="Turno de: "+ this.fichasEquipoUno[0].getEquipo();
                 }
                 if(this.verificarGanador(fichaYposicion)) {
                     const timer = setTimeout(()=>{
