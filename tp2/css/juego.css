@@ -199,6 +199,20 @@
     right: 10px;
     top: 10px;
     height: 25px;
+    width: 80px;
+}
+.divTurno{
+    text-align: center;
+    padding: 4px;
+    left: 10px;
+    color:var(--accentColor);
+    width: 150px;
+    font-size: 20px;
+    font-family: "Black Ops One";
+    background-color: rgba(14, 14, 14, 0.705);
+    border-radius: 10px;
+    height: auto;
+
 }
 .icono-compartir{
 height: 100%;

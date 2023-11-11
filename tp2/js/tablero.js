@@ -29,7 +29,7 @@ class Tablero {
 
 //dibuja tiempo seteado en atributo time
     divujarTiempo(){
-        this.ctx.fillStyle="red";
+        this.ctx.fillStyle="#7a0606";
         let xrect= this.x_tablero+this.anchoTablero/2-48;
         let yrect=this.y_tablero+this.altoTablero;
         this.ctx.fillRect(xrect,yrect,100,450-yrect);
@@ -129,8 +129,12 @@ class Tablero {
                 fichaAcolocar.setJugador(tablero.lastClickedFigure.getJugador()); 
                 if(this.lastClickedFigure.getJugador() == 1){
                     this.turnoJugador = 2;
+                    let divturno=document.getElementById("turno");
+                    divturno.innerHTML="Turno de: "+ this.fichasEquipoDos[0].getEquipo();
                 }else{
                     this.turnoJugador = 1;
+                    let divturno=document.getElementById("turno");
+                    divturno.innerHTML="Turno de: "+ this.fichasEquipoUno[0].getEquipo();
                 }
                 if(this.verificarGanador(fichaYposicion)) {
                     const timer = setTimeout(()=>{
@@ -301,14 +305,16 @@ class Tablero {
     caidaFicha(tablero,y_fichaInicial,fichaAcolocar){
         tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),y_fichaInicial);
         tablero.drawFigures();
-        y_fichaInicial+=10;
+        y_fichaInicial+=15;
         if(y_fichaInicial<=fichaAcolocar.getPosY()){
             
-            setTimeout(()=>{   
-                this.caidaFicha(tablero,y_fichaInicial,fichaAcolocar)
+           let intervaloCaida= setTimeout(()=>{   
+                this.caidaFicha(tablero,y_fichaInicial,fichaAcolocar);
+                clearTimeout(intervaloCaida);
             }
-            ,10);
-        }else{
+            ,50);
+        }
+        else{
             tablero.lastClickedFigure.setPosition(fichaAcolocar.getPosX(),fichaAcolocar.getPosY());
             this.drawFigures();
         }
