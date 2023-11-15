@@ -7,6 +7,11 @@
   margin: 0;
   padding: 0;
 }
+.contenido{
+  width: 1080px;
+  background-color: black;
+  height: 500px;
+}
 
 .seccionUno{
   position: absolute;
@@ -18,7 +23,7 @@
 }
 
 .capa1S1{
-  width: 50%;
+  width: 100%;
   
 }
 .backgrondSeccionUno{
@@ -26,13 +31,32 @@
 }
 
 .capa2S1{
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   width: 100%;
   z-index: 2;
 }
-.imagenEdificios{
-  width: 100px;
+.imagenEdificioIzquierda{
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 400px;
+  left: -48px;
+  top: 50px;
+}
+.imagenEdificioCentro{
+  position: absolute;
+  width: 600px;
+  left: 350px;
+  top: 490px;
+  
+}
+.imagenEdificioDerecha{
+  position: absolute;
+  width: 350px;
+  top: 30px;
+  right: -10px;
+  
 }
 .capa3S1{
   
@@ -42,6 +66,8 @@
 }
 
 .seccionDos{
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 630px;
   width: 100%;
@@ -56,7 +82,7 @@
   top: 1250px;
   height: 1085px;
   background-color: rgb(255, 255, 255);
-  clip-path: polygon(0% 0%, 100% 20%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 12%, 100% 100%, 0% 100%);
 }
 .seccionCuatro{
   position: absolute;
@@ -80,28 +106,28 @@
   top: 3380px;
   width: 100%;
   height: 2194.5px;
-  background-color: rgb(72, 72, 72);
+  background-color: rgb(255, 255, 255);
   clip-path: polygon(0% 0%, 100% 6%, 100% 100%, 0% 100%);
 }
 .seccionSiete{
   position: absolute;
   top: 5470px;
   width: 100%;
-  height: 670px;
-  background-color: rgb(175, 30, 30);
+  height: 500px;
+  background-color: rgb(0, 0, 0);
   clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
 }
 .seccionOcho{
   position: absolute;
-  top: 6000px;
+  top: 5830px;
   width: 100%;
   height: 720px;
-  background-color: rgb(210, 70, 70);
-  clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%);
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(0% 17%, 100% 0%, 100% 100%, 0% 100%);
 }
 .seccionNueve{
   position: absolute;
-  top: 6720px;
+  top: 6550px;
   width: 100%;
   height: 1296px;
   background-image: url(../imgs/backSeccionNueve.png);
@@ -110,9 +136,14 @@
 }
 .footer{
   position: absolute;
-  top: 8016px;
+  top: 7846px;
   width: 100%;
   height: 678px;
   background-color: #5E5E5D;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.headerFooter{
+  width: 100%;
+  height: 80px;
+  background-color: black;
 }
