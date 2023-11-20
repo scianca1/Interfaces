@@ -52,7 +52,7 @@ body{
 }
 .bloqueSeccionSeis{
   display: flex;
-  margin-top: 140px;
+  margin-top: 90px;
   margin-bottom: 140px;
   /* background-color: #8F6AA6; */
 }
@@ -78,7 +78,7 @@ body{
 .textoSeccionSeis p{
   margin-top: 20px;
   margin-left: 30px;
-  margin-right: 5px;
+  margin-right: 50px;
   color: #000;
   font-family: Lato;
   font-size: 20px;
@@ -456,3 +456,4 @@ body{
   cursor:pointer;
   margin-right:90px ;
   margin-top: 20px;
+}
