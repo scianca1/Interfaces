@@ -22,17 +22,24 @@ document.addEventListener("DOMContentLoaded",()=>{
             logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
             logo.style.left= 350+scrollTop*0.75+"px";
             // console.log(scrollTop);
-        }else if(scrollTop>4250&&scrollTop<5530){
-            console.log("hola");
+        }else if(scrollTop>4250&&scrollTop<5560){
             img1SeccionSeis.style.top=300+scrollTop-4250+"px";
-            // img1SeccionSeis.style.opacity = 0.5;
             img2SeccionSeis.style.top=300+scrollTop-4250+"px";
             img3SeccionSeis.style.top=300+scrollTop-4250+"px";
             img4SeccionSeis.style.top=300+scrollTop-4250+"px";
+            if(scrollTop<4666){
+                img1SeccionSeis.style.opacity = 1 - ((scrollTop-4250)/400);
+            }
             if(scrollTop>4666){
-                img1SeccionSeis.style.display="none"; 
-            }else {
-                img1SeccionSeis.style.display="flex"; 
+                img1SeccionSeis.style.opacity = 0;
+                img2SeccionSeis.style.opacity = 1 - ((scrollTop-4666)/400);
+            }
+            if(scrollTop>5100){
+                img2SeccionSeis.style.opacity = 0;
+                img3SeccionSeis.style.opacity = 1 - ((scrollTop-5100)/500);
+                if(scrollTop>5550){
+                    img3SeccionSeis.style.opacity = 0;
+                }
             }
             
 
