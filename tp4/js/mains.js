@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     let img2SeccionSeis= document.getElementById("img2SeccionSeis");
     let img3SeccionSeis= document.getElementById("img3SeccionSeis");
     let img4SeccionSeis= document.getElementById("img4SeccionSeis");
-    
+    let duedeVerde = document.querySelector(".duendeSeccionDos");
+    console.log(duedeVerde);
     if(window.scrollY>0){
         logo.style.width = "158px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
         logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
@@ -16,13 +17,17 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('logo');
         var scrollTop = window.scrollY;
-        
+        console.log(scrollTop);
         if (scrollTop>0&&scrollTop<300) {
             logo.style.width = 590-scrollTop*1.5+"px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
             logo.style.left= 350+scrollTop*0.75+"px";
             // console.log(scrollTop);
-        }else if(scrollTop>4250&&scrollTop<5560){
+        }
+        if(scrollTop>180&&scrollTop<1970){
+            duedeVerde.style.top = (-280) + (scrollTop - 350)* 0.1 + "px";
+        }
+        else if(scrollTop>4250&&scrollTop<5560){
             img1SeccionSeis.style.top=300+scrollTop-4250+"px";
             img2SeccionSeis.style.top=300+scrollTop-4250+"px";
             img3SeccionSeis.style.top=300+scrollTop-4250+"px";
@@ -56,7 +61,6 @@ document.addEventListener("DOMContentLoaded",()=>{
             img3SeccionSeis.style.top="1620px";
             img4SeccionSeis.style.top="1620px";
         }
-        console.log(scrollTop);
         //  else {
         //     logo.style.width = '590px'; /* Restaura el tamaño original del logo al volver arriba */
         //     logo.style.top = '250px'; /* Restaura la posición vertical original del logo al volver arriba */
