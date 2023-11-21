@@ -231,7 +231,6 @@ body{
 }
 .contenidoSeccionUno{
   /* overflow: visible;  */
-  top: 0px;
   transform: translate(0, 0%);
   transition: top 0.8;
   position: relative;
