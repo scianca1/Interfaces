@@ -476,6 +476,25 @@ body{
   background-size: cover;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+  .edificioSeccionNueve{
+    margin-top: 575px;
+    width: 100%;
+  }
+  .spidermanSeccionNueve{
+    position: absolute;
+    top:950px;
+    right: 65px;
+  }
+  .spidermanBlancoSeccionNueve{
+    position: absolute;
+    top: 1060px;
+    left: 430px;
+  }
+  .spidermanNegroSeccionNueve{
+    position: absolute;
+    top: 1123px;
+    left: 100px;
+  }
 .footer{
   position: absolute;
   top: 8575px;
@@ -521,7 +540,7 @@ body{
   letter-spacing: 2.2px;
 }
 .header{
-  display: none;
+  display: flex;
   position:fixed;
   z-index: 1000;
   /* justify-content: space-evenly; */
@@ -536,8 +555,10 @@ body{
 }
 .logo{
   position: absolute;
-  left: 28%;
-  top:100px;
+  left: 350px;
+  top:250px;
+  transform: translate(0, -50%);
+  transition: width 0.8s, top 0.8s,left 0.8s;
 }
 .headerIzquierda{
   display: flex;
