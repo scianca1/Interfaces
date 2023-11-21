@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     let img3SeccionSeis= document.getElementById("img3SeccionSeis");
     let img4SeccionSeis= document.getElementById("img4SeccionSeis");
     let duedeVerde = document.querySelector(".duendeSeccionDos");
-    console.log(duedeVerde);
+    let elementosCapa3Seccion1 = document.querySelector(".contenidoSeccionUno");
+    let elementosCapa2Seccion1 = document.querySelector(".capa2S1");
+    let elementosCapa1Seccion1 = document.querySelector(".imagenEdificioCentro");
     if(window.scrollY>0){
         logo.style.width = "158px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
         logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
@@ -17,12 +19,16 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('logo');
         var scrollTop = window.scrollY;
-        console.log(scrollTop);
+        // console.log(scrollTop);
         if (scrollTop>0&&scrollTop<300) {
             logo.style.width = 590-scrollTop*1.5+"px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
             logo.style.left= 350+scrollTop*0.75+"px";
-            // console.log(scrollTop);
+        }
+        if (scrollTop>0&&scrollTop<1200) {
+            elementosCapa3Seccion1.style.top = 0 + scrollTop * 0.2 +"px";
+            elementosCapa2Seccion1.style.top = 0 + scrollTop * 0.15 +"px";
+            elementosCapa1Seccion1.style.top = 620 + scrollTop * 0.1 +"px";
         }
         if(scrollTop>180&&scrollTop<1970){
             duedeVerde.style.top = (-280) + (scrollTop - 350)* 0.1 + "px";

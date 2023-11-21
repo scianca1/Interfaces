@@ -231,7 +231,9 @@ body{
 }
 .contenidoSeccionUno{
   /* overflow: visible;  */
-  
+  top: 0px;
+  transform: translate(0, 0%);
+  transition: top 0.8;
   position: relative;
   width: 1080px;
   background-color: rgb(255, 119, 0);
@@ -239,7 +241,6 @@ body{
 }
 .cardSuperiorSpiderGirl{
   position: absolute;
-
 }
 .cardMedioSpiderGirl{
   position: absolute;
@@ -314,8 +315,10 @@ body{
     }
 
   .capa2S1{
-    /* position: absolute; */
-    top: 0;
+    position: relative;
+    top: 0px;
+    transform: translate(0, 0%);
+    transition: top 0.8;
     width: 100%;
   }
 
@@ -331,8 +334,9 @@ body{
       position: absolute;
       width: 630px;
       left: 530px;
-      top: 650px;
-      
+      top: 620px;
+      transform: translate(0, 0%);
+      transition: top 0.8;
     }
     .imagenEdificioDerecha{
       position: absolute;
@@ -350,17 +354,17 @@ body{
   .imgSpider{
     position:absolute;
     right: 28% ;
-    top: 438px; 
+    top: 318px; 
   } 
   .imgSpiderBlack{
     position:absolute;
     right: 6%;
-    top: 370px;
+    top: 250px;
   }
   .imgSpiderGirl{
     left: -1%;
     position:absolute;
-    top: 420px;
+    top: 300px;
   }
   .spiderSeccionOcho{
     position:absolute;
@@ -383,13 +387,13 @@ body{
     width: 900px;
     position: absolute;
     left: -410px;
-    top:345px;
+    top:225px;
   }
   .telaraniaDerechaSeccionUno{
     width: 600px;
     position: absolute;
     right: -420px;
-    top: 355px;
+    top: 235px;
   }
 .capa4S1{
   
