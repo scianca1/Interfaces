@@ -432,8 +432,10 @@ body{
   }
   .duendeSeccionDos{
     position: absolute;
-    top: -280px;
+    top: 0px;
     right: -100px;
+    transform: translate(0, 0%);
+    transition: top 0.8;
   }
 .seccionTres{
   display: flex;
