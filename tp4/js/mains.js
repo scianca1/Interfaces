@@ -20,19 +20,23 @@ document.addEventListener("DOMContentLoaded",()=>{
     console.log(cardMedioSpiderGirl);
     console.log(cardInferiorSpiderGirl);
     if(window.scrollY>0){
-        logo.style.width = "158px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
+        logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
         logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
-        logo.style.left= "566px";
+        logo.style.left= "548.75px";
         
     }
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('logo');
         var scrollTop = window.scrollY;
         console.log(scrollTop);
-        if (scrollTop>0&&scrollTop<300) {
+        if (scrollTop>0&&scrollTop<275) {
             logo.style.width = 590-scrollTop*1.5+"px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
             logo.style.left= 350+scrollTop*0.75+"px";
+        }else if(scrollTop>275){
+            logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
+            logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
+            logo.style.left= "548.75px";
         }
         if (scrollTop>0&&scrollTop<1200) {
             elementosCapa3Seccion1.style.top = 0 + scrollTop * 0.2 +"px";
