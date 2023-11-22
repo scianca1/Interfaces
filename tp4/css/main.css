@@ -572,8 +572,21 @@ body{
   }
   .spidermanNegroSeccionNueve{
     position: absolute;
-    top: 1123px;
-    left: 100px;
+    top: 1130px;
+    left: 190px;
+    width:97px;
+    height:116px;
+    margin:auto;
+    background: url(../imgs/spritesheet.png)repeat-x;
+    /* animation:pirueta .9s steps(7) infinite; */
+  }
+  .spidermanNegroSeccionNueve:hover{
+    /* background: url(../imgs/spritesheet.png)repeat-x; */
+    animation:pirueta .9s steps(7) infinite;
+  }
+  @keyframes pirueta{
+   0% { background-position:0 }
+  100% { background-position:-679px }
   }
 .footer{
   position: absolute;
@@ -658,6 +671,24 @@ body{
   cursor:pointer;
 }
 .botonHeader{
+  padding-left:45px;
+  padding-right: 45px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* width: 200px;
+  height: 50px; */
+  color: #02187E;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 94.5%; /* 18.9px */
+  letter-spacing: 2.2px;
+  -webkit-text-stroke:2px;
+  background-color: #FFE901;
+  border:solid 8px #2982FF;
+  box-shadow: 4px 5px 0px 0px #02187E;
+  border-radius: 111px;
   cursor:pointer;
   margin-right:90px ;
   margin-top: 20px;
