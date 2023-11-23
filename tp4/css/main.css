@@ -578,10 +578,10 @@ body{
     height:116px;
     margin:auto;
     background: url(../imgs/spritesheet.png)repeat-x;
-    /* animation:pirueta .9s steps(7) infinite; */
+    
   }
   .spidermanNegroSeccionNueve:hover{
-    /* background: url(../imgs/spritesheet.png)repeat-x; */
+    
     animation:pirueta .9s steps(7) infinite;
   }
   @keyframes pirueta{
