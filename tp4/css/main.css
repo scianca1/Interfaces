@@ -274,6 +274,7 @@ body{
   width: 1080px;
   background-color: rgb(255, 119, 0);
   height: auto;
+  margin-top: 70px;
 }
 .cardSuperiorSpiderGirl{
   position: absolute;
@@ -675,16 +676,12 @@ body{
 .botonHeader{
   padding-left:45px;
   padding-right: 45px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  /* width: 200px;
-  height: 50px; */
   color: #02187E;
   font-family: Lato;
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
-  line-height: 94.5%; /* 18.9px */
+  line-height: 94.5%; 
   letter-spacing: 2.2px;
   -webkit-text-stroke:2px;
   background-color: #FFE901;
@@ -693,5 +690,11 @@ body{
   border-radius: 111px;
   cursor:pointer;
   margin-right: 0px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+.centradorSeccion1{
+  /* margin-top: 70px; */
+}
+#textoSeccionSeis2,#textoSeccionSeis3,#textoSeccionSeis4{
+  opacity: 0;
 }

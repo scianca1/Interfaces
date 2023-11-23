@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     let img2SeccionSeis= document.getElementById("img2SeccionSeis");
     let img3SeccionSeis= document.getElementById("img3SeccionSeis");
     let img4SeccionSeis= document.getElementById("img4SeccionSeis");
+    let textoSeccionSeis1= document.getElementById("textoSeccionSeis1");
+    let textoSeccionSeis2= document.getElementById("textoSeccionSeis2");
+    let textoSeccionSeis3= document.getElementById("textoSeccionSeis3");
+    let textoSeccionSeis4= document.getElementById("textoSeccionSeis4");
     let duedeVerde = document.querySelector(".duendeSeccionDos");
     let elementosCapa3Seccion1 = document.querySelector(".contenidoSeccionUno");
     let elementosCapa2Seccion1 = document.querySelector(".capa2S1");
@@ -22,7 +26,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(window.scrollY>0){
         logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
         logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
-        logo.style.left= "20%";
+        logo.style.left= "40%";
         
     }
     window.addEventListener('scroll', function() {
@@ -84,17 +88,31 @@ document.addEventListener("DOMContentLoaded",()=>{
             img4SeccionSeis.style.top=300+scrollTop-4250+"px";
             if(scrollTop<4666){
                 img1SeccionSeis.style.opacity = 1 - ((scrollTop-4250)/400);
+                textoSeccionSeis1.style.opacity= 1 - ((scrollTop-4250)/100);
+                
+
+            }
+            if(scrollTop>4400){
+                textoSeccionSeis2.style.opacity= 0 + ((scrollTop-4250)/400);
             }
             if(scrollTop>4666){
                 img1SeccionSeis.style.opacity = 0;
                 img2SeccionSeis.style.opacity = 1 - ((scrollTop-4666)/400);
+                textoSeccionSeis2.style.opacity= 1 - ((scrollTop-4666)/100);
+            }
+            if(scrollTop>4866){
+                textoSeccionSeis3.style.opacity= 0 + ((scrollTop-4666)/400);
             }
             if(scrollTop>5100){
                 img2SeccionSeis.style.opacity = 0;
                 img3SeccionSeis.style.opacity = 1 - ((scrollTop-5100)/500);
+                textoSeccionSeis3.style.opacity= 1 - ((scrollTop-5100)/100);
                 if(scrollTop>5550){
                     img3SeccionSeis.style.opacity = 0;
                 }
+            }
+            if(scrollTop>5300){
+                textoSeccionSeis4.style.opacity= 0 + ((scrollTop-5100)/400);
             }
             
 
