@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(window.scrollY>0){
         logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
         logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
-        logo.style.left= "548.75px";
+        logo.style.left= "20%";
         
     }
     window.addEventListener('scroll', function() {
@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded",()=>{
         if (scrollTop>0&&scrollTop<275) {
             logo.style.width = 590-scrollTop*1.5+"px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
-            logo.style.left= 350+scrollTop*0.75+"px";
+            logo.style.left= 28 + scrollTop * 0.04 + "%";
         }else if(scrollTop>275){
             logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
-            logo.style.left= "548.75px";
+            logo.style.left= "40%";
         }
         if (scrollTop>0&&scrollTop<1200) {
             elementosCapa3Seccion1.style.top = 0 + scrollTop * 0.2 +"px";
