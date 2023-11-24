@@ -584,8 +584,8 @@ body{
   .spidermanNegroSeccionNueve:hover{
     /* width: 140.636363636363px;
     height:144px; */
-    background: url(../imgs/spiderman_L.png)repeat-x;
-    animation:pirueta .9s steps(11) infinite;
+    background: url(../imgs/spiderman_L_2.png)repeat-x;
+    animation:piruetaHover 2.5s steps(11) infinite;
   }
 
   @keyframes pirueta{
@@ -594,7 +594,7 @@ body{
   }
   @keyframes piruetaHover{
     0% { background-position:0 }
-   100% { background-position:-1547px }
+   100% { background-position:-1067px }
    }
 .footer{
   position: absolute;
