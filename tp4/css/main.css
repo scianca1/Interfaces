@@ -582,9 +582,9 @@ body{
     animation:pirueta .9s steps(7) infinite;
   }
   .spidermanNegroSeccionNueve:hover{
-    width: 140.636363636363px;
-    height:144px;
-    background: url(../imgs/spriteheetHover.png)repeat-x;
+    /* width: 140.636363636363px;
+    height:144px; */
+    background: url(../imgs/spiderman_L.png)repeat-x;
     animation:pirueta .9s steps(11) infinite;
   }
 
