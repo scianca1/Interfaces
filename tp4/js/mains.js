@@ -20,9 +20,37 @@ document.addEventListener("DOMContentLoaded",()=>{
     let cardSuperiorSpiderGirl = document.querySelector(".cardSuperiorSpiderGirl");
     let cardMedioSpiderGirl = document.querySelector(".cardMedioSpiderGirl");
     let cardInferiorSpiderGirl = document.querySelector(".cardInferiorSpiderGirl");
-    console.log(cardSuperiorSpiderGirl);
-    console.log(cardMedioSpiderGirl);
-    console.log(cardInferiorSpiderGirl);
+    let menuHamburguesa = document.querySelector(".menuHamburguesa");
+    let menu = document.querySelector(".menu");
+    let lineaUnoHamburguesa = document.querySelector(".lineaUno");
+    let lineaDosHamburguesa = document.querySelector(".lineaDos");
+    let lineaTresHamburguesa = document.querySelector(".lineaTres");
+    let opcionUno =  document.querySelector(".opcionUno");
+    let opcionDos =  document.querySelector(".opcionDos");
+    let opcionTres =  document.querySelector(".opcionTres");
+    
+    menuHamburguesa.addEventListener("click", ()=>{
+        if(lineaTresHamburguesa.style.marginTop != "5.5px"){
+            lineaUnoHamburguesa.style.transform = "rotate(45deg)";
+            lineaDosHamburguesa.style.opacity = "0";
+            lineaTresHamburguesa.style.transform = "rotate(-45deg)";
+            lineaTresHamburguesa.style.marginTop = "5.5px";
+            opcionUno.style.animation = "opcion 2s ease-in-out forwards";
+            opcionDos.style.animation = "opcion 1.5s ease-in-out forwards";
+            opcionTres.style.animation = "opcion 1s ease-in-out forwards";
+
+        }else{
+            opcionUno.style.animation = "opcionReversa 2s ease-in-out forwards";
+            opcionDos.style.animation = "opcionReversa 1.5s ease-in-out forwards";
+            opcionTres.style.animation = "opcionReversa 1s ease-in-out forwards";
+            lineaUnoHamburguesa.style.transform = "rotate(0deg)";
+            lineaDosHamburguesa.style.opacity = "1";
+            lineaTresHamburguesa.style.transform = "rotate(0deg)";
+            lineaTresHamburguesa.style.marginTop = "0px";
+        }
+        
+    })
+
     if(window.scrollY>0){
         logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
         logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
