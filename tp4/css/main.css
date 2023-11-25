@@ -426,18 +426,19 @@ body{
     position:absolute;
     top: 40px;
     left: 300px;
+    transition: transform 0.3s ease-in-out;
   } 
   .spiderBlackSeccionOcho{
     position:absolute;
     top: 40px;
     right: 40px;
-    
+    transition: transform 0.3s ease-in-out;
   }
   .spiderGirlSeccionOcho{
     position:absolute;
     top: 40px;
     left: 40px;
-
+    transition: transform 0.3s ease-in-out;
   }
   .telaraniaIzquierdaUno{
     width: 900px;
@@ -538,7 +539,7 @@ body{
   width: 100%;
   height: 500px;
   background-color: rgb(0, 0, 0);
-  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 15%, 100% 75%, 0% 100%);
 }
 .seccionOcho{
   position: absolute;
@@ -563,18 +564,18 @@ body{
   }
   .spidermanSeccionNueve{
     position: absolute;
-    top:950px;
-    right: 65px;
+    top:79%;
+    right: 6%;
   }
   .spidermanBlancoSeccionNueve{
     position: absolute;
-    top: 1060px;
-    left: 430px;
+    top: 88%;
+    left: 40%;
   }
   .spidermanNegroSeccionNueve{
     position: absolute;
-    top: 1130px;
-    left: 190px;
+    top: 94%;
+    left: 18%;
     width:97px;
     height:116px;
     margin:auto;

@@ -28,6 +28,61 @@ document.addEventListener("DOMContentLoaded",()=>{
     let opcionUno =  document.querySelector(".opcionUno");
     let opcionDos =  document.querySelector(".opcionDos");
     let opcionTres =  document.querySelector(".opcionTres");
+    let imagenUnoSeccionOcho= document.getElementById('spiderGirlSeccionOcho');
+    let imagenDosSeccionOcho= document.getElementById('spiderSeccionOcho');
+    let imagenTresSeccionOcho= document.getElementById('spiderBlackSeccionOcho');
+    let fondoOcho=document.getElementById("seccionOcho");
+
+    imagenUnoSeccionOcho.addEventListener("mouseover",()=>{
+        imagenUnoSeccionOcho.style.transform = 'scale(1.3)';
+        imagenDosSeccionOcho.style.transform = 'scale(0.8)';
+        imagenTresSeccionOcho.style.transform = 'scale(0.8)';
+        imagenDosSeccionOcho.style.filter = "blur(5px)";
+        imagenTresSeccionOcho.style.filter = "blur(5px)";
+        fondoOcho.style.backgroundColor='rgb(255, 0, 167, 0.4)';
+    })
+    imagenUnoSeccionOcho.addEventListener("mouseout",()=>{
+        imagenUnoSeccionOcho.style.transform = 'scale(1)';
+        imagenDosSeccionOcho.style.transform = 'scale(1)';
+        imagenTresSeccionOcho.style.transform = 'scale(1)';
+        imagenDosSeccionOcho.style.filter = "none";
+        imagenTresSeccionOcho.style.filter = "none";
+        fondoOcho.style.backgroundColor='white';
+    })
+
+    imagenDosSeccionOcho.addEventListener("mouseover",()=>{
+        imagenDosSeccionOcho.style.transform = 'scale(1.3)';
+        imagenUnoSeccionOcho.style.transform = 'scale(0.8)';
+        imagenTresSeccionOcho.style.transform = 'scale(0.8)';
+        imagenUnoSeccionOcho.style.filter = "blur(5px)";
+        imagenTresSeccionOcho.style.filter = "blur(5px)";
+        fondoOcho.style.backgroundColor='rgb(37, 82, 200,0.9)';
+    })
+    imagenDosSeccionOcho.addEventListener("mouseout",()=>{
+        imagenDosSeccionOcho.style.transform = 'scale(1)';
+        imagenUnoSeccionOcho.style.transform = 'scale(1)';
+        imagenTresSeccionOcho.style.transform = 'scale(1)';
+        imagenUnoSeccionOcho.style.filter = "none";
+        imagenTresSeccionOcho.style.filter = "none";
+        fondoOcho.style.backgroundColor='white';
+    })
+
+    imagenTresSeccionOcho.addEventListener("mouseover",()=>{
+        imagenTresSeccionOcho.style.transform = 'scale(1.3)';
+        imagenUnoSeccionOcho.style.transform = 'scale(0.8)';
+        imagenDosSeccionOcho.style.transform = 'scale(0.8)';
+        imagenUnoSeccionOcho.style.filter = "blur(5px)";
+        imagenDosSeccionOcho.style.filter = "blur(5px)";
+        fondoOcho.style.backgroundColor='rgb(0, 0, 0,0.7)';
+    })
+    imagenTresSeccionOcho.addEventListener("mouseout",()=>{
+        imagenTresSeccionOcho.style.transform = 'scale(1)';
+        imagenUnoSeccionOcho.style.transform = 'scale(1)';
+        imagenDosSeccionOcho.style.transform = 'scale(1)';
+        imagenUnoSeccionOcho.style.filter = "none";
+        imagenDosSeccionOcho.style.filter = "none";
+        fondoOcho.style.backgroundColor='white';
+    })
     
     menuHamburguesa.addEventListener("click", ()=>{
         // if(lineaTresHamburguesa.style.marginTop != "5.5px"){
