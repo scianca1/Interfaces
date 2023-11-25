@@ -838,14 +838,81 @@ body{
 }
 
 .animarUno{
-  animation: pulse 1s;
+  animation: pulseUno 1s forwards;
+}
+.animarDos{
+  animation: pulseDos 1s forwards;
+}
+.animarTres{
+  animation: pulseTres 1s forwards;
 }
 
-@keyframes pulse{
+@keyframes pulseUno{
   0%{
-    
+    transform : rotate(0deg);
+    box-shadow :4px 5px 0px 0px #02187E;
   }
   100%{
-
+    transform : rotate(45deg);
+    box-shadow :none;
   }
+}
+@keyframes pulseDos{
+  0%{
+    opacity :1;
+  }
+  100%{
+    opacity :0;
+  }
+}
+@keyframes pulseTres{
+  0%{
+    transform : rotate(0deg);
+    margin-top: 0;
+    box-shadow :4px 5px 0px 0px #02187E;
+  }
+  100%{
+    transform : rotate(-45deg);
+    margin-top: 5.5px;
+    box-shadow :none;
+  }
+}
+.DespulsarUno{
+  animation: despulseUno 1s forwards;
+}
+.DespulsarDos{
+  animation: despulseDos 1s forwards;
+}
+.DespulsarTres{
+  animation: despulseTres 1s forwards;
+}
+@keyframes despulseUno{
+  0%{
+    transform : rotate(45deg);
+    box-shadow :none;
+  }
+  100%{
+    transform : rotate(0deg);
+    box-shadow :4px 5px 0px 0px #02187E;
+  }
+}
+@keyframes despulseDos{
+  0%{
+    opacity :0;
+  }
+  100%{
+    opacity :1;
+  }
+}
+@keyframes despulseTres{
+  0%{
+    transform : rotate(-45deg);
+    margin-top: 5.5px;
+    box-shadow :none;
+  }
+  100%{
+  transform : rotate(0deg);
+    margin-top: 0;
+    box-shadow :4px 5px 0px 0px #02187E;
+  }  
 }

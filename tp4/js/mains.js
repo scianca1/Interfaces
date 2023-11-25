@@ -30,33 +30,50 @@ document.addEventListener("DOMContentLoaded",()=>{
     let opcionTres =  document.querySelector(".opcionTres");
     
     menuHamburguesa.addEventListener("click", ()=>{
-        if(lineaTresHamburguesa.style.marginTop != "5.5px"){
-            lineaUnoHamburguesa.style.transform = "rotate(45deg)";
-            lineaDosHamburguesa.style.opacity = "0";
-            lineaTresHamburguesa.style.transform = "rotate(-45deg)";
-            lineaTresHamburguesa.style.marginTop = "5.5px";
-            lineaUnoHamburguesa.style.boxShadow = 'none';
-            lineaTresHamburguesa.style.boxShadow = 'none';
+        // if(lineaTresHamburguesa.style.marginTop != "5.5px"){
+        if(!lineaTresHamburguesa.classList.contains("animarTres")){
+            lineaUnoHamburguesa.classList.add("animarUno");
+            lineaDosHamburguesa.classList.add("animarDos");
+            lineaTresHamburguesa.classList.add("animarTres");
+            lineaUnoHamburguesa.classList.remove("DespulsarUno");
+            lineaDosHamburguesa.classList.remove("DespulsarDos");
+            lineaTresHamburguesa.classList.remove("DespulsarTres");
+            
+
+
+            // lineaUnoHamburguesa.style.transform = "rotate(45deg)";
+            // lineaDosHamburguesa.style.opacity = "0";
+            // lineaTresHamburguesa.style.transform = "rotate(-45deg)";
+            // lineaTresHamburguesa.style.marginTop = "5.5px";
+            // lineaUnoHamburguesa.style.boxShadow = 'none';
+            // lineaTresHamburguesa.style.boxShadow = 'none';
             opcionUno.style.animation = "opcion 2s ease-in-out forwards";
             opcionDos.style.animation = "opcion 1.5s ease-in-out forwards";
             opcionTres.style.animation = "opcion 1s ease-in-out forwards";
             menu.style.display='block';
 
         }else{
+            lineaUnoHamburguesa.classList.remove("animarUno");
+            lineaDosHamburguesa.classList.remove("animarDos");
+            lineaTresHamburguesa.classList.remove("animarTres");
+            lineaUnoHamburguesa.classList.add("DespulsarUno");
+            lineaDosHamburguesa.classList.add("DespulsarDos");
+            lineaTresHamburguesa.classList.add("DespulsarTres");
+
+
             opcionUno.style.animation = "opcionReversa 2s ease-in-out forwards";
             opcionDos.style.animation = "opcionReversa 1.5s ease-in-out forwards";
             opcionTres.style.animation = "opcionReversa 1s ease-in-out forwards";
-            lineaUnoHamburguesa.style.transform = "rotate(0deg)";
+            // lineaUnoHamburguesa.style.transform = "rotate(0deg)";
             
-            lineaTresHamburguesa.style.transform = "rotate(0deg)";
-            lineaTresHamburguesa.style.marginTop = "0px";
-            lineaUnoHamburguesa.style.boxShadow = '4px 0px 0px 0px #02187E';
-            lineaTresHamburguesa.style.boxShadow = '4px 5px 0px 0px #02187E';
-            lineaDosHamburguesa.style.opacity = "1";
+            // lineaTresHamburguesa.style.transform = "rotate(0deg)";
+            // lineaTresHamburguesa.style.marginTop = "0px";
+            // lineaUnoHamburguesa.style.boxShadow = '4px 0px 0px 0px #02187E';
+            // lineaTresHamburguesa.style.boxShadow = '4px 5px 0px 0px #02187E';
+            // lineaDosHamburguesa.style.opacity = "1";
             setTimeout(()=>{
-                 
-              menu.style.display='none';
-            }, 2000);
+                  menu.style.display='none';
+            }, 1700);
           
         }
         
