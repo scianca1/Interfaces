@@ -683,6 +683,8 @@ body{
   cursor:pointer;
 }
 .lineaMenuHamburguesa{
+  box-shadow: 4px 5px 0px 0px #02187E;
+  border-radius: 30px;
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -691,12 +693,16 @@ body{
   transform-origin: left;
 }
 .menu{
+  display: none;
   position: fixed;
   top: 90px;
   width: 35%;
   animation: nav 1s ease-in-out forwards;
   height: 400px;
   z-index: 1000;
+}
+.opcionesNav{
+  cursor: pointer;
 }
 .opcionesNav p{
   text-transform: capitalize;
@@ -829,4 +835,17 @@ body{
 .desbanecer{
   opacity: 0;
   transition: opacity 1.5s ease;
+}
+
+.animarUno{
+  animation: pulse 1s;
+}
+
+@keyframes pulse{
+  0%{
+    
+  }
+  100%{
+
+  }
 }

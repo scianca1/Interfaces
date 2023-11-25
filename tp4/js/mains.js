@@ -35,18 +35,29 @@ document.addEventListener("DOMContentLoaded",()=>{
             lineaDosHamburguesa.style.opacity = "0";
             lineaTresHamburguesa.style.transform = "rotate(-45deg)";
             lineaTresHamburguesa.style.marginTop = "5.5px";
+            lineaUnoHamburguesa.style.boxShadow = 'none';
+            lineaTresHamburguesa.style.boxShadow = 'none';
             opcionUno.style.animation = "opcion 2s ease-in-out forwards";
             opcionDos.style.animation = "opcion 1.5s ease-in-out forwards";
             opcionTres.style.animation = "opcion 1s ease-in-out forwards";
+            menu.style.display='block';
 
         }else{
             opcionUno.style.animation = "opcionReversa 2s ease-in-out forwards";
             opcionDos.style.animation = "opcionReversa 1.5s ease-in-out forwards";
             opcionTres.style.animation = "opcionReversa 1s ease-in-out forwards";
             lineaUnoHamburguesa.style.transform = "rotate(0deg)";
-            lineaDosHamburguesa.style.opacity = "1";
+            
             lineaTresHamburguesa.style.transform = "rotate(0deg)";
             lineaTresHamburguesa.style.marginTop = "0px";
+            lineaUnoHamburguesa.style.boxShadow = '4px 0px 0px 0px #02187E';
+            lineaTresHamburguesa.style.boxShadow = '4px 5px 0px 0px #02187E';
+            lineaDosHamburguesa.style.opacity = "1";
+            setTimeout(()=>{
+                 
+              menu.style.display='none';
+            }, 2000);
+          
         }
         
     })
