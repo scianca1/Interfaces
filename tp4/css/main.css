@@ -68,7 +68,6 @@ body{
   width: 552px;
   height: 302px;
   transform: translate(0, -50%);
-  /* transition:  top 0.8s; */
 }
 .textoSeccionSeis{
   display: flex;
@@ -189,23 +188,35 @@ body{
   height: 527px;
   position: relative;
 }
+.capaUnoSeccionCinco{
+  transform: translate(0%, 0%);
+}
 .capaDosSeccionCinco{
-
+  transform: translate(0%, 0%);
+}
+.contenedorDeParalax{
+  overflow: hidden;
+  background-color: #FFE901;
+  width: 1080PX;
+  height: 527px;
 }
 .hulk{
+  transform: translate(0%, 0%);
   position: absolute;
   right: -60px;
   top: 95px;
 }
 .capaTresSeccionCinco{
-  
+  transform: translate(0%, 0%);
 }
 .elastiGirl{
   position: absolute;
   top: -90px;
+  transform: translate(0%, 0%);
 }
 .ninjaNegro{
   position: absolute;
+  transform: translate(0%, 0%);
   left: 435px;
   top: -250px;
 }

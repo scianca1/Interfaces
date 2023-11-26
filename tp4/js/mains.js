@@ -32,6 +32,48 @@ document.addEventListener("DOMContentLoaded",()=>{
     let imagenDosSeccionOcho= document.getElementById('spiderSeccionOcho');
     let imagenTresSeccionOcho= document.getElementById('spiderBlackSeccionOcho');
     let fondoOcho=document.getElementById("seccionOcho");
+    
+    let paralaxSeccionCinco = document.querySelector(".paralaxSeccionCinco");
+    let capaUnoSeccionCinco = document.querySelector(".capaUnoSeccionCinco");
+    let capaDosSeccionCinco = document.querySelector(".capaDosSeccionCinco");
+    let capaTresSeccionCinco = document.querySelector(".capaTresSeccionCinco");
+    let elastiGirl = document.querySelector(".elastiGirl");
+    let hulk  = document.querySelector(".hulk");
+    let ninjaNegro  = document.querySelector(".ninjaNegro");
+
+
+    paralaxSeccionCinco.addEventListener("mousemove", (e)=>{
+        transladarImagenes(e);
+    })
+
+    function transladarImagenes(e){
+        let x = e.clientX;
+        let y = e.clientY;
+        elastiGirl.style.transform = `translate(
+            ${x/100}%,
+            ${y/100}%
+        )`;
+        ninjaNegro.style.transform = `translate(
+            ${x/200}%,
+            ${y/200}%
+        )`;
+        capaTresSeccionCinco.style.transform = `translate(
+            ${x/300}%,
+            ${y/300}%
+        )`;
+        hulk.style.transform = `translate(
+            ${x/350}%,
+            ${y/350}%
+        )`;
+        capaDosSeccionCinco.style.transform = `translate(
+            ${x/400}%,
+            ${y/400}%
+            )`;
+        capaUnoSeccionCinco.style.transform = `translate(
+            ${x/500}%,
+            ${y/500}%
+        )`;
+    }
 
     imagenUnoSeccionOcho.addEventListener("mouseover",()=>{
         imagenUnoSeccionOcho.style.transform = 'scale(1.3)';
@@ -143,7 +185,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('logo');
         var scrollTop = window.scrollY;
-        console.log(scrollTop);
         if (scrollTop>0&&scrollTop<275) {
             logo.style.width = 590-scrollTop*1.5+"px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
@@ -192,11 +233,25 @@ document.addEventListener("DOMContentLoaded",()=>{
             cardMedioSpiderGirl.style.top = 260 + (scrollTop - 1850)* 0.06 + "px";
             cardInferiorSpiderGirl.style.top = 475 + (scrollTop - 1850)* 0.03 + "px";
         }
+        if(scrollTop<4250){
+            img1SeccionSeis.style.position = "absolute";
+            img2SeccionSeis.style.position = "absolute";
+            img3SeccionSeis.style.position = "absolute";
+            img4SeccionSeis.style.position = "absolute";
+            img1SeccionSeis.style.top = "300px";
+            img2SeccionSeis.style.top = "300px";
+            img3SeccionSeis.style.top = "300px";
+            img4SeccionSeis.style.top = "300px";
+        }
         else if(scrollTop>4250&&scrollTop<5560){
-            img1SeccionSeis.style.top=300+scrollTop-4250+"px";
-            img2SeccionSeis.style.top=300+scrollTop-4250+"px";
-            img3SeccionSeis.style.top=300+scrollTop-4250+"px";
-            img4SeccionSeis.style.top=300+scrollTop-4250+"px";
+            img1SeccionSeis.style.position = "fixed";
+            img2SeccionSeis.style.position = "fixed";
+            img3SeccionSeis.style.position = "fixed";
+            img4SeccionSeis.style.position = "fixed";
+            img1SeccionSeis.style.top = "330px";
+            img2SeccionSeis.style.top = "330px";
+            img3SeccionSeis.style.top = "330px";
+            img4SeccionSeis.style.top = "330px";
             if(scrollTop<4666){
                 img1SeccionSeis.style.opacity = 1 - ((scrollTop-4250)/400);
                 textoSeccionSeis1.style.opacity= 1 - ((scrollTop-4250)/100);
@@ -228,13 +283,11 @@ document.addEventListener("DOMContentLoaded",()=>{
             
 
         }
-        else if(scrollTop<4200){
-            img1SeccionSeis.style.top="300px";
-            img2SeccionSeis.style.top="300px";
-            img3SeccionSeis.style.top="300px";
-            img4SeccionSeis.style.top="300px";
-        }
-        else if(scrollTop>5530){
+        if(scrollTop>5560){
+            img1SeccionSeis.style.position = "absolute";
+            img2SeccionSeis.style.position = "absolute";
+            img3SeccionSeis.style.position = "absolute";
+            img4SeccionSeis.style.position = "absolute";
             img1SeccionSeis.style.top="1620px";
             img2SeccionSeis.style.top="1620px";
             img3SeccionSeis.style.top="1620px";
