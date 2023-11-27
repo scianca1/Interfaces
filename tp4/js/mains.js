@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     let imagenDosSeccionOcho= document.getElementById('spiderSeccionOcho');
     let imagenTresSeccionOcho= document.getElementById('spiderBlackSeccionOcho');
     let fondoOcho=document.getElementById("seccionOcho");
-    
     let paralaxSeccionCinco = document.querySelector(".paralaxSeccionCinco");
     let capaUnoSeccionCinco = document.querySelector(".capaUnoSeccionCinco");
     let capaDosSeccionCinco = document.querySelector(".capaDosSeccionCinco");
