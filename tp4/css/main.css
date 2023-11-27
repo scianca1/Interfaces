@@ -530,9 +530,9 @@ body{
 }
 .seccionCinco{
   position: absolute;
-  top: 3185px;
+  top: 3165px;
   width: 100%;
-  height: 1000px;
+  height: 1020px;
   background-color: black;
   clip-path: polygon(0% 7%, 100% 0%, 100% 100%, 0% 100%);
 }
