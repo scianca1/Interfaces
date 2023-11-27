@@ -140,6 +140,9 @@ body{
   width: 816px;
   margin-top: 70px;
 }
+.fijo{
+  height: 1337.81px;
+}
 .contenidoSeccionNueve p{
   width: 578px;
   margin: 0;
@@ -572,6 +575,7 @@ body{
   .edificioSeccionNueve{
     margin-top: 575px;
     width: 100%;
+    height: 758.81px;
   }
   .spidermanSeccionNueve{
     position: absolute;
