@@ -168,29 +168,31 @@ document.addEventListener("DOMContentLoaded",()=>{
         
     })
 
-    if(window.scrollY>0){
-        logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
-        logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
-        logo.style.left= "40%";
-        
-    }
+    // agrega un evento al scroll de la pagina, que sera utilizado para animar todas las 
+    // secciones luego
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('logo');
         var scrollTop = window.scrollY;
+        //ajusta el tamaño del logo y del header en relacion al scroll
         if (scrollTop>0&&scrollTop<275) {
-            logo.style.width = 590-scrollTop*1.5+"px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
-            logo.style.top = 250-scrollTop*0.7+"px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
+            logo.style.width = 590-scrollTop*1.5+"px";
+            logo.style.top = 250-scrollTop*0.7+"px";
             logo.style.left= 28 + scrollTop * 0.04 + "%";
-        }else if(scrollTop>275){
+        }
+        //corrigue el tamaño del logo por si quedo mal por un scroll rapido o algo asi
+        else if(scrollTop>275){
             logo.style.width = "192.5px";  /* Ajusta el nuevo tamaño del logo al hacer scroll */
             logo.style.top = "48.4px"; /* Ajusta la nueva posición vertical del logo al hacer scroll */
             logo.style.left= "40%";
         }
+        //le da un suave movimiento a las capas de la seccion 1 generando un efecto paralax
         if (scrollTop>0&&scrollTop<1200) {
             elementosCapa3Seccion1.style.top = 0 + scrollTop * 0.2 +"px";
             elementosCapa2Seccion1.style.top = 0 + scrollTop * 0.15 +"px";
             elementosCapa1Seccion1.style.top = 620 + scrollTop * 0.1 +"px";
         }
+        // recorre los 3 bloques de la seccion 3 y le da a cada uno un suave movimiento (a distintas velocidades)
+        // y les va quitando opacidad, dando la sensacion que aparecen cuando estoy scrolleando en esa seccion 
         if(scrollTop>1200&&scrollTop<1800){
             bloqueIzquierdaSeccion3.forEach(element => {
                 element.style.top = 400 - (scrollTop-1200) * 0.55 +"px";                
@@ -217,24 +219,19 @@ document.addEventListener("DOMContentLoaded",()=>{
                 }
             });
         }
+        //le da un movimiento suave al duende verde de la seccion 2, generando un efecto paralax
         if(scrollTop>180&&scrollTop<1970){
             duedeVerde.style.top = (-280) + (scrollTop - 350)* 0.1 + "px";
         }
+        //crea el efecto paralax en la seccion de las cards de spider girl, estan van las 3 a distinta velocidad
         if(scrollTop>1830&&scrollTop<3450){
             cardSuperiorSpiderGirl.style.top = 80 + (scrollTop - 1850)* 0.1 + "px";
             cardMedioSpiderGirl.style.top = 260 + (scrollTop - 1850)* 0.06 + "px";
             cardInferiorSpiderGirl.style.top = 475 + (scrollTop - 1850)* 0.03 + "px";
         }
-        if(scrollTop<4250){
-            img1SeccionSeis.style.position = "absolute";
-            img2SeccionSeis.style.position = "absolute";
-            img3SeccionSeis.style.position = "absolute";
-            img4SeccionSeis.style.position = "absolute";
-            img1SeccionSeis.style.top = "300px";
-            img2SeccionSeis.style.top = "300px";
-            img3SeccionSeis.style.top = "300px";
-            img4SeccionSeis.style.top = "300px";
-        }
+        //cuando llego a la seccion donde los titulos deeben ir desapareciendo y scrolleando, y la imagen de la izquierda debe ir cambiando gradualmente
+        //se setea como fija la imagen y a medida que se va escrolleando para abajo, estas van perdieendo opacidad y dejando ver la siguiente, a medida
+        //que los textos viejos desaparecen, y los nuevos aparecen por la parte inferior de la pantalla
         else if(scrollTop>4250&&scrollTop<5560){
             img1SeccionSeis.style.position = "fixed";
             img2SeccionSeis.style.position = "fixed";
@@ -275,6 +272,18 @@ document.addEventListener("DOMContentLoaded",()=>{
             
 
         }
+        //corrige la posicion de la imagen "que habiamos seteado como fija" cuando se vuelve para arriba en la pagina
+        if(scrollTop<4250){
+            img1SeccionSeis.style.position = "absolute";
+            img2SeccionSeis.style.position = "absolute";
+            img3SeccionSeis.style.position = "absolute";
+            img4SeccionSeis.style.position = "absolute";
+            img1SeccionSeis.style.top = "300px";
+            img2SeccionSeis.style.top = "300px";
+            img3SeccionSeis.style.top = "300px";
+            img4SeccionSeis.style.top = "300px";
+        }
+        //corrige la posicion de la imagen "que habiamos seteado como fija" cuando se sigue scrolleando hacia la proxima seccion
         if(scrollTop>5560){
             img1SeccionSeis.style.position = "absolute";
             img2SeccionSeis.style.position = "absolute";
@@ -285,20 +294,17 @@ document.addEventListener("DOMContentLoaded",()=>{
             img3SeccionSeis.style.top="1620px";
             img4SeccionSeis.style.top="1620px";
         }
-        //  else {
-        //     logo.style.width = '590px'; /* Restaura el tamaño original del logo al volver arriba */
-        //     logo.style.top = '250px'; /* Restaura la posición vertical original del logo al volver arriba */
-        // }
     });
     const carga= document.getElementById('background');
-const body = document.getElementById('body');
-const percentage = document.getElementById('porsentaje');
+    const body = document.getElementById('body');
+    const percentage = document.getElementById('porsentaje');
     body.style.overflow = 'hidden';
     updatePercentage();
- function updatePercentage() {
+    
+    function updatePercentage() {
         let width = 0;
         let percent = 0;
-        
+            
         const interval = setInterval(() => {
             width += 1;
             percent += 1;
@@ -320,9 +326,9 @@ const percentage = document.getElementById('porsentaje');
         }, 50);
         
     }
-function closecarry(){
-        carga.classList.add("desbanecer");
-        carga.style.display='none'; 
-        
+
+    function closecarry(){
+            carga.classList.add("desbanecer");
+            carga.style.display='none'; 
     }
 });
