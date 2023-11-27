@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     let hulk  = document.querySelector(".hulk");
     let ninjaNegro  = document.querySelector(".ninjaNegro");
 
+ //Cambia la posicion de los elementos dentro del paralax de la seccion Cinco en base a la posicion del mouse,
+ //divide la  posicion del mouse  x e y en distintos porcentajes de velocidades , haciendo que lo de atras se mueva mas lento 
+ //ya que se divide por numeros mas grandes.
 
     paralaxSeccionCinco.addEventListener("mousemove", (e)=>{
         transladarImagenes(e);
@@ -73,7 +76,10 @@ document.addEventListener("DOMContentLoaded",()=>{
             ${y/500}%
         )`;
     }
-
+// Estos metodos hacen que los dos spidermans que no tienen el mouse arriba se achiquen y se desenfoquen 
+//mientras que el que tiene el mouse arriba se agrande un poco en escala, luego se cambia el color del fondo segun 
+//que spiderman tenga el mouse arriba, y una vez que se saca el mouse de arriba de cualquiera de los tres, las escalas 
+// vuelven a ser 1 para su posicion original y el fondo vuelve a ser blanco 
     imagenUnoSeccionOcho.addEventListener("mouseover",()=>{
         imagenUnoSeccionOcho.style.transform = 'scale(1.3)';
         imagenDosSeccionOcho.style.transform = 'scale(0.8)';
@@ -125,8 +131,10 @@ document.addEventListener("DOMContentLoaded",()=>{
         fondoOcho.style.backgroundColor='white';
     })
     
+//Define un evento al menu hamburguesa que agrega un clase a cada una de las lineas que tiene una animacion keyFrame 
+//que las hace rotar, y transformarce en una X, esta animacion se ejecuta apenas se agrega la clase, 1 vez y mantiene el 
+//estado final de los atributos en el keyFrame.
     menuHamburguesa.addEventListener("click", ()=>{
-        // if(lineaTresHamburguesa.style.marginTop != "5.5px"){
         if(!lineaTresHamburguesa.classList.contains("animarTres")){
             lineaUnoHamburguesa.classList.add("animarUno");
             lineaDosHamburguesa.classList.add("animarDos");
@@ -134,15 +142,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             lineaUnoHamburguesa.classList.remove("DespulsarUno");
             lineaDosHamburguesa.classList.remove("DespulsarDos");
             lineaTresHamburguesa.classList.remove("DespulsarTres");
-            
 
-
-            // lineaUnoHamburguesa.style.transform = "rotate(45deg)";
-            // lineaDosHamburguesa.style.opacity = "0";
-            // lineaTresHamburguesa.style.transform = "rotate(-45deg)";
-            // lineaTresHamburguesa.style.marginTop = "5.5px";
-            // lineaUnoHamburguesa.style.boxShadow = 'none';
-            // lineaTresHamburguesa.style.boxShadow = 'none';
             opcionUno.style.animation = "opcion 2s ease-in-out forwards";
             opcionDos.style.animation = "opcion 1.5s ease-in-out forwards";
             opcionTres.style.animation = "opcion 1s ease-in-out forwards";
@@ -160,13 +160,6 @@ document.addEventListener("DOMContentLoaded",()=>{
             opcionUno.style.animation = "opcionReversa 2s ease-in-out forwards";
             opcionDos.style.animation = "opcionReversa 1.5s ease-in-out forwards";
             opcionTres.style.animation = "opcionReversa 1s ease-in-out forwards";
-            // lineaUnoHamburguesa.style.transform = "rotate(0deg)";
-            
-            // lineaTresHamburguesa.style.transform = "rotate(0deg)";
-            // lineaTresHamburguesa.style.marginTop = "0px";
-            // lineaUnoHamburguesa.style.boxShadow = '4px 0px 0px 0px #02187E';
-            // lineaTresHamburguesa.style.boxShadow = '4px 5px 0px 0px #02187E';
-            // lineaDosHamburguesa.style.opacity = "1";
             setTimeout(()=>{
                   menu.style.display='none';
             }, 1700);
