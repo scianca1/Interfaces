@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded",()=>{
             ${y/200}%
         )`;
         capaTresSeccionCinco.style.transform = `translate(
-            ${x/300}%,
-            ${y/300}%
+            ${x/280}%,
+            ${y/280}%
         )`;
         hulk.style.transform = `translate(
-            ${x/350}%,
-            ${y/350}%
+            ${x/320}%,
+            ${y/320}%
         )`;
         capaDosSeccionCinco.style.transform = `translate(
             ${x/400}%,
