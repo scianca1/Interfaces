@@ -301,6 +301,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     body.style.overflow = 'hidden';
     updatePercentage();
     
+    //va agregando porsentaje al loader y cuando termina lo desaparece 
+    // y le agrega el scroll al body 
     function updatePercentage() {
         let width = 0;
         let percent = 0;
@@ -310,13 +312,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             percent += 1;
     
             if (width <= 100) {
-                // if(width >=60){
-                //     bar.style.width = width + "%";
-                // percentage.textContent = percent + "%"+" ya casii!";
-                // }else{
                 bar.style.width = width + "%";
                 percentage.textContent = percent + "%";
-                // }
             } else {
                 clearInterval(interval);
                 closecarry();
